@@ -1,5 +1,7 @@
 /* Where customizations for each section will go */
-
+a {
+  display:block;
+}
   
 ul {
   font-family: Arial, Verdana;
