@@ -1,16 +1,5 @@
 /* Where customizations for each section will go */
 
-.nav a {
-  margin-right: auto;
-  margin-left: auto;
-  font-size: 12px;
-  font-weight: bold;
-}
-
-.item-list h1 {
-  margin-right: auto;
-  margin-left: auto;
-}
   
 ul {
   font-family: Arial, Verdana;
