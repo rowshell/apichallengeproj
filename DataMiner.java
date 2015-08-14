@@ -12,6 +12,7 @@ Version 2.0 - Added list of Black Market items
               Added findRelevant to find all relevant participants in a match
 Version 2.1 - Added package bmb (Black Market Buddy)
             - Relocated list of Black Market Items to ID.java
+Version 2.2 - Changed data type to enums for better usability. Items are now in Items.java
 
 */
 package bmb;
@@ -72,8 +73,8 @@ public class DataMiner{
         //purchased by the player
         int numBMI = 0;
         for(int j = 0; j < 6; j++){
-          for(int k = 0; k < items.length; k++){
-            if(items[k] == (int)stats.get("item"+j)){
+          for( Items k : Items.values() ){
+            if(k.value == (int)stats.get("item"+j)){
               numBMI++;   
             }
           }
