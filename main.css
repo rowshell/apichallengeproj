@@ -21,7 +21,7 @@ ul {
 }
 
 ul li {
-  display: block;
+  display: inline;
   position: relative;
   float: left;
 }
@@ -31,7 +31,7 @@ li ul {
 }
 
 ul li a {
-  display: inline;
+  display: block;
   text-decoration: none;
   color: #ffffff;
   border-top: 1px solid #ffffff;
@@ -46,7 +46,7 @@ ul li a:hover {
 }
 
 li:hover ul {
-  display: inline;
+  display: block;
   position: absolute;
 }
 
