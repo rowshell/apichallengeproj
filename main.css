@@ -21,7 +21,7 @@ ul {
 }
 
 ul li {
-  display: inline;
+  display: block;
   position: relative;
   float: left;
 }
