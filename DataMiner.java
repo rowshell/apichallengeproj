@@ -1,12 +1,20 @@
 /*
-This class allows the user to retrieve data from Riot's API.
-JSON objects are retrieved, and functions in this class
-extract certain data and manipulate it.
+Flow: An array of match ids to use is generated.
+      Each match is searched and relevant players are added to a list
+      Data is extracted from the list
+      Data is sent to a new JSON file for use by the website
 
 @author Jeremy Seiji Smith, The First of His Name
-@version 1.0
+@version 2.0
+
+Version 1.0 - Created methods to generate URL's and generate an array of match ids
+Version 2.0 - Added list of Black Market items
+              Added findRelevant to find all relevant participants in a match
+Version 2.1 - Added package bmb (Black Market Buddy)
+            - Relocated list of Black Market Items to ID.java
 
 */
+package bmb;
 
 import java.io.*;
 import java.net.*;
@@ -21,21 +29,74 @@ public class DataMiner{
   private static URL url;
 
   /////////SECURE THIS LATER!////////
-  private String key = "?api_key=cd294b04-4505-4d18-89b8-6d1f0298d920";
+  private static String key = "?api_key=cd294b04-4505-4d18-89b8-6d1f0298d920";
+
+
 
   public static void main(String[] args){
 
     //////This is just for test/////////
     int[] array = genArray("./Datasets/BILGEWATER/NA.json");
-    System.out.println(array[0]);
+
+
     ////////////////////////////////////
 
 
   }
 
+
+
+  /**
+  * Method to search a match and add all relevant participants to an ArrayList.
+  * Participants are relevant if they bought exactly one Black Market item
+  * @param match the match id to search
+  * @param summoners the ArrayList to add the relevant summoners to
+  * */
+  @SuppressWarnings("unchecked")
+  private static void findRelevant(int match, ArrayList<JSONObject> summoners){
+    
+    try{
+      //Generate a URL and access the participants array
+      genURL(matchAPI,"" + match, key);
+      JSONParser parser = new JSONParser();
+      JSONObject jso = (JSONObject)parser.parse(new InputStreamReader(url.openStream()));
+      JSONArray participants = (JSONArray)jso.get("participants");
+
+      //Loop through all 10 players and access stats
+      Iterator<JSONObject> iter = participants.iterator();
+      for(int i = 0; i < 10; i++){
+        JSONObject player = iter.next();
+        JSONObject stats = (JSONObject)player.get("stats");
+        
+        //Count the total number of Black Market Items(BMI)
+        //purchased by the player
+        int numBMI = 0;
+        for(int j = 0; j < 6; j++){
+          for(int k = 0; k < items.length; k++){
+            if(items[k] == (int)stats.get("item"+j)){
+              numBMI++;   
+            }
+          }
+        }
+        //If only one BMI was purchased, the player is relevant to our stats
+        if( numBMI == 1 ){
+          summoners.add(player);
+        }
+      }
+    }
+    catch(IOException e){
+      e.printStackTrace();
+    }
+    catch(ParseException e){
+      e.printStackTrace();
+    }
+  }
+
+
+
   /**
   * Generates a URL in order to access Riot's api
-  * @param first the beginning of the url, indicating what kind
+  * @param first the beginning of the url, indicating which data to retrieve
   * @param id the id number of the desired object
   * @param key the api key
   * */
