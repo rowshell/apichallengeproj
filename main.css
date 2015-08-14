@@ -31,7 +31,7 @@ li ul {
 }
 
 ul li a {
-  display: block;
+  display: inline;
   text-decoration: none;
   color: #ffffff;
   border-top: 1px solid #ffffff;
@@ -46,7 +46,7 @@ ul li a:hover {
 }
 
 li:hover ul {
-  display: block;
+  display: inline;
   position: absolute;
 }
 
