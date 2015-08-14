@@ -11,7 +11,7 @@ ul {
 ul li {
   display: block;
   position: relative;
-  float: down;
+  float: left;
 }
 
 li ul { 
