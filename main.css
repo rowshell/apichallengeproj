@@ -1,6 +1,6 @@
 /* Where customizations for each section will go */
  
-/*ul {
+ul.old {
   font-family: Arial, Verdana;
   font-size: 14px;
   margin: 0;
@@ -8,18 +8,13 @@
   list-style: none;
 }
 
-ul li {
+ul.old li {
   display: block;
   position: relative;
   float: left;
 }
 
-li ul { 
-  display: none; 
-  
-}
-
-ul li a {
+ul.old li a {
   display: block;
   text-decoration: none;
   color: #ffffff;
@@ -29,29 +24,29 @@ ul li a {
   margin-left: 1px;
   white-space: nowrap;
 }
-ul li a:hover { 
+
+ul.old li a:hover { 
   background: #617F8A; 
 }
 
-li:hover ul {
+ul.old li:hover ul {
   display: block;
   position: absolute;
 }
 
-li:hover li {
+ul.old li:hover li {
   float: none;
   font-size: 11px;
 }
 
-li:hover a { 
+ul.old li:hover a { 
   background: #617F8A; 
 }
 
-li:hover li a:hover { 
+ul.old li:hover li a:hover { 
   background: #95A9B1; 
   
 }
-*/
 
 ul.menu {
   margin-left: auto;
