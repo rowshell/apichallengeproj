@@ -17,6 +17,11 @@ body {
 
 }
 
+.names h1 {
+    font-style: fantasy;
+    font-size: 20px;
+}
+
 ul.menu {
   margin-left: auto;
   margin-right: auto;
