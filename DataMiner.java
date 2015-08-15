@@ -5,7 +5,7 @@ Flow: An array of match ids to use is generated.
       Data is sent to a new JSON file for use by the website
 
 @author Jeremy Seiji Smith, The First of His Name
-@version 2.0
+@version 3.0
 
 Version 1.0 - Created methods to generate URL's and generate an array of match ids
 Version 2.0 - Added list of Black Market items
@@ -13,6 +13,8 @@ Version 2.0 - Added list of Black Market items
 Version 2.1 - Added package bmb (Black Market Buddy)
             - Relocated list of Black Market Items to ID.java
 Version 2.2 - Changed data type to enums for better usability. Items are now in Items.java
+Version 3.0 - Added methods to get the champion and item purchased by a summoner
+            - Added method to get Kills/Deaths/Assists and calculate KDA
 
 */
 package bmb;
@@ -45,7 +47,75 @@ public class DataMiner{
 
   }
 
+  /**
+  * Method to calculate the KDA of a summoner in a match
+  * @param summoner A JSONObject representing the summoner
+  * @return a double array containing kills, deaths, assists, and KDA
+  * */
+  private static double[] getKDA(JSONObject summoner){
+    
+    JSONObject stats = (JSONObject)summoner.get("stats");
+   
+    int kills = (int)stats.get("kills");
 
+    int actualDeaths = (int)stats.get("deaths");
+    int deaths = actualDeaths;
+    if( deaths == 0 )
+      deaths = 1;
+
+    int assists = (int)stats.get("assists");
+
+    double kda = (kills + assists)/deaths;
+
+    double[] toReturn = new double[4];
+    toReturn[0] = kills;
+    toReturn[1] = actualDeaths;
+    toReturn[2] = assists;
+    toReturn[3] = kda;
+
+    return toReturn;
+  }
+
+  /**
+  * Method to return the name of the item purchased
+  * by the summoner.
+  * @param summoner A JSONObject representing the summoner
+  * @return The name of the BMI purchased as a String
+  * */
+  private static String getItem(JSONObject summoner){
+
+    JSONObject stats = (JSONObject)summoner.get("stats");
+
+    //Determine which item was bought by searching the Items enum
+    for(int i = 1; i < 7; i++){
+      for( Items j : Items.values() ){
+        if( (int)stats.get("item"+i) == j.id ){
+          return j.name;
+        }
+      }
+    }    
+
+    return "";
+  }
+
+  /**
+  * Method to return the name of the champion played by the summoner
+  * @param summoner A JSONObject representing the summoner
+  * @return The name of the champion played as a String
+  * */
+  private static String getChamp(JSONObject summoner){
+  
+    int champId = (int)summoner.get("championId");
+  
+    //Search through the Champions enum to find a match
+    for(Champions c : Champions.values()){
+      if(champId == c.id){
+        return c.name;
+      }
+    }
+    return "";
+  }
+      
 
   /**
   * Method to search a match and add all relevant participants to an ArrayList.
@@ -72,9 +142,9 @@ public class DataMiner{
         //Count the total number of Black Market Items(BMI)
         //purchased by the player
         int numBMI = 0;
-        for(int j = 0; j < 6; j++){
+        for(int j = 1; j < 7; j++){
           for( Items k : Items.values() ){
-            if(k.value == (int)stats.get("item"+j)){
+            if(k.id == (int)stats.get("item"+j)){
               numBMI++;   
             }
           }
