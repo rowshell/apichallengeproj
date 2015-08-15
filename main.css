@@ -1,6 +1,6 @@
 /* Where customizations for each section will go */
  
-ul {
+/*ul {
   font-family: Arial, Verdana;
   font-size: 14px;
   margin: 0;
@@ -51,6 +51,7 @@ li:hover li a:hover {
   background: #95A9B1; 
   
 }
+*/
 
 ul.menu {
   margin-left: auto;
