@@ -67,9 +67,8 @@ ul.menu li.home-page {
 }
 
       
-ul.menu li:hover,
-ul.menu li.current {
-    background:#888; 
+ul.menu li:hover, ul.menu li.current {
+    background:#fff; 
     border-right:#fff 1px solid; 
     border-left:#fff 1px solid;
     transition: all 0.7s ease-in 0s;
