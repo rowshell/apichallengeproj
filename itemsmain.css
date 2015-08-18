@@ -6,7 +6,7 @@ body {
 
 .boxed {
   border: 2px solid white;
-  width: 500px;
+  width: 800px;
   text-align: justify;
   text-justify: inter-word;
 }
