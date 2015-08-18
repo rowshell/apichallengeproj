@@ -1,3 +1,8 @@
 .boxed {
   border: 1px solid green ;
 }
+
+.boxed h1 h2{
+  font-size: 200%;
+}
+
