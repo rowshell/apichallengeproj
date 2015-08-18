@@ -10,7 +10,10 @@ body {
   text-align: justify;
   text-justify: inter-word;
   display:inline-block;
-  padding: 20 20 20 20;
+  padding-top: 20px;
+  padding-bottom:20px;
+  padding-left: 20px;
+  padding-right: 20px;
   
   margin: 0 auto;
   margin-left: auto;
