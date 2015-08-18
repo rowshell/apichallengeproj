@@ -1,6 +1,7 @@
 body {
     color: white; 
     background-color: black;
+    font-family: helvetica;
 
 .boxed {
   border: 1px solid white;
