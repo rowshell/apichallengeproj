@@ -10,7 +10,7 @@ body {
   width: 650px;
   text-align: justify;
   text-justify: inter-word;
-  display:inline-block;
+  /*display:inline-block; use when making champion list page to do image blocking*/
   padding-top: 20px;
   padding-bottom:20px;
   padding-left: 20px;
