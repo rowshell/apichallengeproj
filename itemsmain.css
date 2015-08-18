@@ -2,16 +2,17 @@ body {
     color: white; 
     background-color: black;
     font-family: arial;
+}
 
 .boxed {
   border: 1px solid white;
 }
 
-.boxed h1{
+h1.boxed {
   font-size: 200%;
 }
 
-.boxed h2 {
+h2.boxed {
     font-size: 200%;
 }
 
