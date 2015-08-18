@@ -1,3 +1,10 @@
+body {
+    background-image: url("http://orig12.deviantart.net/7f23/f/2012/360/a/8/vi___league_of_legends_by_sovietpancake-d5pa5tu.jpg");
+    background-size: 1490px 900px;
+    background-repeat: no-repeat;
+    color: white; 
+    background-color: black;
+
 .boxed {
   border: 1px solid green ;
 }
