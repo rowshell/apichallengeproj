@@ -11,14 +11,14 @@ body {
 }
 
 h1.boxed {
-  font-size: 200%;
+  font-size: 300%;
 }
 
 h2.boxed {
     font-size: 200%;
 }
 
-h2.deadman {
-    font-size: 300%;
+h3.deadman {
+    font-size: 200%;
 }
 
