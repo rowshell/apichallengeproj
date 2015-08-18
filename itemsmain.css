@@ -10,15 +10,19 @@ body {
   text-justify: inter-word;
 }
 
-h1.boxed {
+boxed h1 {
   font-size: 300%;
 }
 
-h2.boxed {
+boxed h2{
     font-size: 200%;
 }
 
-h3.deadman {
+deadman h3 {
     font-size: 200%;
 }
 
+deadman img {
+    float: right;
+    margin: 0 0 10px 10px;
+}
