@@ -19,6 +19,7 @@ Version 4.0 - Added method to get win rate for a champ or item
             - Added class statHolder and fields itemList and champList for data storage
             - Updated getChamp and getItem to store data on win/loss
             - Began work on main
+Version 5.0 - I'm sorry about how gross main is.....
 
 */
 package bmb;
@@ -34,6 +35,7 @@ public class DataMiner{
 
   private static String matchAPI = "https://na.api.pvp.net/api/lol/na/v2.2/match/";
   private static URL url;
+
   private static ArrayList<statHolder> itemList = new ArrayList<statHolder>();
   private static ArrayList<statHolder> champList = new ArrayList<statHolder>();
 
@@ -49,13 +51,80 @@ public class DataMiner{
       return;
     }
     
+    //Create an array of file names, as provided by args
     String fileName = args[0];
     ArrayList<int[]> matchIDs = new ArrayList<int[]>();
     for(int i = 1; i < args.length; i++){
-      matchIDs.add(args[i].genArray());
+
+      //parse each file to generate an ArrayList of int arrays
+      matchIDs.add(genArray(args[i]));
     }
     
-    
+    JSONObject obj = new JSONObject();
+    ArrayList<JSONObject> summoners = new ArrayList<JSONObject>();
+
+    ArrayList<Item> itemToJSON = new ArrayList<Item>();
+
+    //Loop through every single provided match ID
+    for(int i = 0; i < matchIDs.size(); i++){
+      for(int j = 0; j < matchIDs.get(i).length; j++){
+      
+        //Find the relevant summoners and store them in an ArrayList
+        findRelevant(matchIDs.get(i)[j], summoners);
+      }
+    }  
+
+    //Loop through our ArrayList of relevant summoners
+    for(int i = 0; i < summoners.size(); i++){
+
+      //Find out which item was purchased, which champ played, and kda
+      String itemName = getItem(summoners.get(i));
+      String champName = getChamp(summoners.get(i));
+      double[] kda = getKDA(summoners.get(i));
+     
+      Item itemRef = null;
+
+      //Check to see if the item is already in the list and gain a reference
+      //if not, add it
+      boolean listHasItem = false;
+      for(int j = 0; j < itemToJSON.size(); j++){
+        if(itemToJSON.get(j).name.equals(itemName)){
+          listHasItem = true;
+          itemRef = itemToJSON.get(j);
+          break;
+        }
+      }
+      if(!listHasItem){
+        itemToJSON.add(new Item(itemName));
+        itemRef = itemToJSON.get(itemToJSON.size()-1);
+      }
+      
+      //Check to see if the item we referenced has the champion played
+      //If not, add it
+      boolean listHasChamp = false;
+      Champion champRef = null;
+      for(int j = 0; j < itemRef.itemChamps.size(); j++){
+        if(itemRef.itemChamps.get(j).name.equals(champName)){
+          listHasChamp = true;
+          champRef = itemRef.itemChamps.get(j);
+          break;
+        }
+      }
+      if(!listHasChamp){
+        itemRef.itemChamps.add(new Champion(champName));
+        champRef = itemRef.itemChamps.get(itemToJSON.size()-1);
+      }
+      champRef.games++;
+      champRef.kda+=kda[3];
+    }
+    //At this point, itemToJSON should have every item, and each item should
+    //should have its own list of champions. KDA needs to be averaged
+
+//    for(int i = 0; i < itemToJSON.size(); i++){
+//      Item currItem = itemToJSON.get(i);
+
+
+
 //TODO: Add some kind of functionality to write data to file
 //Include champion, item, and stat detail. Perhaps create a
 //JSONObject full of item objects. Each item object has a champ
