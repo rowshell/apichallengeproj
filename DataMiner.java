@@ -20,6 +20,7 @@ Version 4.0 - Added method to get win rate for a champ or item
             - Updated getChamp and getItem to store data on win/loss
             - Began work on main
 Version 5.0 - I'm sorry about how gross main is.....
+Version 5.1 - Yup. There's more in main now. It's "done"
 
 */
 package bmb;
@@ -43,7 +44,7 @@ public class DataMiner{
   private static String key = "?api_key=cd294b04-4505-4d18-89b8-6d1f0298d920";
 
 
-
+  @SuppressWarnings("unchecked")
   public static void main(String[] args){
 
     if( args.length < 2 ){
@@ -51,6 +52,8 @@ public class DataMiner{
       return;
     }
     
+    System.out.print("Creating ArrayList of match id's...");
+
     //Create an array of file names, as provided by args
     String fileName = args[0];
     ArrayList<int[]> matchIDs = new ArrayList<int[]>();
@@ -59,10 +62,13 @@ public class DataMiner{
       //parse each file to generate an ArrayList of int arrays
       matchIDs.add(genArray(args[i]));
     }
+
+    System.out.println("  Successful");
+
+    System.out.print("Finding relevant summoners and adding to an ArrayList...");
     
     JSONObject obj = new JSONObject();
     ArrayList<JSONObject> summoners = new ArrayList<JSONObject>();
-
     ArrayList<Item> itemToJSON = new ArrayList<Item>();
 
     //Loop through every single provided match ID
@@ -73,6 +79,10 @@ public class DataMiner{
         findRelevant(matchIDs.get(i)[j], summoners);
       }
     }  
+ 
+    System.out.println("  Successful");
+
+    System.out.print("Creating JSONObject with list of items and champions...");
 
     //Loop through our ArrayList of relevant summoners
     for(int i = 0; i < summoners.size(); i++){
@@ -81,6 +91,10 @@ public class DataMiner{
       String itemName = getItem(summoners.get(i));
       String champName = getChamp(summoners.get(i));
       double[] kda = getKDA(summoners.get(i));
+      int win = 0;
+      JSONObject stats = (JSONObject)((JSONObject)summoners.get(i)).get("stats");
+      if((boolean)stats.get("winner"))
+        win = 1;
      
       Item itemRef = null;
 
@@ -112,24 +126,56 @@ public class DataMiner{
       }
       if(!listHasChamp){
         itemRef.itemChamps.add(new Champion(champName));
-        champRef = itemRef.itemChamps.get(itemToJSON.size()-1);
+        champRef = itemRef.itemChamps.get(itemRef.itemChamps.size()-1);
       }
       champRef.games++;
       champRef.kda+=kda[3];
+      champRef.wins+=win;
     }
-    //At this point, itemToJSON should have every item, and each item should
-    //should have its own list of champions. KDA needs to be averaged
 
-//    for(int i = 0; i < itemToJSON.size(); i++){
-//      Item currItem = itemToJSON.get(i);
+    System.out.println("  Successful");
 
+    System.out.print("Averaging kda, winRate, and placing champion and item objects into final object...");
 
+    //Loop through the items. Get a reference to the current item
+    for(int i = 0; i < itemToJSON.size(); i++){
+      Item currItem = itemToJSON.get(i);
+      JSONObject itemToAdd = new JSONObject();
 
-//TODO: Add some kind of functionality to write data to file
-//Include champion, item, and stat detail. Perhaps create a
-//JSONObject full of item objects. Each item object has a champ
-//object which has stats in it. Consider inner classes for item and champ
-//in order to temporarily store data before JSONObject creation
+      //Loop through the champs. Average to get win rate and kda
+      for(int j = 0; j < currItem.itemChamps.size(); j++){
+        Champion currChamp = currItem.itemChamps.get(j);
+        double numWins = currChamp.wins;
+        double numGames = currChamp.games;
+        double totKDA = currChamp.kda;
+        
+        currChamp.winRate = (double)numWins/numGames;
+        currChamp.kda = (double)totKDA/numGames;
+
+        //Add champion name and stats to the current item object
+        itemToAdd.put("Champion Name",currChamp.name);
+        itemToAdd.put("Win Rate", currChamp.winRate);
+        itemToAdd.put("KDA", currChamp.kda);
+      }
+      
+      //Put each item in our big huge final object
+      obj.put("Item Name",currItem.name);
+    }
+
+    System.out.println("  Successful");
+    System.out.println("Writing to file "+ fileName + "...");
+
+    //Write all of our hopefully glorious data to the fileName provided
+    try{
+      FileWriter file = new FileWriter(fileName);
+      file.write(obj.toJSONString());
+      file.flush();
+      file.close();
+    }
+    catch(IOException e){
+      e.printStackTrace();
+    }
+    System.out.println("Program Successful");
 
   }
 
@@ -190,16 +236,16 @@ public class DataMiner{
     
     JSONObject stats = (JSONObject)summoner.get("stats");
    
-    int kills = (int)stats.get("kills");
+    double kills = (long)stats.get("kills");
 
-    int actualDeaths = (int)stats.get("deaths");
-    int deaths = actualDeaths;
+    double actualDeaths = (long)stats.get("deaths");
+    double deaths = actualDeaths;
     if( deaths == 0 )
       deaths = 1;
 
-    int assists = (int)stats.get("assists");
+    double assists = (long)stats.get("assists");
 
-    double kda = (kills + assists)/deaths;
+    double kda = (double)(kills + assists)/deaths;
 
     boolean win = (boolean)stats.get("winner");
     int winner = 0;
@@ -229,7 +275,8 @@ public class DataMiner{
     //Determine which item was bought by searching the Items enum
     for(int i = 1; i < 7; i++){
       for( Items j : Items.values() ){
-        if( (int)stats.get("item"+i) == j.id ){
+        long itemID = (long)stats.get("item"+i);
+        if( j.id - itemID > -0.05 && j.id - itemID < 0.05 ){
 
           //Determine if win or loss, and put data into itemList
           boolean winner = (boolean)stats.get("winner");
@@ -253,12 +300,12 @@ public class DataMiner{
   * */
   private static String getChamp(JSONObject summoner){
   
-    int champId = (int)summoner.get("championId");
+    long champId = (long)summoner.get("championId");
     JSONObject stats = (JSONObject)summoner.get("stats");
   
     //Search through the Champions enum to find a match
     for(Champions c : Champions.values()){
-      if(champId == c.id){
+      if(c.id - champId > -0.05 && c.id - champId < 0.05){
 
         //Determine if win or loss, and put data into champList
         boolean winner = (boolean)stats.get("winner");
@@ -282,7 +329,6 @@ public class DataMiner{
   * */
   @SuppressWarnings("unchecked")
   private static void findRelevant(int match, ArrayList<JSONObject> summoners){
-    
     try{
       //Generate a URL and access the participants array
       genURL(matchAPI,"" + match, key);
@@ -301,7 +347,8 @@ public class DataMiner{
         int numBMI = 0;
         for(int j = 1; j < 7; j++){
           for( Items k : Items.values() ){
-            if(k.id == (int)stats.get("item"+j)){
+            long itemID = (long)stats.get("item"+j);
+            if(k.id - itemID > -0.05 && k.id - itemID < 0.05){
               numBMI++;   
             }
           }
@@ -352,12 +399,16 @@ public class DataMiner{
       JSONParser parser = new JSONParser();
       JSONArray jso = (JSONArray)parser.parse(new FileReader(dataFile));
       Iterator<Long> iter = jso.iterator();
-      while(iter.hasNext()){
+///////////while(iter.hasNext()){
+int j = 0;
+      while(j < 6){
         array.add(iter.next());
+j++;
       }
 
       //Convert array (Long) to an int[]
       int[] toReturn = new int[array.size()];
+
       for(int i = 0; i < toReturn.length; i++){
         toReturn[i] = array.get(i).intValue();
       }
