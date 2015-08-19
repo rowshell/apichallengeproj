@@ -21,19 +21,15 @@
         <center><h2>Item information</h2></center>
         <br>
         <h3>Attributes</h3>
-        <p>+600 Health</p>
-        <p>+55 Armor</p>
+        <p>+400 Health</p>
+        <p>+100% Base Health Regen</p>
+        <p>+10% Cooldown Reduction</p>
         </div>
         
         <div>
         <h3>Description</h3>
         <p>
-          <b>UNIQUE Passive: </b> <i><b>Dreadnought</b></i>: While moving, build stacks of Momentum, increasing movement speed by up to 60 at 100 stacks. 
-          Momentum quickly decays while under the effects of a stun, taunt, fear, silence, blind, polymorph, or immobilize effect, and slowly decays while slowed.
-          <br> 
-          <br>
-          <b>UNIQUE Passive: </b> <i><b>Crushing Blow</b></i>: Basic attacks discharge all Momentum dealing 1 physical damage per 2 stacks. 
-          If 100 stacks are discharged, damage is doubled and the target is slowed by 75% decaying over 1 second (melee only).
+          <b>UNIQUE Active: </b> UNIQUE Active: Binds yourself to target champion for the next 3 seconds, redirecting 60% of all damage dealt to them to yourself (30 second cooldown).
         </p>
         </div>
       </div>
