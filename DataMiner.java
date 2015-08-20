@@ -5,7 +5,7 @@ Flow: An array of match ids to use is generated.
       Data is sent to a new JSON file for use by the website
 
 @author Jeremy Seiji Smith, The First of His Name
-@version 3.0
+@version 6.0
 
 Version 1.0 - Created methods to generate URL's and generate an array of match ids
 Version 2.0 - Added list of Black Market items
@@ -21,7 +21,14 @@ Version 4.0 - Added method to get win rate for a champ or item
             - Began work on main
 Version 5.0 - I'm sorry about how gross main is.....
 Version 5.1 - Yup. There's more in main now. It's "done"
-
+            - Various bugfixes
+            - Error: only one champion is making it into the item object
+Version 6.0 - Bugs fixed
+            - Removed unused method winRate()
+            - Added conditions to exit main upon error
+            - Added functionality to allow user to get data from pre-BMB games (whoops)
+            - Removed unused fields itemList and champList along with utilizing code
+            - Added data for item win and pick rate
 */
 package bmb;
 
@@ -37,9 +44,6 @@ public class DataMiner{
   private static String matchAPI = "https://na.api.pvp.net/api/lol/na/v2.2/match/";
   private static URL url;
 
-  private static ArrayList<statHolder> itemList = new ArrayList<statHolder>();
-  private static ArrayList<statHolder> champList = new ArrayList<statHolder>();
-
   /////////SECURE THIS LATER!////////
   private static String key = "?api_key=cd294b04-4505-4d18-89b8-6d1f0298d920";
 
@@ -47,26 +51,44 @@ public class DataMiner{
   @SuppressWarnings("unchecked")
   public static void main(String[] args){
 
-    if( args.length < 2 ){
+    //Process args
+    if( args.length < 3 ){
       printUsage();
       return;
     }
-    
+    ////////
     System.out.print("Creating ArrayList of match id's...");
-
-    //Create an array of file names, as provided by args
-    String fileName = args[0];
-    ArrayList<int[]> matchIDs = new ArrayList<int[]>();
-    for(int i = 1; i < args.length; i++){
-
-      //parse each file to generate an ArrayList of int arrays
-      matchIDs.add(genArray(args[i]));
+    ////////
+    boolean pre = false;
+    if(args[0].equals("Pre"))
+      pre = true;
+    else if(args[0].equals("Post"))
+      pre = false;
+    else{
+      printUsage();
+      return;
     }
 
-    System.out.println("  Successful");
+    String fileName = args[1];
 
+    ArrayList<int[]> matchIDs = new ArrayList<int[]>();
+    int totGames = 0;
+    for(int i = 2; i < args.length; i++){
+      //parse each file to generate an ArrayList of int arrays
+      matchIDs.add(genArray(args[i]));
+      totGames += matchIDs.get(matchIDs.size()-1).length;
+    }
+    ////////
+    if(totGames == 0){
+      System.out.println("No match IDs were loaded. Failure");
+      return;
+    }
+    System.out.println("  Successful");
     System.out.print("Finding relevant summoners and adding to an ArrayList...");
-    
+    ////////
+
+    /////////////////////////////////////////////////////////////
+   
     JSONObject obj = new JSONObject();
     ArrayList<JSONObject> summoners = new ArrayList<JSONObject>();
     ArrayList<Item> itemToJSON = new ArrayList<Item>();
@@ -74,15 +96,20 @@ public class DataMiner{
     //Loop through every single provided match ID
     for(int i = 0; i < matchIDs.size(); i++){
       for(int j = 0; j < matchIDs.get(i).length; j++){
-      
+        
         //Find the relevant summoners and store them in an ArrayList
-        findRelevant(matchIDs.get(i)[j], summoners);
+        findRelevant(matchIDs.get(i)[j], summoners, pre);
       }
-    }  
- 
-    System.out.println("  Successful");
+    }
 
+    ////////
+    if(summoners.size() == 0){
+      System.out.println("No relevant summoners found. Failure");
+      return;
+    }  
+    System.out.println("  Successful");
     System.out.print("Creating JSONObject with list of items and champions...");
+    ////////
 
     //Loop through our ArrayList of relevant summoners
     for(int i = 0; i < summoners.size(); i++){
@@ -112,6 +139,8 @@ public class DataMiner{
         itemToJSON.add(new Item(itemName));
         itemRef = itemToJSON.get(itemToJSON.size()-1);
       }
+      itemRef.games++;
+      itemRef.wins+=win;
       
       //Check to see if the item we referenced has the champion played
       //If not, add it
@@ -133,9 +162,10 @@ public class DataMiner{
       champRef.wins+=win;
     }
 
+    ////////
     System.out.println("  Successful");
-
     System.out.print("Averaging kda, winRate, and placing champion and item objects into final object...");
+    ////////
 
     //Loop through the items. Get a reference to the current item
     for(int i = 0; i < itemToJSON.size(); i++){
@@ -144,37 +174,50 @@ public class DataMiner{
 
       //Loop through the champs. Average to get win rate and kda
       for(int j = 0; j < currItem.itemChamps.size(); j++){
+
+        JSONObject champToAdd = new JSONObject();
         Champion currChamp = currItem.itemChamps.get(j);
+
         double numWins = currChamp.wins;
         double numGames = currChamp.games;
         double totKDA = currChamp.kda;
-        
-        currChamp.winRate = (double)numWins/numGames;
+
+        currChamp.pickRate = ((double)numGames/totGames)*100;
+
+        if(numGames == 0)
+          numGames = 1;
+
+        currChamp.winRate = ((double)numWins/numGames)*100;
         currChamp.kda = (double)totKDA/numGames;
 
-        //Add champion name and stats to the current item object
-        itemToAdd.put("Champion Name",currChamp.name);
-        itemToAdd.put("Win Rate", currChamp.winRate);
-        itemToAdd.put("KDA", currChamp.kda);
+        champToAdd.put("KDA", currChamp.kda);
+        champToAdd.put("Pick Rate", currChamp.pickRate);
+        champToAdd.put("Win Rate", currChamp.winRate);
+        itemToAdd.put(currChamp.name, champToAdd );
       }
+
+      double numWins = currItem.wins;
+      double numGames = currItem.games;
+      currItem.pickRate = ((double)numGames/totGames)*100;
+      if(numGames == 0)
+        numGames = 1;
+      currItem.winRate = ((double)numWins/numGames)*100;
+
+      itemToAdd.put("Win Rate", currItem.winRate);
+      itemToAdd.put("Pick Rate", currItem.pickRate);
       
       //Put each item in our big huge final object
-      obj.put("Item Name",currItem.name);
+      obj.put(currItem.name,itemToAdd);
     }
 
+    ////////
     System.out.println("  Successful");
     System.out.println("Writing to file "+ fileName + "...");
+    ////////
 
     //Write all of our hopefully glorious data to the fileName provided
-    try{
-      FileWriter file = new FileWriter(fileName);
-      file.write(obj.toJSONString());
-      file.flush();
-      file.close();
-    }
-    catch(IOException e){
-      e.printStackTrace();
-    }
+    writeFile(fileName, obj); 
+
     System.out.println("Program Successful");
 
   }
@@ -196,36 +239,6 @@ public class DataMiner{
     }
   }
 
-  /**
-  * Method to calculate the win rate of an item or champion
-  * @param isChamp whether or not the element is a champion
-  * @param id the id of the champion or item
-  * @return the win rate of the item of champion
-  * */
-  public static double winRate(boolean isChamp, int id){
-    int numGames = 0;
-    int numWins = 0;
- 
-    //Access the appropriate ArrayList and sum wins and games
-    if(isChamp){
-      for(int i = 0; i < champList.size(); i++){
-        if(id == champList.get(i).champion){
-          numGames++;
-          numWins+=champList.get(i).win;
-        }
-      }
-    }
-    else{
-      for(int i = 0; i < itemList.size(); i++){
-        if(id == itemList.get(i).item){
-          numGames++;
-          numWins+=itemList.get(i).win;
-        }
-      }
-    }
-
-    return (double)(numWins/numGames);
-  }
 
   /**
   * Method to calculate the stats of a summoner in a match
@@ -277,14 +290,6 @@ public class DataMiner{
       for( Items j : Items.values() ){
         long itemID = (long)stats.get("item"+i);
         if( j.id - itemID > -0.05 && j.id - itemID < 0.05 ){
-
-          //Determine if win or loss, and put data into itemList
-          boolean winner = (boolean)stats.get("winner");
-          int win = 0;
-          if(winner)
-            win = 1;
-
-          itemList.add( new statHolder(j.id, 0, win) );
           return j.name;
         }
       }
@@ -306,14 +311,6 @@ public class DataMiner{
     //Search through the Champions enum to find a match
     for(Champions c : Champions.values()){
       if(c.id - champId > -0.05 && c.id - champId < 0.05){
-
-        //Determine if win or loss, and put data into champList
-        boolean winner = (boolean)stats.get("winner");
-        int win = 0;
-        if(winner)
-          win = 1;
-
-        champList.add(new statHolder(0,c.id,win));
         return c.name;
       }
     }
@@ -326,9 +323,10 @@ public class DataMiner{
   * Participants are relevant if they bought exactly one Black Market item
   * @param match the match id to search
   * @param summoners the ArrayList to add the relevant summoners to
+  * @param pre whether or not the matches are pre-BMB
   * */
   @SuppressWarnings("unchecked")
-  private static void findRelevant(int match, ArrayList<JSONObject> summoners){
+  private static void findRelevant(int match, ArrayList<JSONObject> summoners, boolean pre){
     try{
       //Generate a URL and access the participants array
       genURL(matchAPI,"" + match, key);
@@ -353,8 +351,8 @@ public class DataMiner{
             }
           }
         }
-        //If only one BMI was purchased, the player is relevant to our stats
-        if( numBMI == 1 ){
+        //If only one BMI was purchased, the player is relevant to our stats OR if pre-BMB
+        if( numBMI == 1 || pre){
           summoners.add(player);
         }
       }
@@ -427,28 +425,17 @@ j++;
     return new int[0];
   }
 
+  /**
+  * Method to print usage about this program
+  * */
   public static void printUsage(){
     System.out.println("Usage:");
-    System.out.println("Takes at least 2 args, the file to write to and the file(s) " +
+    System.out.println("Takes at least 3 args, the file to write to and the file(s) " +
                         "containing Riot's dataset of match ids");
+    System.out.println("args[0] = <Pre, Post> //whether the datasets are pre or post Black Market Brawlers");
     System.out.println("args[1] = fileName  //the name of the file to write to");
     System.out.println("args[2:] = dataFile //the names of the files to read in");
   }
-
-     
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
