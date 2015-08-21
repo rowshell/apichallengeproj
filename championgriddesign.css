@@ -1,11 +1,23 @@
 /* EDIT THIS TO REFELCT CHAMPIONGRID HTML PAGE */
 
-.table th td {
+.table th {
     border: 1px solid black;
     border-collapse: collapse;
 }
 
-th td {
+.table td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    
+}
+
+th {
     padding: 5px;
     text-align: left;    
 }
+
+td { 
+     padding: 5px;
+    text-align: left;  
+}
+    
