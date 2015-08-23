@@ -26,4 +26,10 @@ td {
      padding: 5px;
     text-align: left;  
 }
-    
+
+.champtable tr {
+    display: inline-block;
+    padding: 5px;
+    text-align: center;
+    float: below;
+}    
