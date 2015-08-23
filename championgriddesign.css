@@ -32,4 +32,6 @@ td {
     padding: 5px;
     text-align: center;
     float: below;
+    border: 2px solid black;
+    border-collapse: collapse;
 }    
