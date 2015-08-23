@@ -6,18 +6,27 @@ var post;
 var url = "pre.json";
 loadJSONs(url, 0);
 url = "post.json";
-loadJSONs(post, 1);
+loadJSONs(url, 1);
 
+/*
+loadJSONs("post.json",1);
+function test(){
+loadJSONs("post.json",1);
+console.log("this is being reached");
+return "hello";
+}
+*/
 /**
 * method to load the json files and store them in pre and post
 * @param url the url of the json file to load
 * @param which the type of data loaded. 0 for pre, 1 for post
 * */
 function loadJSONs( url, which ){
-  var AJAX_req = new XMLHttpResuest();
+  var AJAX_req = new XMLHttpRequest();
+  AJAX_req.overrideMimeType("application/json");
   AJAX_req.open('GET',url,true);
   AJAX_req.onreadystatechange = function(){
-    if(AJAX_req.readystate==4 && AJAX_req.status=="200"){
+    if(AJAX_req.readyState==4 && AJAX_req.status=="200"){
       if( which == 0){
         pre = JSON.parse( AJAX_req.responseText ); 
       }
@@ -25,8 +34,10 @@ function loadJSONs( url, which ){
         post = JSON.parse( AJAX_req.responseText );
       }
     }
-  }
-  Ajax_req.send();
+  };
+
+ AJAX_req.send();
+return post;
 } 
 
 /**
@@ -83,7 +94,7 @@ function getChampionPickRate( item, champion, which ){
     return pre[item][champion]["Pick Rate"];
   }
   else{
-    return post[item][champion["Pick Rate"];
+    return post[item][champion]["Pick Rate"];
   }
 }
 
@@ -130,7 +141,7 @@ function getDifference( isItem, isChampion, isWinRate, isPickRate, isKDA, item, 
       return post[item][champion]["Pick Rate"] = pre[item][champion]["Pick Rate"];
     }
     else{
-      return post[item][champion]["KDA"] - pre[item][champion]["KDA];
+      return post[item][champion]["KDA"] - pre[item][champion]["KDA"];
     }
   }
 }
