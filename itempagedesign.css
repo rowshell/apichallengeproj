@@ -6,6 +6,7 @@ body {
     background-color: black;
     text-align: center;
     float: below;
+    padding: 10px;
 
 }
 .table th {
