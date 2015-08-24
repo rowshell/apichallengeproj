@@ -4,34 +4,29 @@ body {
     font-family: arial;
     color: white;
     background-color: black;
+    text-align: center;
+    float: below;
 
 }
 .table th {
-    border: 2px solid white;
+    border: 2px solid black;
     border-collapse: collapse;
 }
 
 .table td {
-    border: 2px solid white;
+    border: 2px solid black;
     border-collapse: collapse;
     
 }
 
 th {
-    padding: 5px;
-    text-align: left;    
+    padding: 8px;
+    text-align: center; 
+    float: below;
 }
 
 td { 
-     padding: 5px;
-    text-align: left;  
-}
-
-.champtable th {
-    display: inline-block;
-    padding: 5px;
+    padding: 8px;
     text-align: center;
     float: below;
-    border: 2px solid black;
-    border-collapse: collapse;
-}    
+}
