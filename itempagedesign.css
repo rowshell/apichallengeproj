@@ -27,8 +27,10 @@ body {
     background-color: black;
     text-align: center;
     float: below;
-    padding: 10px;
-
+    padding-top: 10px;
+    padding-bottom:10px;
+    padding-left: 15px;
+    padding-right: 15px;
 }
 .table th {
     border: 1px solid black;
