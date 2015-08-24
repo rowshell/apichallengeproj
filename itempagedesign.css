@@ -9,24 +9,24 @@ body {
 
 }
 .table th {
-    border: 2px solid black;
+    border: 1px solid black;
     border-collapse: collapse;
 }
 
 .table td {
-    border: 2px solid black;
+    border: 1px solid black;
     border-collapse: collapse;
     
 }
 
 th {
-    padding: 8px;
+    padding: 5px;
     text-align: center; 
     float: below;
 }
 
 td { 
-    padding: 8px;
+    padding: 5px;
     text-align: center;
     float: below;
 }
