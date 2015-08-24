@@ -1,4 +1,9 @@
 /* EDIT THIS TO REFELCT CHAMPIONGRID HTML PAGE */
+a:link {
+    color: white;
+    text-decoration: none;
+    background-color: transparent;
+}
 
 a:visited {
     color: white;
