@@ -37,7 +37,7 @@ ul.menu li {
     background: none repeat scroll 0 0 #000;
     border-left: 0 solid #fff;
     border-right: 0 solid #fff;
-    float: right;
+    float: left;
     font-family: helvetica;
     line-height: 17px;
     margin: 0;
