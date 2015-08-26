@@ -48,10 +48,10 @@ ul.menu li {
 ul.menu li a {
     color: #fff;
     display: block;
-    font-size: 13px;
+    font-size: 11px;
     font-weight: bold;
     height: 50px;
-    width: 130px;
+    width: 120px;
     text-align: center;
     line-height: 50px;
     padding: 3px 3px;
@@ -83,7 +83,7 @@ ul.menu li ul {
     left: 0;
     padding: 20px 0 0;
     position: absolute;
-    top: 34px;
+    top: 32px;
     width: 250px;
     transition: all 0.7s ease-in 0s;
 }
