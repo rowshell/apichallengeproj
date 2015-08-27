@@ -5,8 +5,6 @@
   </head>
 
   <body>  
-  
-  <script src="DataMiner.js"></script>
 
   <div class="menu">
   <ul class="menu">
@@ -19,20 +17,19 @@
   
   <div class="splashart">
 
-    <center><table style="width:90%">
+    <center><table style="width:90%"></center>
       <tr>
-        <td></td>
+        <td> <img id="splash" src="temp" alt="temp" title="temp" style="width:1097;height:647;border:0"></img></td>
       </tr>
-      </center>
     </table>
   </div>
 
 <br>
-
   <div class="champname">
-    <center><table style="width:70%">
+
+    <table style="width:50%">
       <tr>
-        <td></td>
+        <td id="champName"></td>
       </tr>
     </table></center> 
   </div>
@@ -54,11 +51,11 @@
       <th>Post KDA</th>
     </tr>
     <tr>
-      <td><img src="#" alt="Blah" title="Blah" style="width:75px;height:75px;border:0;">Blah</a></td>
-      <td>Blah</td>
-      <td>Blah</td>
-      <td>Blah</td>
-      <td>Blah</td>
+      <td><img id="helpItemPic" src="#" alt="Blah" title="Blah" style="width:75px;height:75px;border:0;">Blah</a></td>
+      <td id="helpPreWin">Blah</td>
+      <td id="helpPostWin">Blah</td>
+      <td id="helpPreKDA">Blah</td>
+      <td id="helpPostKDA">Blah</td>
     </tr>
   </table>
 
@@ -79,13 +76,18 @@
     </tr>
   
   <tr>
-    <td><img src="#" alt="Blah" title="Blah" style="width:75px;height:75px;border:0;">Blah</a></td>
-    <td>Blah</td>
-    <td>Blah</td>
-    <td>Blah</td>
-    <td>Blah</td>
+    <td><img id="hurtItemPic" src="#" alt="Blah" title="Blah" style="width:75px;height:75px;border:0;">Blah</a></td>
+    <td id="hurtPreWin">Blah</td>
+    <td id="hurtPostWin">Blah</td>
+    <td id="hurtPreKDA">Blah</td>
+    <td id="hurtPostKDA">Blah</td>
   </tr>
 </table>
 
+  <script src="DataMiner.js"></script>
+  <script src="champWriter.js"></script>
+
 </body>
 </html>
+
+
