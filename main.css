@@ -97,10 +97,6 @@ ul.menu li:hover ul {
     
 }
 
-
-
-
-
 /*     ---------- */
 
 ul.projectcell {
@@ -171,12 +167,6 @@ ul.projectcell li:hover ul {
     transition: all 0.7s ease-in 0s;
     
 }
-
-
-
-
-
-
 
 .items {
     border-bottom: 10px solid #000;
