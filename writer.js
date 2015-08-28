@@ -20,7 +20,7 @@ function initWrite(){
   var champLines = document.getElementsByTagName("tr");
   var i;
 
-  for(int i = 1; i < champLines.length; i++){
+  for( i = 1; i < champLines.length; i++){
     var champLine = champLines[i];
     var champPic = document.getElementById(""+i+"a").getAttribute("src");
     var champName = document.getElementById(""+i+"a").getAttribute("title");
