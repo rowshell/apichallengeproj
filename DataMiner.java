@@ -5,7 +5,7 @@ Flow: An array of match ids to use is generated.
       Data is sent to a new JSON file for use by the website
 
 @author Jeremy Seiji Smith, The First of His Name
-@version 6.0
+@version 6.1
 
 Version 1.0 - Created methods to generate URL's and generate an array of match ids
 Version 2.0 - Added list of Black Market items
@@ -29,6 +29,7 @@ Version 6.0 - Bugs fixed
             - Added functionality to allow user to get data from pre-BMB games (whoops)
             - Removed unused fields itemList and champList along with utilizing code
             - Added data for item win and pick rate
+Version 6.1 - Added functionality to disregard information from items picked few times
 */
 package bmb;
 
@@ -190,6 +191,7 @@ public class DataMiner{
         currChamp.winRate = ((double)numWins/numGames)*100;
         currChamp.kda = (double)totKDA/numGames;
 
+        champToAdd.put("numGames", numGames);
         champToAdd.put("KDA", currChamp.kda);
         champToAdd.put("Pick Rate", currChamp.pickRate);
         champToAdd.put("Win Rate", currChamp.winRate);
