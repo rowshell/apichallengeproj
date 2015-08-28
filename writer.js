@@ -31,7 +31,7 @@ function initWrite(){
     document.getElementById(""+i+"a").getElementsByTagName("a")[0].setAttribute("href",url);
 
     document.getElementById(""+i+"b").innerHTML = getChampionWinRate( itemName, champName, 0 );
-    document.getElementById(""+i+"c").innerHTML = getChampionWinRate( itemName, champName, 1 ):
+    document.getElementById(""+i+"c").innerHTML = getChampionWinRate( itemName, champName, 1 );
     document.getElementById(""+i+"d").innerHTML = getChampionKDA( itemName, champName, 0 );
     document.getElementById(""+i+"e").innerHTML = getChampionKDA( itemName, champName, 1 );
   }
