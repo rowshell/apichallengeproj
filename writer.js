@@ -260,6 +260,7 @@ function swap(i, line){
   var newPreKDA = document.getElementById(""+line+"d").innerHTML;
   var newPostKDA = document.getElementById(""+line+"e").innerHTML;
   var newURL = document.getElementById(""+line+"a").getElementsByTagName("a")[0].getAttribute("href");
+  console.log(i);
 
   document.getElementById(""+i+"a").setAttribute("src",newPic);
   document.getElementById(""+i+"a").setAttribute("title",newName);
