@@ -59,7 +59,7 @@ function orderByName(){
         maxMin = document.getElementById(""+j+"a").innerHTML;
         line = j;
       }
-      elseif( document.getElementById(""+j+"a").innerHTML > maxMin && alphaOrder == 1 ){
+      else if( document.getElementById(""+j+"a").innerHTML > maxMin && alphaOrder == 1 ){
         maxMin = document.getElementById(""+j+"a").innerHTML;
         line = j;
       }
@@ -98,7 +98,7 @@ function orderByPreWin(){
         maxMin = document.getElementById(""+j+"b");
         line = j;
       }
-      elseif( document.getElementById(""+j+"b") < maxMin && preWinOrder == 1 ){
+      else if( document.getElementById(""+j+"b") < maxMin && preWinOrder == 1 ){
         maxMin = document.getElementById(""+j+"b");
         line = j;
       }
@@ -139,7 +139,7 @@ function orderByPostWin(){
         maxMin = document.getElementById(""+j+"c");
         line = j;
       }
-      elseif( document.getElementById(""+j+"c") < maxMin && postWinOrder == 1 ){
+      else if( document.getElementById(""+j+"c") < maxMin && postWinOrder == 1 ){
         maxMin = document.getElementById(""+j+"c");
         line = j;
       }
@@ -180,7 +180,7 @@ function orderByPreKDA(){
         maxMin = document.getElementById(""+j+"d");
         line = j;
       }
-      elseif( document.getElementById(""+j+"d") < maxMin && prekdaOrder == 1 ){
+      else if( document.getElementById(""+j+"d") < maxMin && prekdaOrder == 1 ){
         maxMin = document.getElementById(""+j+"d");
         line = j;
       }
@@ -220,7 +220,7 @@ function orderByPostKDA(){
         maxMin = document.getElementById(""+j+"e");
         line = j;
       }
-      elseif( document.getElementById(""+j+"e") < maxMin && postkdaOrder == 1 ){
+      else if( document.getElementById(""+j+"e") < maxMin && postkdaOrder == 1 ){
         maxMin = document.getElementById(""+j+"e");
         line = j;
       }
