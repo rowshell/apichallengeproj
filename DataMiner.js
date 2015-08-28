@@ -1,4 +1,8 @@
-
+/**
+This class provides the ability to loadJSON object information onto the site.
+Functions are defined which get specific stats about champions and items
+@author Jeremy Seiji Smith
+*/
 
 
 var pre; 
@@ -8,14 +12,6 @@ loadJSONs(url, 0);
 url = "post.json";
 loadJSONs(url, 1);
 
-/*
-loadJSONs("post.json",1);
-function test(){
-loadJSONs("post.json",1);
-console.log("this is being reached");
-return "hello";
-}
-*/
 /**
 * method to load the json files and store them in pre and post
 * @param url the url of the json file to load
@@ -37,33 +33,21 @@ function loadJSONs( url, which ){
   };
 
  AJAX_req.send();
-return post;
 } 
 
 /**
 * method to extract the win rate of an item
 * @param item the name of the item
-* @param which 0 for pre, 1 for post
 * */
-function getItemWinRate( item, which ){
-  if( which == 0 ){
-    return pre[item]["Win Rate"];
-  }
-  else{
-    return post[item]["Win Rate"];
-  }
+function getItemWinRate( item ){
+  return post[item]["Win Rate"];
 }
 
 /**
 * method to extract the pick rate of an item
 * @param item the name of the item
-* @param which 0 for pre, 1 for post
 * */
-function getItemPickRate( item, which ){
-  if( which == 0 ){
-    return pre[item]["Pick Rate"];
-  }
-  else{
+function getItemPickRate( item ){
     return post[item]["Pick Rate"];
   }
 }
@@ -76,9 +60,11 @@ function getItemPickRate( item, which ){
 * */
 function getChampionWinRate( item, champion, which ){
   if( which == 0 ){
-    return pre[item][champion]["Win Rate"];
+    return pre[champion]["Win Rate"];
   }
   else{
+    if( post[item][champion]["numGames"] < 10 )
+      return "Unplayed";
     return post[item][champion]["Win Rate"];
   }
 }
@@ -91,9 +77,11 @@ function getChampionWinRate( item, champion, which ){
 * */
 function getChampionPickRate( item, champion, which ){
   if( which == 0 ){
-    return pre[item][champion]["Pick Rate"];
+    return pre[champion]["Pick Rate"];
   }
   else{
+    if( post[item][champion]["numGames"] < 10 )
+      return "Unplayed";
     return post[item][champion]["Pick Rate"];
   }
 }
@@ -106,42 +94,99 @@ function getChampionPickRate( item, champion, which ){
 * */
 function getChampionKDA( item, champion, which ){
   if( which == 0 ){
-    return pre[item][champion][KDA];
+    return pre[champion][KDA];
   }
   else{
+    if( post[item][champion]["numGames"] < 10 )
+      return "Unplayed";
     return post[item][champion][KDA];
   }
 }
 
 /**
 * Function to evaluate the difference between pre and post stats. Be careful! I didn't add
-* no improper use handles
-* @param isItem if we want an item stat
-* @param isChampion if we want a champion stat
+* any improper use handles
 * @param isWinRate if we want the win rate
 * @param isPickRate if we want the pick rate
 * @param isKDA if we want the KDA (only for champions)
 * @param item the item to search under
 * @param champion the champion to search under
 * */
-function getDifference( isItem, isChampion, isWinRate, isPickRate, isKDA, item, champion ){
-  if( isItem == 1 ){
+function getDifference( isWinRate, isPickRate, isKDA, item, champion ){
+    if( post[item][champion]["numGames"] < 10 )
+      return "Unplayed";
     if( isWinRate == 1 ){
-      return post[item]["Win Rate"] - pre[item]["Win Rate"];
-    }
-    else{
-      return post[item]["Pick Rate"] - pre[item]["Pick Rate"];
-    }
-  }
-  else{
-    if( isWinRate == 1 ){
-      return post[item][champion]["Win Rate"] - pre[item][champion]["Win Rate"];
+      return post[item][champion]["Win Rate"] - pre[champion]["Win Rate"];
     }
     else if( isPickRate == 1 ){
-      return post[item][champion]["Pick Rate"] = pre[item][champion]["Pick Rate"];
+      return post[item][champion]["Pick Rate"] = pre[champion]["Pick Rate"];
     }
     else{
-      return post[item][champion]["KDA"] - pre[item][champion]["KDA"];
+      return post[item][champion]["KDA"] - pre[champion]["KDA"];
+    }
+}
+
+/**
+* Function to find the best item for a champion
+* @param champion the name of the champion
+* @return the name of the best item for this champion
+* */
+function findBest( champion ){
+  var tempBest = 0; 
+  var item = "";
+  var winDiff;
+  var kdaDiff;
+
+  //Check each item in the champ's list
+  for( var key in pre ){
+    if( pre.hasOwnProperty(key) ){
+
+      //Calculate the difference and account for unplayed items
+      winDiff = getDifference( 1, 0, 0, key, champion );
+      kdaDiff = getDifference(  0, 0, 1, key, champion );
+      if(winDiff == "Unplayed" || kdaDiff == "Unplayed")
+        continue;
+    
+      //Find the maximum sum
+      if( winDiff + kdaDiff > tempBest ){
+        tempBest = winDiff + kdaDiff;
+        item = key;
+      }
     }
   }
+  return item;
 }
+
+/**
+* Function to find the worst item for a champion
+* @param champion the name of the champion
+* @return the name of the worst item for this champion
+*/
+function findWorst( champion ){
+  var tempWorst = 0;
+  var item = "";
+  var winDiff;
+  var kdadiff;
+  
+  //Check each item in the champ's list
+  for( var key in pre ){
+    if( pre.hasOwnProperty(key) ){
+ 
+      //Calulate the difference and account for unplayed
+      winDiff = getDifference( 1, 0, 0, key, champion );
+      kdaDiff = getDifference( 0, 0, 1, key, champion );
+      if(winDiff == "Unplayed" || kdaDiff == "Unplayed")
+        continue;
+
+      //Calculate the minimum sum
+      if( winDiff + kdaDiff < tempWorst ){
+        tempWorst = winDiff + kdaDiff;
+        item = key;
+      }
+    }
+  }
+  return item;
+}
+
+
+
