@@ -2,7 +2,7 @@
 
 var itemName = document.getElementsByTagName("img")[0].getAttribute("title");
 
-/**
+/*
 * function to initially write to the champion grid. Order is alphabetical
 * */
 function initWrite(){
@@ -15,6 +15,11 @@ function initWrite(){
     var champPic = document.getElementById(""+i+"a").getAttribute("src");
     var champName = document.getElementById(""+i+"a").getAttribute("title");
     
+    var url = document.getElementById(""+i+"a").getElementsByTagName("a")[0].getAttribute("href");
+    url = url + "#" + champName;
+    url = url.replace(" ","_");
+    document.getElementById(""+i+"a").getElementsByTagName("a")[0].setAttribute("href",url);
+
     document.getElementById(""+i+"b").innerHTML = getChampionWinRate( itemName, champName, 0 );
     document.getElementById(""+i+"c").innerHTML = getChampionWinRate( itemName, champName, 1 ):
     document.getElementById(""+i+"d").innerHTML = getChampionKDA( itemName, champName, 0 );
@@ -194,6 +199,7 @@ function swap(i, line){
   var tempPostWin = document.getElementById(""+i+"c").innerHTML;
   var tempPreKDA = document.getElementById(""+i+"d").innerHTML;
   var tempPostKDA = document.getElementById(""+i+"e").innerHTML;
+  var tempURL = document.getElementById(""+i+"a").getElementsByTagName("a")[0].getAttribute("href");
 
   var newPic = document.getElementById(""+line+"a").getAttribute("src");
   var newName = document.getElementById(""+line+"a").getAttribute("title");
@@ -201,6 +207,7 @@ function swap(i, line){
   var newPostWin = document.getElementById(""+line+"c").innerHTML;
   var newPreKDA = document.getElementById(""+line+"d").innerHTML;
   var newPostKDA = document.getElementById(""+line+"e").innerHTML;
+  var newURL = document.getElementById(""+line+"a").getElementsByTagName("a")[0].getAttribute("href");
 
   document.getElementById(""+i+"a").setAttribute("src",newPic);
   document.getElementById(""+i+"a").setAttribute("title",newName);
@@ -210,6 +217,7 @@ function swap(i, line){
   document.getElementById(""+i+"d").innerHTML = newPreKDA;
   document.getElementById(""+i+"e").innerHTML = newPostKDA;
   document.getElementById(""+i).innerHTML = newName;
+  document.getElementById(""+i+"a").getElementsByTagName("a")[0].setAttribute("href",newURL);
    
   document.getElementById(""+line+"a").setAttribute("src",tempPic);
   document.getElementById(""+line+"a").setAttribute("title",tempName);
@@ -219,6 +227,7 @@ function swap(i, line){
   document.getElementById(""+line+"d").innerHTML = tempPreKDA;
   document.getElementById(""+line+"e").innerHTML = tempPostKDA;
   document.getElementById(""+line).innerHTML = tempName;
+  document.getElementById(""+line+"a").getElementsByTagName("a")[0].setAttribute("href",tempURL);
 }
 
 
