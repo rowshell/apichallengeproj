@@ -1,12 +1,10 @@
-<!DOCTYPE html> 
+CTYPE html> 
 <html>
   <head>
     <link href="itemsmain.css" rel="stylesheet">
   </head>
 
   <body>  
-  <script src="DataMiner.js"></script>
-
   
   <ul class="menu">
   <li class="home-page current">
@@ -50,11 +48,11 @@
 <div class="table">
 <table style="width:100%">
   <tr id="0">
-    <th id="0a">Champion</th>
-    <th id="0b">Pre Win Rate</th>
-    <th id="0c">Post Win Rate</th>
-    <th id="0d">Pre KDA</th>
-    <th id="0e">Post KDA</th>
+    <th id="0a"><button onClick="orderByName()">Champion</button></th>
+    <th id="0b"><button onClick="orderByPreWin()">Pre Win Rate</button></th>
+    <th id="0c"><button onClick="orderByPostWin()">Post Win Rate</button></th>
+    <th id="0d"><button onClick="orderByPreKDA()">Pre KDA</button></th>
+    <th id="0e"><button onClick="orderByPostKDA()">Post KDA</button></th>
   </tr>
   
   <tr id="1">
@@ -943,7 +941,11 @@
 </table> <!--End of the stats table--> 
 </div>
 
+  <script src="DataMiner.js"></script>
+  <script src="writer.js"></script>
 
   </body>
 </html>
+
+
 
