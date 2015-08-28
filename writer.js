@@ -1,4 +1,9 @@
-
+/**
+This script writes to the grid of champions for each item
+The item name is retrieved, then the list of champions is displayed alphabetically
+Functions are defined which allow the list to be reordered
+@author Jeremy Seiji Smith
+*/
 
 var itemName = document.getElementsByTagName("img")[0].getAttribute("title");
 
@@ -224,12 +229,4 @@ function swap(i, line){
   document.getElementById(""+line+"a").setAttribute("alt",tempName);
   document.getElementById(""+line+"b").innerHTML = tempPreWin;
   document.getElementById(""+line+"c").innerHTML = tempPostWin;
-  document.getElementById(""+line+"d").innerHTML = tempPreKDA;
-  document.getElementById(""+line+"e").innerHTML = tempPostKDA;
-  document.getElementById(""+line).innerHTML = tempName;
-  document.getElementById(""+line+"a").getElementsByTagName("a")[0].setAttribute("href",tempURL);
-}
-
-
- 
-
+  document.getElementById(""+line+"d").innerHTML = tempP
