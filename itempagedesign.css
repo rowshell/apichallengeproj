@@ -5,6 +5,10 @@
 
 }*/
 
+.title {
+  font-size: 13px;
+}
+
 ul.menu li {
     background: none repeat scroll 0 0 #000;
     border-left: 0 solid #fff;
