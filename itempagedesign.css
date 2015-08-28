@@ -12,10 +12,6 @@ body {
     padding-right: 15px;
 }
 
-.title {
-  font-size: 16px;
-}
-
 ul.menu li {
     background: none repeat scroll 0 0 #000;
     border-left: 0 solid #fff;
