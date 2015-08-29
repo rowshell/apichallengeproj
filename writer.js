@@ -52,6 +52,7 @@ function initWrite(){
  * */
 function search(){
   var str = document.getElementById("searchBar").value;
+  if(str == "") return;
   var champLines = document.getElementsByTagName("tr");
   var i;
   var j;
