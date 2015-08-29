@@ -131,3 +131,37 @@ ul.menu li:hover ul {
     width: 0;
 }
 
+/* For sidebar */
+
+div.background
+{
+  border: 2px solid black;
+  width: 350px;
+  height: 420px;
+}
+div.transbox
+{
+  background-color: #303030;
+  border: 1px solid black;
+  opacity:0.8;
+  filter:alpha(opacity=60); /* For IE8 and earlier */
+  width: 350px;
+  height: 420px;
+}
+
+div.transbox p
+{
+  margin: 2%;
+  font-weight: bold;
+  color: #000000;
+  opacity:0.9;
+  color: white;
+  text-align: center;
+}
+
+div.transbox h1 
+{
+  text-align: center;
+  color: white;
+}
+
