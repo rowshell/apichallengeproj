@@ -38,8 +38,8 @@ function write(){
   document.getElementById("champName").innerHTML = champName;
 
   //Determine the item that helped and hurt the champion the most
-  var bestItem = getBest(champName);
-  var worstItem = getWorst(champName);
+  var bestItem = findBest(champName);
+  var worstItem = findWorst(champName);
  
   document.getElementById("helpPreWin").innerHTML = getChampionWinRate( bestItem, champName, 0 );
   document.getElementById("helpPostWin").innerHTML = getChampionWinRate( bestItem, champName, 1 );
