@@ -56,8 +56,7 @@ function search(){
   var i;
   for(i = 1; i < champLines.length; i++){
     var champName = document.getElementById(""+i+"a").getElementsByTagName("img")[0].getAttribute("title");  
-    if( champName.toLowerCase().search(str.toLowerCase()) > -1 ){
-      console.log("swapping "+champName);
+    if( champName.toLowerCase().search(str.toLowerCase()) > -1 );
       swap(1,i);
       return;
     }
