@@ -6,7 +6,6 @@
 
   <body>  
   
-  <script src="DataMiner.js"></script>
 
   <ul class="menu">
   <li class="home-page current">
@@ -45,11 +44,11 @@
 <div class="table">
 <table style="width:100%">
   <tr id="0">
-    <th id="0a">Champion</th>
-    <th id="0b">Pre Win Rate</th>
-    <th id="0c">Post Win Rate</th>
-    <th id="0d">Pre KDA</th>
-    <th id="0e">Post KDA</th>
+    <th id="0a" onClick="orderByName()">Champion</th>
+    <th id="0b" onClick="orderByPreWin()">Pre Win Rate</th>
+    <th id="0c" onClick="orderByPostWin()">Post Win Rate</th>
+    <th id="0d" onClick="orderByPreKDA()">Pre KDA</th>
+    <th id="0e" onClick="orderByPostKDA()">Post KDA</th>
   </tr>
   
   <tr id="1">
@@ -469,8 +468,8 @@
     <td id="60a"><a href="http://rowshell.github.io/apichallengeproj/emptychamptemp"><img src="http://ddragon.leagueoflegends.com/cdn/5.15.1/img/champion/Malzahar.png" alt="Malzahar" title="Malzahar" style="width:75px;height:75px;border:0;"></a> <a href="http://rowshell.github.io/apichallengeproj/emptychamptemp">Malzahar</a> </td>
     <td id="60b">Blah</td>
     <td id="60c">Blah</td>
-    <td id="60d>Blah</td>
-    <td id="60e>Blah</td>
+    <td id="60d">Blah</td>
+    <td id="60e">Blah</td>
   </tr>
   <tr id="61">
     <td id="61a"><a href="http://rowshell.github.io/apichallengeproj/emptychamptemp"><img src="http://ddragon.leagueoflegends.com/cdn/5.15.1/img/champion/Maokai.png" alt="Maokai" title="Maokai" style="width:75px;height:75px;border:0;"></a> <a href="http://rowshell.github.io/apichallengeproj/emptychamptemp">Maokai</a> </td>
@@ -938,6 +937,7 @@
 </table> <!--End of the stats table--> 
 </div>
 
-
+  <script src="DataMiner.js"></script>
+  <script src="writer.js"></script>
   </body>
 </html>
