@@ -135,6 +135,7 @@ body {
 .champname table { 
   border: 1px solid white;
   border-collapse: collapse; 
+  text-align: center;
 }
 
 .itemtables th {
