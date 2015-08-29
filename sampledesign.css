@@ -6,7 +6,7 @@ div.background
 }
 div.transbox
 {
-  background-color: #193100;
+  background-color: #303030;
   border: 1px solid black;
   opacity:0.8;
   filter:alpha(opacity=60); /* For IE8 and earlier */
