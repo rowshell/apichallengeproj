@@ -12,23 +12,25 @@ var postWinOrder = 0;
 var prekdaOrder = 0;
 var postkdaOrder = 0;
 
+initWrite();
+
 /*
 * function to initially write to the champion grid. Order is alphabetical
 * */
 function initWrite(){
-
   var champLines = document.getElementsByTagName("tr");
   var i;
 
   for( i = 1; i < champLines.length; i++){
     var champLine = champLines[i];
-    var champPic = document.getElementById(""+i+"a").getAttribute("src");
-    var champName = document.getElementById(""+i+"a").getAttribute("title");
+    var champPic = document.getElementById(""+i+"a").getElementsByTagName("img")[0].getAttribute("src");
+    var champName = document.getElementById(""+i+"a").getElementsByTagName("img")[0].getAttribute("title");
     
     var url = document.getElementById(""+i+"a").getElementsByTagName("a")[0].getAttribute("href");
     url = url + "#" + champName;
     url = url.replace(" ","_");
     document.getElementById(""+i+"a").getElementsByTagName("a")[0].setAttribute("href",url);
+    document.getElementById(""+i+"a").getElementsByTagName("a")[1].setAttribute("href",url);
 
     document.getElementById(""+i+"b").innerHTML = getChampionWinRate( itemName, champName, 0 );
     document.getElementById(""+i+"c").innerHTML = getChampionWinRate( itemName, champName, 1 );
@@ -48,24 +50,24 @@ function orderByName(){
   var maxMin;
   var line;
 
-
   for(i = 1; i < champLines.length; i++){
-
-    maxMin = document.getElementById(""+i+"a").innerHTML;
-
+    line = -1;
+    maxMin = document.getElementById(""+i+"a").getElementsByTagName("a")[1].innerHTML;
     //Loop through each line and find the max or min winrate. Keep track of line
     for(j = i; j < champLines.length; j++){
-      if( document.getElementById(""+j+"a").innerHTML < maxMin && alphaOrder == 0 ){
-        maxMin = document.getElementById(""+j+"a").innerHTML;
+      if( document.getElementById(""+j+"a").getElementsByTagName("a")[1].innerHTML < maxMin && alphaOrder == 0 ){
+        maxMin = document.getElementById(""+j+"a").getElementsByTagName("a")[1].innerHTML;
         line = j;
       }
-      else if( document.getElementById(""+j+"a").innerHTML > maxMin && alphaOrder == 1 ){
-        maxMin = document.getElementById(""+j+"a").innerHTML;
+      else if( document.getElementById(""+j+"a").getElementsByTagName("a")[1].innerHTML > maxMin && alphaOrder == 1 ){
+        maxMin = document.getElementById(""+j+"a").getElementsByTagName("a")[1].innerHTML;
         line = j;
       }
     }
     //Swaps the current line with the next max or min, then continue iterating
-    swap( i, line );
+    if( line == -1 ){}
+    else
+      swap( i, line );
   }
 
   if( alphaOrder == 0 )
@@ -89,22 +91,28 @@ function orderByPreWin(){
   var line;
 
   for(i = 1; i < champLines.length; i++){
-
-    maxMin = document.getElementById(""+i+"b");
+    line = -1;
+    maxMin = document.getElementById(""+i+"b").innerHTML;
+    if( maxMin == "Unplayed" ) maxMin = -1;
 
     //Loop through each line and find the max or min winrate. Keep track of line
     for(j = i; j < champLines.length; j++){
-      if( document.getElementById(""+j+"b") > maxMin && preWinOrder == 0 ){
-        maxMin = document.getElementById(""+j+"b");
+      var preWin = document.getElementById(""+j+"b").innerHTML;
+      if( preWin == "Unplayed" ) preWin = -1;
+
+      if( Number(preWin) > Number(maxMin) && preWinOrder == 0 ){
+        maxMin = document.getElementById(""+j+"b").innerHTML;
         line = j;
       }
-      else if( document.getElementById(""+j+"b") < maxMin && preWinOrder == 1 ){
-        maxMin = document.getElementById(""+j+"b");
+      else if(Number(preWin) < Number(maxMin) && preWinOrder == 1 ){
+        maxMin = document.getElementById(""+j+"b").innerHTML;
         line = j;
       }
     }
     //Swaps the current line with the next max or min, then continue iterating
-    swap( i, line );
+    if( line == -1 ){}
+    else
+      swap( i, line );
   }
 
   if( preWinOrder == 0 )
@@ -130,22 +138,28 @@ function orderByPostWin(){
   var line;
 
   for(i = 1; i < champLines.length; i++){
-
-    maxMin = document.getElementById(""+i+"c");
+    line = -1;
+    maxMin = document.getElementById(""+i+"c").innerHTML;
+    if( maxMin == "Unplayed" ) maxMin = -1;
 
     //Loop through each line and find the max or min winrate. Keep track of line
     for(j = i; j < champLines.length; j++){
-      if( document.getElementById(""+j+"c") > maxMin && postWinOrder == 0 ){
-        maxMin = document.getElementById(""+j+"c");
+      var postWin = document.getElementById(""+j+"c").innerHTML;
+      if( postWin == "Unplayed" ) postWin = -1;
+
+      if( Number(postWin) > Number(maxMin) && postWinOrder == 0 ){
+        maxMin = document.getElementById(""+j+"c").innerHTML;
         line = j;
       }
-      else if( document.getElementById(""+j+"c") < maxMin && postWinOrder == 1 ){
-        maxMin = document.getElementById(""+j+"c");
+      else if( Number(postWin) < Number(maxMin) && postWinOrder == 1 ){
+        maxMin = document.getElementById(""+j+"c").innerHTML;
         line = j;
       }
     }
     //Swaps the current line with the next max or min, then continue iterating
-    swap( i, line );
+    if( line == -1 ){}
+    else
+      swap( i, line );
   }
 
   if( postWinOrder == 0 )
@@ -171,22 +185,28 @@ function orderByPreKDA(){
   var line;
 
   for(i = 1; i < champLines.length; i++){
-
-    maxMin = document.getElementById(""+i+"d");
+    line = -1;
+    maxMin = document.getElementById(""+i+"d").innerHTML;
+    if( maxMin == "Unplayed" ) maxMin = -1;
 
     //Loop through each line and find the max or min winrate. Keep track of line
     for(j = i; j < champLines.length; j++){
-      if( document.getElementById(""+j+"d") > maxMin && prekdaOrder == 0 ){
-        maxMin = document.getElementById(""+j+"d");
+      var preKDA = document.getElementById(""+j+"d").innerHTML;
+      if( preKDA == "Unplayed" ) preKDA = -1;
+
+      if( Number(preKDA) > Number(maxMin) && prekdaOrder == 0 ){
+        maxMin = document.getElementById(""+j+"d").innerHTML;
         line = j;
       }
-      else if( document.getElementById(""+j+"d") < maxMin && prekdaOrder == 1 ){
-        maxMin = document.getElementById(""+j+"d");
+      else if( Number(preKDA) < Number(maxMin) && prekdaOrder == 1 ){
+        maxMin = document.getElementById(""+j+"d").innerHTML;
         line = j;
       }
     }
     //Swaps the current line with the next max or min, then continue iterating
-    swap( i, line );
+    if( line == -1 ){}
+    else
+      swap( i, line );
   }
 
   if( prekdaOrder == 0 )
@@ -211,22 +231,28 @@ function orderByPostKDA(){
   var line;
 
   for(i = 1; i < champLines.length; i++){
-
-    maxMin = document.getElementById(""+i+"e");
+    line = -1;
+    maxMin = document.getElementById(""+i+"e").innerHTML;
+    if( maxMin == "Unplayed") maxMin = -1;
 
     //Loop through each line and find the max or min winrate. Keep track of line
     for(j = i; j < champLines.length; j++){
-      if( document.getElementById(""+j+"e") > maxMin && postkdaOrder == 0 ){
-        maxMin = document.getElementById(""+j+"e");
+      var postKDA = document.getElementById(""+j+"e").innerHTML;
+      if( postKDA == "Unplayed" ) postKDA = -1;
+
+      if( Number(postKDA) > Number(maxMin) && postkdaOrder == 0 ){
+        maxMin = document.getElementById(""+j+"e").innerHTML;
         line = j;
       }
-      else if( document.getElementById(""+j+"e") < maxMin && postkdaOrder == 1 ){
-        maxMin = document.getElementById(""+j+"e");
+      else if( Number(postKDA) < Number(maxMin) && postkdaOrder == 1 ){
+        maxMin = document.getElementById(""+j+"e").innerHTML;
         line = j;
       }
     }
     //Swaps the current line with the next max or min, then continue iterating
-    swap( i, line );
+    if( line == -1 ){}
+    else
+      swap( i, line );
   }
 
   if( postkdaOrder == 0 )
@@ -245,42 +271,70 @@ function orderByPostKDA(){
 * @param line the second line to swap
 * */
 function swap(i, line){
-  var tempPic = document.getElementById(""+i+"a").getAttribute("src");
-  var tempName = document.getElementById(""+i+"a").getAttribute("title");
-  var tempPreWin = document.getElementById(""+i+"b").innerHTML;
-  var tempPostWin = document.getElementById(""+i+"c").innerHTML;
-  var tempPreKDA = document.getElementById(""+i+"d").innerHTML;
-  var tempPostKDA = document.getElementById(""+i+"e").innerHTML;
-  var tempURL = document.getElementById(""+i+"a").getElementsByTagName("a")[0].getAttribute("href");
+  var image1 = document.getElementById(""+i+"a").getElementsByTagName("img")[0];
+  var image2 = document.getElementById(""+line+"a").getElementsByTagName("img")[0];
+  var imageTemp = document.getElementById(""+line+"a").getElementsByTagName("img")[0].getAttribute("src");
 
-  var newPic = document.getElementById(""+line+"a").getAttribute("src");
-  var newName = document.getElementById(""+line+"a").getAttribute("title");
-  var newPreWin = document.getElementById(""+line+"b").innerHTML;
-  var newPostWin = document.getElementById(""+line+"c").innerHTML;
-  var newPreKDA = document.getElementById(""+line+"d").innerHTML;
-  var newPostKDA = document.getElementById(""+line+"e").innerHTML;
-  var newURL = document.getElementById(""+line+"a").getElementsByTagName("a")[0].getAttribute("href");
-  console.log(i);
+  var name1 = document.getElementById(""+i+"a").getElementsByTagName("a")[1].innerHTML;
+  var name2 = document.getElementById(""+line+"a").getElementsByTagName("a")[1].innerHTML;
+  var nameTemp = document.getElementById(""+line+"a").getElementsByTagName("a")[1].innerHTML;
 
-  document.getElementById(""+i+"a").setAttribute("src",newPic);
-  document.getElementById(""+i+"a").setAttribute("title",newName);
-  document.getElementById(""+i+"a").setAttribute("alt",newName);
-  document.getElementById(""+i+"b").innerHTML = newPreWin;
-  document.getElementById(""+i+"c").innerHTML = newPostWin;
-  document.getElementById(""+i+"d").innerHTML = newPreKDA;
-  document.getElementById(""+i+"e").innerHTML = newPostKDA;
-  document.getElementById(""+i).innerHTML = newName;
-  document.getElementById(""+i+"a").getElementsByTagName("a")[0].setAttribute("href",newURL);
-   
-  document.getElementById(""+line+"a").setAttribute("src",tempPic);
-  document.getElementById(""+line+"a").setAttribute("title",tempName);
-  document.getElementById(""+line+"a").setAttribute("alt",tempName);
-  document.getElementById(""+line+"b").innerHTML = tempPreWin;
-  document.getElementById(""+line+"c").innerHTML = tempPostWin;
-  document.getElementById(""+line+"d").innerHTML = tempPreKDA;
-  document.getElementById(""+line+"e").innerHTML = tempPostKDA;
-  document.getElementById(""+line).innerHTML = tempName;
-  document.getElementById(""+line+"a").getElementsByTagName("a")[0].setAttribute("href",tempURL);
+  var URL1 = document.getElementById(""+i+"a").getElementsByTagName("a")[0];
+  var URL2 = document.getElementById(""+line+"a").getElementsByTagName("a")[0];
+  var URLTemp = document.getElementById(""+line+"a").getElementsByTagName("a")[0].getAttribute("href");
+  var URL1b = document.getElementById(""+i+"a").getElementsByTagName("a")[1];
+  var URL2b = document.getElementById(""+line+"a").getElementsByTagName("a")[1];
+  var URLTempb = document.getElementById(""+line+"a").getElementsByTagName("a")[1].getAttribute("href");
+
+  var preWin1 = document.getElementById(""+i+"b").innerHTML;
+  var preWin2 = document.getElementById(""+line+"b").innerHTML;
+  var preWinTemp = document.getElementById(""+line+"b").innerHTML;
+
+  var postWin1 = document.getElementById(""+i+"c").innerHTML;
+  var postWin2 = document.getElementById(""+line+"c").innerHTML;
+  var postWinTemp = document.getElementById(""+line+"c").innerHTML;
+
+  var preKDA1 = document.getElementById(""+i+"d").innerHTML;
+  var preKDA2 = document.getElementById(""+line+"d").innerHTML;
+  var preKDATemp = document.getElementById(""+line+"d").innerHTML;
+
+  var postKDA1 = document.getElementById(""+i+"e").innerHTML;
+  var postKDA2 = document.getElementById(""+line+"e").innerHTML;
+  var postKDATemp = document.getElementById(""+line+"e").innerHTML;
+
+  image2.src = image1.src;
+  image1.src = imageTemp;
+  image2.alt = name1;
+  image1.alt = name2;
+  image2.title = name1;
+  image1.title = name2;
+
+
+  name2 = name1;
+  document.getElementById(""+line+"a").getElementsByTagName("a")[1].innerHTML = name2;
+  document.getElementById(""+i+"a").getElementsByTagName("a")[1].innerHTML = nameTemp;
+
+  URL2.href = URL1.href;
+  URL1.href = URLTemp;
+  URL2b.href = URL1.hrefb;
+  URL1b.href = URLTempb;
+
+  preWin2 = preWin1;
+  document.getElementById(""+line+"b").innerHTML = preWin2; 
+  document.getElementById(""+i+"b").innerHTML = preWinTemp; 
+
+  postWin2 = postWin1;
+  document.getElementById(""+line+"c").innerHTML = postWin2; 
+  document.getElementById(""+i+"c").innerHTML = postWinTemp; 
+
+  preKDA2 = preKDA1;
+  document.getElementById(""+line+"d").innerHTML = preKDA2; 
+  document.getElementById(""+i+"d").innerHTML = preKDATemp; 
+
+  postKDA2 = postKDA1;
+  document.getElementById(""+line+"e").innerHTML = postKDA2; 
+  document.getElementById(""+i+"e").innerHTML = postKDATemp; 
+
 }
 
 
