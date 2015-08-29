@@ -32,10 +32,10 @@ function initWrite(){
     document.getElementById(""+i+"a").getElementsByTagName("a")[0].setAttribute("href",url);
     document.getElementById(""+i+"a").getElementsByTagName("a")[1].setAttribute("href",url);
 
-    document.getElementById(""+i+"b").innerHTML = getChampionWinRate( itemName, champName, 0 );
-    document.getElementById(""+i+"c").innerHTML = getChampionWinRate( itemName, champName, 1 );
-    document.getElementById(""+i+"d").innerHTML = getChampionKDA( itemName, champName, 0 );
-    document.getElementById(""+i+"e").innerHTML = getChampionKDA( itemName, champName, 1 );
+    document.getElementById(""+i+"b").innerHTML = Number(getChampionWinRate( itemName, champName, 0 )).toFixed(3) + "%";
+    document.getElementById(""+i+"c").innerHTML = Number(getChampionWinRate( itemName, champName, 1 )).toFixed(3) + "%";
+    document.getElementById(""+i+"d").innerHTML = Number(getChampionKDA( itemName, champName, 0 )).toFixed(3);
+    document.getElementById(""+i+"e").innerHTML = Number(getChampionKDA( itemName, champName, 1 )).toFixed(3);
   }
 }
 
@@ -316,7 +316,7 @@ function swap(i, line){
 
   URL2.href = URL1.href;
   URL1.href = URLTemp;
-  URL2b.href = URL1.hrefb;
+  URL2b.href = URL1b.href;
   URL1b.href = URLTempb;
 
   preWin2 = preWin1;
