@@ -4,7 +4,7 @@ Functions are defined which get specific stats about champions and items
 @author Jeremy Seiji Smith
 */
 
-
+var num = 1;
 var pre; 
 var post;
 var url = "pre.json";
@@ -20,7 +20,7 @@ loadJSONs(url, 1);
 function loadJSONs( url, which ){
   var AJAX_req = new XMLHttpRequest();
   AJAX_req.overrideMimeType("application/json");
-  AJAX_req.open('GET',url,true);
+  AJAX_req.open('GET',url,false);
   AJAX_req.onreadystatechange = function(){
     if(AJAX_req.readyState==4 && AJAX_req.status=="200"){
       if( which == 0){
@@ -34,6 +34,24 @@ function loadJSONs( url, which ){
 
  AJAX_req.send();
 } 
+/*
+function loadJSONS(callback){
+  var xobj = new XMLHttpRequest();
+  xobj.overrideMimeType("application/json");
+  xobj.open('GET','pre.json',true);
+  xobj.onreadystatechange=function(){
+    if(xobj.readystate==4 && xobj.status=="200"){
+      callback(xobj.responseText);
+    }
+  };
+  xobj.send(null);
+}
+function init(){
+console.log("init called");
+  loadJSONS(function(response){
+    pre = JSON.parse(response);
+  });
+}*/
 
 /**
 * method to extract the win rate of an item
@@ -49,7 +67,7 @@ function getItemWinRate( item ){
 * */
 function getItemPickRate( item ){
     return post[item]["Pick Rate"];
-  }
+  
 }
 
 /**
@@ -60,10 +78,12 @@ function getItemPickRate( item ){
 * */
 function getChampionWinRate( item, champion, which ){
   if( which == 0 ){
-    return pre[champion]["Win Rate"];
+    if( pre[""][champion] == undefined )
+      return "Unplayed";
+    return pre[""][champion]["Win Rate"];
   }
   else{
-    if( post[item][champion]["numGames"] < 10 )
+    if( post[item][champion] == undefined || post[item][champion]["numGames"] < num )
       return "Unplayed";
     return post[item][champion]["Win Rate"];
   }
@@ -77,10 +97,12 @@ function getChampionWinRate( item, champion, which ){
 * */
 function getChampionPickRate( item, champion, which ){
   if( which == 0 ){
-    return pre[champion]["Pick Rate"];
+    if( pre[""][champion] == undefined )
+      return "Unplayed";
+    return pre[""][champion]["Pick Rate"];
   }
   else{
-    if( post[item][champion]["numGames"] < 10 )
+    if( post[item][champion] == undefined || post[item][champion]["numGames"] < num )
       return "Unplayed";
     return post[item][champion]["Pick Rate"];
   }
@@ -94,12 +116,14 @@ function getChampionPickRate( item, champion, which ){
 * */
 function getChampionKDA( item, champion, which ){
   if( which == 0 ){
-    return pre[champion][KDA];
+    if( pre[""][champion] == undefined )
+      return "Unplayed";
+    return pre[""][champion]["KDA"];
   }
   else{
-    if( post[item][champion]["numGames"] < 10 )
+    if( post[item][champion] == undefined || post[item][champion]["numGames"] < num )
       return "Unplayed";
-    return post[item][champion][KDA];
+    return post[item][champion]["KDA"];
   }
 }
 
@@ -113,16 +137,17 @@ function getChampionKDA( item, champion, which ){
 * @param champion the champion to search under
 * */
 function getDifference( isWinRate, isPickRate, isKDA, item, champion ){
-    if( post[item][champion]["numGames"] < 10 )
+    if( pre[""][champion] == undefined || post[item][champion] == undefined ||
+        post[item][champion]["numGames"] < num )
       return "Unplayed";
     if( isWinRate == 1 ){
-      return post[item][champion]["Win Rate"] - pre[champion]["Win Rate"];
+      return post[item][champion]["Win Rate"] - pre[""][champion]["Win Rate"];
     }
     else if( isPickRate == 1 ){
-      return post[item][champion]["Pick Rate"] = pre[champion]["Pick Rate"];
+      return post[item][champion]["Pick Rate"] = pre[""][champion]["Pick Rate"];
     }
     else{
-      return post[item][champion]["KDA"] - pre[champion]["KDA"];
+      return post[item][champion]["KDA"] - pre[""][champion]["KDA"];
     }
 }
 
