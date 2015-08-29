@@ -10,12 +10,12 @@ a:visited {
     text-decoration: none;
 }
 a:hover {
-    color: #C6336E;
+    color: #B89300;
     background-color: transparent;
     text-decoration: underline;
 }
 a:active {
-    color: #C6336E;
+    color: #B89300;
     background-color: transparent;
     text-decoration: none;
 }
