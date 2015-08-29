@@ -43,7 +43,7 @@ function write(){
  
   document.getElementById("helpPreWin").innerHTML = getChampionWinRate( bestItem, champName, 0 );
   document.getElementById("helpPostWin").innerHTML = getChampionWinRate( bestItem, champName, 1 );
-  document.getElementById.("helpPreKDA").innerHTML = getChampionKDA( bestItem, champName, 0 );
+  document.getElementById("helpPreKDA").innerHTML = getChampionKDA( bestItem, champName, 0 );
   document.getElementById("helpPostKDA").innerHTML = getChampionKDA( bestItem, champName, 1 );
 
   document.getElementById("hurtPreWin").innerHTML = getChampionWinRate( worstItem, champName, 0 );
