@@ -54,13 +54,14 @@ function search(){
   var str = document.getElementById("searchBar").value;
   var champLines = document.getElementsByTagName("tr");
   var i;
+  var j;
   for(i = 1; i < champLines.length; i++){
-    var champName = document.getElementById(""+i+"a").getElementsByTagName("img")[0].getAttribute("title");  
-    if( champName.toLowerCase().search(str.toLowerCase()) > -1 );
-      swap(1,i);
-      return;
+    for(j = i; j < champLines.length; j++){
+      var champName = document.getElementById(""+i+"a").getElementsByTagName("img")[0].getAttribute("title");  
+      if( champName.toLowerCase().search(str.toLowerCase()) > -1 );
+        swap(j,i);
+     }
     }
-  }
 }
 
 /**
