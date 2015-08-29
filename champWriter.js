@@ -39,6 +39,8 @@ function write(){
 
   //Determine the item that helped and hurt the champion the most
   var bestItem = findBest(champName);
+  if( bestItem == "" )
+    return;
   var worstItem = findWorst(champName);
  
   document.getElementById("helpPreWin").innerHTML = getChampionWinRate( bestItem, champName, 0 );
