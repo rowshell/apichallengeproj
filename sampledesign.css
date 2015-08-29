@@ -12,12 +12,6 @@ div.transbox
   filter:alpha(opacity=60); /* For IE8 and earlier */
   width: 350px;
   height: 420px;
-  
-  position: fixed;
-  top: 50%;
-  left: 25%;
-  margin-top: -50px;
-  margin-left: -125px;
 }
 
 div.transbox p
