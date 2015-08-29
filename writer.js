@@ -38,9 +38,9 @@ function initWrite(){
     document.getElementById(""+i+"e").innerHTML = getChampionKDA( itemName, champName, 1 );
     
     if(document.getElementById(""+i+"b").innerHTML != "Unplayed")
-      document.getElementById(""+i+"b").innerHTML = Number(getChampionWinRate( itemName, champName, 0 )).toFixed(3) + "%";
+      document.getElementById(""+i+"b").innerHTML = Number(getChampionWinRate( itemName, champName, 0 )).toFixed(3);
     if(document.getElementById(""+i+"c").innerHTML != "Unplayed")
-      document.getElementById(""+i+"c").innerHTML = Number(getChampionWinRate( itemName, champName, 1 )).toFixed(3) + "%";
+      document.getElementById(""+i+"c").innerHTML = Number(getChampionWinRate( itemName, champName, 1 )).toFixed(3);
     if(document.getElementById(""+i+"d").innerHTML != "Unplayed")  
       document.getElementById(""+i+"d").innerHTML = Number(getChampionKDA( itemName, champName, 0 )).toFixed(3);
     if(document.getElementById(""+i+"e").innerHTML != "Unplayed")
