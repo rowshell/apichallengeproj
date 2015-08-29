@@ -58,10 +58,11 @@ function search(){
   for(i = 1; i < champLines.length; i++){
     for(j = i; j < champLines.length; j++){
       var champName = document.getElementById(""+i+"a").getElementsByTagName("img")[0].getAttribute("title");  
-      if( champName.toLowerCase().search(str.toLowerCase()) > -1 );
+      if( champName.toLowerCase().search(str.toLowerCase()) > -1 ){
         swap(j,i);
-     }
+      }
     }
+  }  
 }
 
 /**
