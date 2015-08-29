@@ -4,6 +4,30 @@
     font-family: arial;
 }
 
+.header a:link {
+    color: white;
+    text-decoration: none;
+    background-color: transparent;
+}
+
+.header a:visited {
+    color: white;
+    background-color: transparent;
+    text-decoration: none;
+}
+
+.header a:hover {
+    color: #C6336E;
+    background-color: transparent;
+    text-decoration: underline;
+}
+
+.header a:active {
+    color: #C6336E;
+    background-color: transparent;
+    text-decoration: none;
+}
+
 body {
     background-image: url("http://orig12.deviantart.net/7f23/f/2012/360/a/8/vi___league_of_legends_by_sovietpancake-d5pa5tu.jpg");
     background-size: 1490px 900px;
