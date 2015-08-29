@@ -28,7 +28,7 @@ function write(){
   //Format the champ name in order to get the correct splash art
   var imgChampName = champName.replace(" ","");
   imgChampName = imgChampName.replace("'","");
-  var imgURL = "http://ddragon.leagueoflegends.com/cdn/img/champion.splash/" + imgChampName + "_0.jpg";
+  var imgURL = "http://ddragon.leagueoflegends.com/cdn/img/champion/splash/" + imgChampName + "_0.jpg";
 
   //Set each element in the page according to the champion's characteristics
   document.getElementById("splash").setAttribute("src",imgURL);
