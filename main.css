@@ -17,13 +17,13 @@
 }
 
 .header a:hover {
-    color: #C6336E;
+    color: #B89300;
     background-color: transparent;
     text-decoration: underline;
 }
 
 .header a:active {
-    color: #C6336E;
+    color: #B89300;
     background-color: transparent;
     text-decoration: none;
 }
