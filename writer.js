@@ -47,6 +47,21 @@ function initWrite(){
       document.getElementById(""+i+"e").innerHTML = Number(getChampionKDA( itemName, champName, 1 )).toFixed(3);
   }
 }
+/**
+ * Method to search the champion grid for a specific champion. Swaps with the first position if found
+ * */
+function search(){
+  var str = document.getElementById("searchBar").value;
+  var champLines = document.getElementsByTagName("tr");
+  var i;
+  for(i = 1; i < champLines.length; i++){
+    var champName = document.getElementById(""+i+"a").getElementsByTagName("img")[0].getAttribute("title");  
+    if( champName.toLowerCase().search(str.toLowerCase()) > -1 ){
+      swap(0,i);
+      return;
+    }
+  }
+}
 
 /**
 * Function to reorder the champion grid by Name 
