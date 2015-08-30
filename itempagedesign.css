@@ -132,3 +132,9 @@ td {
     text-align: center;
     float: below;
 }
+
+.title {
+    border-style: solid;
+    border-width: medium;
+    border-color:white;
+}
