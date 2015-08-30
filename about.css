@@ -1,6 +1,4 @@
 ul.menu {
-  margin-left: auto;
-  margin-right: auto;
 
   display:inline-block; 
 
@@ -73,7 +71,6 @@ body {
     font-family: arial;
     color: white;
     background-color: black;
-    text-align: center;
     float: below;
     padding-top: 15px;
     padding-bottom:15px;
