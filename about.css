@@ -68,3 +68,15 @@ ul.menu li:hover ul {
     transition: all 0.7s ease-in 0s;
     
 }
+
+body {
+    font-family: arial;
+    color: white;
+    background-color: black;
+    text-align: center;
+    float: below;
+    padding-top: 15px;
+    padding-bottom:15px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
