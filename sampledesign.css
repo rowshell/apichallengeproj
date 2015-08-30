@@ -12,7 +12,7 @@ div.transbox
   filter:alpha(opacity=60); /* For IE8 and earlier */
   width: 350px;
   height: 420px;
-    display: inline; 
+  white-space: nowrap;
 
 }
 
@@ -24,7 +24,7 @@ div.transbox p
   opacity:0.9;
   color: white;
   text-align: center;
-    display: inline; 
+     white-space: nowrap;
 
 }
 
@@ -32,7 +32,7 @@ div.transbox h1
 {
   text-align: center;
   color: white;
-    display: inline; 
+     white-space: nowrap;
 
 }
 
@@ -57,8 +57,10 @@ div.background-2
   border: 2px solid black;
   width: 350px;
   height: 420px;
-  display: inline;
+    display:inline-block;
   float: right;
+      white-space: normal;
+
 }
 
 div.transbox-2
@@ -70,8 +72,10 @@ div.transbox-2
   width: 350px;
   height: 420px;
   float: right;
-  display: inline;
+    display:inline-block;
   float: right;
+      white-space: normal;
+
 
 }
 
@@ -79,7 +83,9 @@ div.transbox-2 h1
 {
   text-align: center;
   color: white;
-  display: inline; 
+    display:inline-block;
   float: right;
+      white-space: normal;
+
 
 }
