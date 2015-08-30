@@ -135,13 +135,15 @@ ul.menu li:hover ul {
     width: 0;
 }
 
-/* For sidebar */
+/* For left sidebar */
 
 div.background
 {
   border: 2px solid black;
   width: 350px;
   height: 420px;
+  float:left;
+
 }
 div.transbox
 {
@@ -151,6 +153,8 @@ div.transbox
   filter:alpha(opacity=60); /* For IE8 and earlier */
   width: 350px;
   height: 420px;
+  float:left;
+
 }
 
 div.transbox p
@@ -161,11 +165,49 @@ div.transbox p
   opacity:0.9;
   color: white;
   text-align: center;
+  float:left;
+
 }
 
 div.transbox h1 
 {
   text-align: center;
   color: white;
+  float:left;
+
+}
+
+/* For right sidebar */
+
+div.background-2
+{
+  border: 2px solid black;
+  width: 350px;
+  height: 420px;
+  display: inline;
+  float: right;
+}
+
+div.transbox-2
+{
+  background-color: #303030;
+  border: 1px solid black;
+  opacity:0.8;
+  filter:alpha(opacity=60); /* For IE8 and earlier */
+  width: 350px;
+  height: 420px;
+  float: right;
+  display: inline;
+  float: right;
+
+}
+
+div.transbox-2 h1 
+{
+  text-align: center;
+  color: white;
+  display: inline; 
+  float: right;
+
 }
 
