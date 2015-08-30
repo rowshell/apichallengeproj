@@ -211,17 +211,30 @@ div.transbox-2 h1
 
 /* The best/worst boxes */
 
-.thebestbox .theworstbox table, th, td {
+.theworstbox table, th, td {
+    border: 1px solid white;
+    border-collapse: collapse;
+    color: white;
+}
+.thebestbox table, th, td {
     border: 1px solid white;
     border-collapse: collapse;
     color: white;
 }
 
-.thebestbox .theworstbox th {
+.theworstbox th {
+    padding: 5px;
+    text-align: center;    
+}
+.thebestbox th {
     padding: 5px;
     text-align: center;    
 }
 
-.thebestbox .theworstbox td {
+.theworstbox td {
+    padding: 7px;
+}
+
+.thebestbox td {
     padding: 7px;
 }
