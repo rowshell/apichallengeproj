@@ -26,29 +26,39 @@
   (eligible summoners* purchased a single Black Market Item, possibly in addition to other normal items). 
   Once a summoner has been verified to be eligible, the program extracts the Champion Name, Item Purchased,
   KDA, and Win/Loss. These are averaged from all eligible summoners and are placed into our own JSON Objects.
+  </p>
 
-  Each finished object is of the form: {"Item Name": {"Champion Name": {"Win Rate", "Pick Rate", "KDA", "NumGames"}}}**
-
+  <p>
+  Each finished object is of the form: <code>{"Item Name": {"Champion Name": {"Win Rate", "Pick Rate", "KDA", "NumGames"}}}</code>**
+  </p>
+  <p>
   *If a summoner is from a pre-Black Market Brawlers match, he/she is automatically considered eligible
   **Note that Pick Rate is available in our object but is unused in the interests of minimizing clutter.  
   "Item Name" for pre-Black Market Brawlers objects is ""
+  </p>
 
+  <p>
   In order to respect Rate Limits, our program makes 1 request every 2 seconds to Riot's API.  Upon
   receiving a 429 error, the program will wait for 15 seconds.  Theoretically this prevents our program
   from ever exceeding the Development Key Usage (though occasional 429's are still received and can be explained
   here ******LINK**********). Unfortunately, this results in huge amounts of time spent extracting data.
   As such, only information regarding matches in NA were used, and each object contains data from 5000 matches.
+  </p>
 
+  <p>
   Our website was written with typical web development languages (HTML, CSS, JavaScript).
   A script is used in order to populate each table of statistics.  Functions are included
   that search our new object for the item, champion, and each data field. In addition,
   functions are included to reorder the data using a selection sort (hey it works, okay)
   depending on the table header selected.
+  </p>
 
+  <p>
   Our champion pages come from a template.  Links to the page append "#Ahri" for example, to the
   URL.  This allows functions to parse the URL and put the correct splash art and name in place.
   Functions then determine which item was best and which item was worst for the champion by 
-  calculating the difference between Pre Win Rate and KDA to Post Win Rate and KDA.</p>
+  calculating the difference between Pre Win Rate and KDA to Post Win Rate and KDA.
+  </p>
   
   </div>
   </body>
