@@ -222,6 +222,11 @@ div.transbox-2 h1
     color: white;
 }
 
+.thebestbox table {
+    float: left;
+    margin: 100px 0;
+}
+
 .theworstbox th {
     padding: 5px;
     text-align: center;    
