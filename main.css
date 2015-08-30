@@ -69,6 +69,8 @@ ul.menu li {
     line-height: 17px;
     margin: 0;
     position: relative; list-style:none
+    text-align: center;
+
 }
 
 
@@ -78,7 +80,7 @@ ul.menu li a {
     font-weight: bold;
     height: 50px;
     width: 135px;
-    text-align: center;
+    /*text-align: center;*/
     line-height: 40px;
     padding: 3px 3px;
     text-decoration: none;
