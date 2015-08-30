@@ -51,6 +51,7 @@ div.background-2
   border: 2px solid black;
   width: 350px;
   height: 420px;
+  display: inline-block;
 }
 
 div.transbox-2
@@ -62,10 +63,14 @@ div.transbox-2
   width: 350px;
   height: 420px;
   float: right;
+  display: inline-block;
+
 }
 
 div.transbox-2 h1 
 {
   text-align: center;
   color: white;
+  display: inline-block;
+
 }
