@@ -4,7 +4,7 @@ Functions are defined which get specific stats about champions and items
 @author Jeremy Seiji Smith
 */
 
-var num = 1;
+var num = 5;
 var pre; 
 var post;
 var url = "pre.json";
