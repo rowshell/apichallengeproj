@@ -165,7 +165,6 @@ div.transbox p
   opacity:0.9;
   color: white;
   text-align: center;
-  float:left;
 
 }
 
@@ -173,8 +172,6 @@ div.transbox h1
 {
   text-align: center;
   color: white;
-  float:left;
-
 }
 
 /* For right sidebar */
