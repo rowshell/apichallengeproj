@@ -163,8 +163,8 @@ function findBest( champion ){
   var kdaDiff;
 
   //Check each item in the champ's list
-  for( var key in pre ){
-    if( pre.hasOwnProperty(key) ){
+  for( var key in post ){
+    if( post.hasOwnProperty(key) ){
 
       //Calculate the difference and account for unplayed items
       winDiff = getDifference( 1, 0, 0, key, champion );
