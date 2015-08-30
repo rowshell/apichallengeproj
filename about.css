@@ -77,3 +77,27 @@ body {
     line-height: 150%;
 
 }
+
+a:link {
+    color: white;
+    text-decoration: none;
+    background-color: transparent;
+}
+
+a:visited {
+    color: white;
+    background-color: transparent;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #B89300;
+    background-color: transparent;
+    text-decoration: underline;
+}
+
+a:active {
+    color: #B89300;
+    background-color: transparent;
+    text-decoration: none;
+}
