@@ -2,6 +2,9 @@
 
 .header {
     font-family: arial;
+    border-style: solid;
+    border-width: medium;
+    border-color:white;
 }
 
 .header a:link {
