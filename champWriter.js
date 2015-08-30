@@ -44,6 +44,7 @@ function write(){
   var worstItem = findWorst(champName);
  
   document.getElementById("helpPreWin").innerHTML = getChampionWinRate( bestItem, champName, 0 );
+  console.log(getChampionWinRate(bestItem,champName,0));
   document.getElementById("helpPostWin").innerHTML = getChampionWinRate( bestItem, champName, 1 );
   document.getElementById("helpPreKDA").innerHTML = getChampionKDA( bestItem, champName, 0 );
   document.getElementById("helpPostKDA").innerHTML = getChampionKDA( bestItem, champName, 1 );
