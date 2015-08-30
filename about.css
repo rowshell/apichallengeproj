@@ -1,7 +1,5 @@
 ul.menu {
-
   display:inline-block; 
-
 }
 
 ul.menu li {
@@ -76,6 +74,6 @@ body {
     padding-bottom:15px;
     padding-left: 15px;
     padding-right: 15px;
-    line-height: 70%;
+    line-height: 200%;
 
 }
