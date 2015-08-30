@@ -5,6 +5,7 @@
     border-style: solid;
     border-width: medium;
     border-color:white;
+    padding: 8px;
 }
 
 .header a:link {
