@@ -27,16 +27,17 @@
   Once a summoner has been verified to be eligible, the program extracts the Champion Name, Item Purchased,
   KDA, and Win/Loss. These are averaged from all eligible summoners and are placed into our own JSON Objects.
   </p>
-
+<br>
   <p>
   Each finished object is of the form: <code>{"Item Name": {"Champion Name": {"Win Rate", "Pick Rate", "KDA", "NumGames"}}}</code>**
   </p>
+  <br>
   <p>
   *If a summoner is from a pre-Black Market Brawlers match, he/she is automatically considered eligible
   **Note that Pick Rate is available in our object but is unused in the interests of minimizing clutter.  
   "Item Name" for pre-Black Market Brawlers objects is ""
   </p>
-
+<br>
   <p>
   In order to respect Rate Limits, our program makes 1 request every 2 seconds to Riot's API.  Upon
   receiving a 429 error, the program will wait for 15 seconds.  Theoretically this prevents our program
@@ -44,7 +45,7 @@
   <a href="https://developer.riotgames.com/discussion/community-discussion/show/t7lUKGPL">here</a>). Unfortunately, this results in huge amounts of time spent extracting data.
   As such, only information regarding matches in NA were used, and each object contains data from 5000 matches.
   </p>
-
+<br>
   <p>
   Our website was written with typical web development languages (HTML, CSS, JavaScript).
   A script is used in order to populate each table of statistics.  Functions are included
@@ -52,7 +53,7 @@
   functions are included to reorder the data using a selection sort (hey it works, okay)
   depending on the table header selected.
   </p>
-
+<br>
   <p>
   Our champion pages come from a template.  Links to the page append "#Ahri" for example, to the
   URL.  This allows functions to parse the URL and put the correct splash art and name in place.
