@@ -45,14 +45,13 @@ function write(){
   }
   var worstItem = findWorst(champName);
  
-  document.getElementById("helpPreWin").innerHTML = getChampionWinRate( bestItem, champName, 0 );
-  console.log(getChampionWinRate(bestItem,champName,0));
-  document.getElementById("helpPostWin").innerHTML = getChampionWinRate( bestItem, champName, 1 );
-  document.getElementById("helpPreKDA").innerHTML = getChampionKDA( bestItem, champName, 0 );
-  document.getElementById("helpPostKDA").innerHTML = getChampionKDA( bestItem, champName, 1 );
+  document.getElementById("helpPreWin").innerHTML = Number(getChampionWinRate( bestItem, champName, 0 )).toFixed(3);
+  document.getElementById("helpPostWin").innerHTML = Number(getChampionWinRate( bestItem, champName, 1 )).toFixed(3);
+  document.getElementById("helpPreKDA").innerHTML = Number(getChampionKDA( bestItem, champName, 0 )).toFixed(3);
+  document.getElementById("helpPostKDA").innerHTML = Number(getChampionKDA( bestItem, champName, 1 )).toFixed(3);
 
-  document.getElementById("hurtPreWin").innerHTML = getChampionWinRate( worstItem, champName, 0 );
-  document.getElementById("hurtPostWin").innerHTML = getChampionWinRate( worstItem, champName, 1 );
-  document.getElementById("hurtPreKDA").innerHTML = getChampionKDA( worstItem, champName, 0 );
-  document.getElementById("hurtPostKDA").innerHTML = getChampionKDA( worstItem, champName, 1 );
+  document.getElementById("hurtPreWin").innerHTML = Number(getChampionWinRate( worstItem, champName, 0 )).toFixed(3);
+  document.getElementById("hurtPostWin").innerHTML = Number(getChampionWinRate( worstItem, champName, 1 )).toFixed(3);
+  document.getElementById("hurtPreKDA").innerHTML = Number(getChampionKDA( worstItem, champName, 0 )).toFixed(3);
+  document.getElementById("hurtPostKDA").innerHTML = Number(getChampionKDA( worstItem, champName, 1 )).toFixed(3);
 }
