@@ -6,8 +6,6 @@
 
   <body> 
   
-
-  
   <ul class="menu">
   <li class="home-page current">
     <li><a href="http://rowshell.github.io/apichallengeproj/#">Home</a></li>           
@@ -50,9 +48,18 @@
   <br>
   <br>
   <br>
-       <input id="searchBar"></input><button onClick="search()">Search</button>
-<div class="table">
-<table style="width:100%">
+  
+  <div class="searchbar">
+    <input id="searchBar"></input><button onClick="search()">Search</button>
+  </div>
+    
+  <div class="searchbardescription">
+    Click table headers to reorder data. Use search bar to search up a specific champion. 
+  </div>
+  
+  
+  <div class="table">
+  <table style="width:100%">
   <tr id="0">
     <th id="0a" onClick="orderByName()">Champion</th>
     <th id="0b" onClick="orderByPreWin()">Pre Win Rate</th>
