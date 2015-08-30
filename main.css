@@ -68,9 +68,8 @@ ul.menu li {
     font-family: helvetica;
     line-height: 17px;
     margin: 0;
-    position: relative; list-style:none
+    position: relative; list-style:none;
     text-align: center;
-
 }
 
 
