@@ -49,7 +49,6 @@ function findBestItem(){
   document.getElementById("increaseWinRate").innerHTML = Number(winDiffStore).toFixed(3);
   document.getElementById("increaseKDA").innerHTML = Number(kdaDiffStore).toFixed(3);
   document.getElementById("bestItemPic").src = ""; 
-  document.getElementById("bestItemPic").alt = currBest;
   document.getElementById("bestItemPic").innerHTML = currBest;
 }
 
