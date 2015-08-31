@@ -4,7 +4,7 @@ Functions are defined which get specific stats about champions and items
 @author Jeremy Seiji Smith
 */
 
-var num = 1;
+var num = 5;
 var pre; 
 var post;
 var url = "pre.json";
@@ -137,8 +137,8 @@ function getChampionKDA( item, champion, which ){
 * @param champion the champion to search under
 * */
 function getDifference( isWinRate, isPickRate, isKDA, item, champion ){
-    if( pre[""][champion] == undefined || post[item][champion] == undefined ||
-        post[item][champion]["numGames"] < num )
+    if( pre[""][champion] == undefined || post[item] == undefined ||
+        post[item][champion] == undefined || post[item][champion]["numGames"] < num )
       return "Unplayed";
     if( isWinRate == 1 ){
       return post[item][champion]["Win Rate"] - pre[""][champion]["Win Rate"];
@@ -163,8 +163,8 @@ function findBest( champion ){
   var kdaDiff;
 
   //Check each item in the champ's list
-  for( var key in pre ){
-    if( pre.hasOwnProperty(key) ){
+  for( var key in post ){
+    if( post.hasOwnProperty(key) ){
 
       //Calculate the difference and account for unplayed items
       winDiff = getDifference( 1, 0, 0, key, champion );
@@ -194,8 +194,8 @@ function findWorst( champion ){
   var kdadiff;
   
   //Check each item in the champ's list
-  for( var key in pre ){
-    if( pre.hasOwnProperty(key) ){
+  for( var key in post ){
+    if( post.hasOwnProperty(key) ){
  
       //Calulate the difference and account for unplayed
       winDiff = getDifference( 1, 0, 0, key, champion );
