@@ -44,9 +44,9 @@ public class DataMiner{
 
   private static String matchAPI = "https://na.api.pvp.net/api/lol/na/v2.2/match/";
   private static URL url;
+  private static int iteration = 0;
 
-  /////////SECURE THIS LATER!////////
-  private static String key = "?api_key=cd294b04-4505-4d18-89b8-6d1f0298d920";
+  private static String key = ""; //insert your API Key Here
 
 
   @SuppressWarnings("unchecked")
@@ -316,6 +316,7 @@ public class DataMiner{
         return c.name;
       }
     }
+    System.out.println("Champ name unknown: "+ champId);
     return "";
   }
       
@@ -335,6 +336,11 @@ public class DataMiner{
       JSONParser parser = new JSONParser();
       JSONObject jso = (JSONObject)parser.parse(new InputStreamReader(url.openStream()));
       JSONArray participants = (JSONArray)jso.get("participants");
+
+//////FOR USE WITH DEVELOPMENT KEY/////////////
+      Thread.sleep(2000);
+      System.out.println("Iteration: " + iteration);
+      iteration++;
 
       //Loop through all 10 players and access stats
       Iterator<JSONObject> iter = participants.iterator();
@@ -360,9 +366,18 @@ public class DataMiner{
       }
     }
     catch(IOException e){
+      try{
+      Thread.sleep(15000);
       e.printStackTrace();
+      }
+      catch(InterruptedException fu){
+        e.printStackTrace();
+      }
     }
     catch(ParseException e){
+      e.printStackTrace();
+    }
+    catch(InterruptedException e){
       e.printStackTrace();
     }
   }
@@ -399,9 +414,10 @@ public class DataMiner{
       JSONParser parser = new JSONParser();
       JSONArray jso = (JSONArray)parser.parse(new FileReader(dataFile));
       Iterator<Long> iter = jso.iterator();
-///////////while(iter.hasNext()){
+
+//      while(iter.hasNext()){
 int j = 0;
-      while(j < 6){
+while(j < 10000){
         array.add(iter.next());
 j++;
       }
