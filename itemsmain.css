@@ -1,0 +1,165 @@
+a:link {
+    color: white;
+    text-decoration: none;
+    background-color: transparent;
+}
+
+a:visited {
+    color: white;
+    background-color: transparent;
+    text-decoration: none;
+}
+a:hover {
+    color: #B89300;
+    background-color: transparent;
+    text-decoration: underline;
+}
+a:active {
+    color: #B89300;
+    background-color: transparent;
+    text-decoration: none;
+}
+
+body {
+    color: white; 
+    background-color: black;
+    font-family: arial;
+    padding-top: 10px;
+    padding-bottom:10px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.boxed {
+  border: 2px solid white;
+  margin-left: auto;
+  margin-right: auto;
+  width: 650px;
+  text-align: justify;
+  text-justify: inter-word;
+  padding-top: 20px;
+  padding-bottom:20px;
+  padding-left: 20px;
+  padding-right: 20px;
+
+}
+
+.boxed h1 {
+  font-size: 300%;
+}
+
+.boxed h2 h3 {
+    font-size: 200%;
+}
+
+.boxed img {
+    float: left;
+}
+
+.names h1 {
+    font-family: helvetica;
+    font-size: 20px;
+}
+
+
+ul.menu {
+  margin-left: auto;
+  margin-right: auto;
+
+  display:inline-block; 
+
+}
+
+ul.menu li {
+    background: none repeat scroll 0 0 #000;
+    border-left: 0 solid #fff;
+    border-right: 0 solid #fff;
+    float: left;
+    font-family: helvetica;
+    line-height: 17px;
+    margin: 0;
+    position: relative; list-style:none
+}
+
+
+ul.menu li a {
+    color: #fff;
+    display: block;
+    font-size: 13px;
+    font-weight: bold;
+    height: 50px;
+    width: 130px;
+    text-align: center;
+    line-height: 50px;
+    padding: 3px 3px;
+    text-decoration: none;
+}
+
+  ul.menu li > ul li {
+    width:100%;
+    transition: all 0.7s ease-in 0s; 
+}  
+
+ul.menu li.home-page {
+    display:inline-block; 
+    background:#000;  
+    border:none;
+}
+
+      
+ul.menu li:hover {
+    background:#888; 
+    border-right:#fff 1px solid; 
+    border-left:#fff 1px solid;
+    transition: all 0.7s ease-in 0s;
+}
+
+
+ul.menu li ul {
+    display: none;
+    left: 0;
+    padding: 20px 0 0;
+    position: absolute;
+    top: 34px;
+    width: 250px;
+    transition: all 0.7s ease-in 0s;
+}
+
+
+ul.menu li:hover ul {
+    display:block;
+    transition: all 0.7s ease-in 0s;
+    
+}
+
+/* For the data table */
+
+.table th {
+    border: 2px solid white;
+    border-collapse: collapse;
+}
+
+.table td {
+    border: 2px solid white;
+    border-collapse: collapse;
+    
+}
+
+th {
+    padding: 5px;
+    text-align: left;    
+}
+
+td { 
+    padding: 5px;
+    text-align: left;  
+}
+
+.searchbar { 
+    display: inline-block;  
+}
+
+.searchbardescription {
+    float: right;
+    display: inline-block;
+}
