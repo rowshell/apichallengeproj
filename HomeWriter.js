@@ -70,6 +70,7 @@ function findBestItem(){
 
 function findWorstItem(){
   var currWorst = "";
+  var currWorstScore = 0;
   var win;
   var kda;
   var numChamps = 0;
@@ -81,29 +82,55 @@ function findWorstItem(){
   for( var item in post ){
     if( post.hasOwnProperty(item) ){
 
-      for( var champion in item ){
- 
-        win = getDifference( 1, 0, 0, item, champion );
-        kda = getDifference( 0, 0, 1, item, champion );
-        if(win == "Unplayed" || kda == "Unplayed")
-          continue;
-
-        winDiff += win;
-        kdaDiff += kda;
-        numChamps++;
+      for( var champion in post[item] ){
+        if( post[item].hasOwnProperty(champion) ){
+          if( champion == "Win Rate" || champion == "Pick Rate")
+            continue;
+          win = getDifference( 1, 0, 0, item, champion );
+          kda = getDifference( 0, 0, 1, item, champion );
+          if(win == "Unplayed" || kda == "Unplayed")
+            continue;
+        
+          winDiff += win;
+          kdaDiff += kda;
+          numChamps++;
+        }
       }
-      if( winDiff + kdaDiff < currWorst ){
+
+      if( winDiff + kdaDiff < currWorstScore ){
         currWorst = item;
+        currWorstScore = winDiff + kdaDiff;
         winDiffStore = winDiff;
         kdaDiffStore = kdaDiff;
+        worstItemNumChamps = numChamps;
       }
       winDiff = 0;
       kdaDiff = 0;
+      numChamps = 0;
     }
   }
+  winDiffStore /= worstItemNumChamps;
+  kdaDiffStore /= worstItemNumChamps;
   document.getElementById("decreaseWinRate").innerHTML = Number(winDiffStore).toFixed(3);
   document.getElementById("decreaseKDA").innerHTML = Number(kdaDiffStore).toFixed(3);
-  document.getElementById("worstItemPic").src = "";
-  document.getElementById("worstItemPic").alt = currWorst;
+  document.getElementById("worstItemPic").src = ""; 
   document.getElementById("worstItemPic").innerHTML = currWorst;
+  document.getElementById("worstItemName").innerHTML = currWorst;
+
+  var itemId = 0;
+  if(currWorst == "Dead Man's Plate") itemId = 3742;
+  else if(currWorst == "Flesheater") itemId = 3924;
+  else if(currWorst == "Globe of Trust") itemId = 3840;
+  else if(currWorst == "Martyr's Gambit") itemId = 3911;
+  else if(currWorst == "Mirage Blade") itemId = 3150;
+  else if(currWorst == "Netherstride Grimoire") itemId = 3431;
+  else if(currWorst == "Pox Arcana") itemId = 3434;
+  else if(currWorst == "Puppeteer") itemId = 3745;
+  else if(currWorst == "Rite of Ruin") itemId = 3430;
+  else if(currWorst == "Staff of Flowing Water") itemId = 3744;
+  else if(currWorst == "Trickster's Glass") itemId = 3829;
+  else if(currWorst == "Typhoon Claws") itemId = 3652;
+  
+  document.getElementById("worstItemPic").src = "http://ddragon.leagueoflegends.com/cdn/5.15.1/img/item/" + itemId + ".png";
 }
+
