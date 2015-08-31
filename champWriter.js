@@ -46,7 +46,7 @@ function write(){
   var worstItem = findWorst(champName);
   
   document.getElementById("helpItemPic").innerHTML = bestItem;
-  document.getElementById("helpIemPic").title = bestItem;
+  document.getElementById("helpItemPic").title = bestItem;
  
   document.getElementById("helpPreWin").innerHTML = Number(getChampionWinRate( bestItem, champName, 0 )).toFixed(3);
   document.getElementById("helpPostWin").innerHTML = Number(getChampionWinRate( bestItem, champName, 1 )).toFixed(3);
