@@ -17,7 +17,7 @@ function findBestItem(){
     console.log(item);
     if( post.hasOwnProperty(item) ){
 
-      for( var champion in item ){
+      for( var champion in post[item] ){
         console.log(champion);
         win = getDifference( 1, 0, 0, item, champion );
         kda = Number(getDifference( 0, 0, 1, item, champion ));
