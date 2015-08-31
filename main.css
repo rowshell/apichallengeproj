@@ -243,8 +243,12 @@ div.transbox-2 h1
 
 .theworstbox td {
     padding: 7px;
+    text-align: center;
+
 }
 
 .thebestbox td {
     padding: 7px;
+    text-align: center;
+
 }
