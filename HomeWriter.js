@@ -17,7 +17,7 @@ function findBestItem(){
     if( post.hasOwnProperty(item) ){
 
       for( var champion in item ){
-        win = Number(getDifference( 1, 0, 0, item, champion ));
+        win = getDifference( 1, 0, 0, item, champion );
         kda = Number(getDifference( 0, 0, 1, item, champion ));
         console.log(win);
         if(win == "Unplayed" || kda == "Unplayed")
