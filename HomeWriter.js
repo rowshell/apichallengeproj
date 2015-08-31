@@ -20,9 +20,8 @@ function findBestItem(){
         if( post[item].hasOwnProperty(champion) ){
           win = getDifference( 1, 0, 0, item, champion );
           console.log(win);
+          console.log(item+" "+champion);
           kda = Number(getDifference( 0, 0, 1, item, champion ));
-          if(win==NaN||win=="NaN") console.log(item +" "+champion);
-          console.log("change");
           if(win == "Unplayed" || kda == "Unplayed")
             continue;
         
