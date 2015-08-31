@@ -32,6 +32,7 @@ function findBestItem(){
         currBestScore = winDiff + kdaDiff;
         winDiffStore = winDiff;
         kdaDiffStore = kdaDiff;
+        console.log("New best found");
       }
     }
   }
