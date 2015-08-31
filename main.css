@@ -143,6 +143,7 @@ div.background
   float:left;
 
 }
+
 div.transbox
 {
   background-color: #303030;
@@ -191,7 +192,6 @@ div.transbox-2
   filter:alpha(opacity=60); /* For IE8 and earlier */
   width: 350px;
   height: 420px;
-  float: right;
   display: inline;
   float: right;
 
@@ -222,6 +222,7 @@ div.transbox-2 h1
 .thebestbox table {
     float: left;
     margin: 350px 0;
+    position:absolute;
 }
 
 .theworstbox table {
