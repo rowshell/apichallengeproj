@@ -50,6 +50,22 @@ function findBestItem(){
   document.getElementById("increaseKDA").innerHTML = Number(kdaDiffStore).toFixed(3);
   document.getElementById("bestItemPic").src = ""; 
   document.getElementById("bestItemPic").innerHTML = currBest;
+
+  var itemId = 0;
+  if(currBest == "Dead Man's Plate") itemId = 3742;
+  else if(currBest == "Flesheater") itemId = 3924;
+  else if(currBest == "Globe of Trust") itemId = 3840;
+  else if(currBest == "Martyr's Gambit") itemId = 3911;
+  else if(currBest == "Mirage Blade") itemId = 3150;
+  else if(currBest == "Netherstride Grimoire") itemId = 3431;
+  else if(currBest == "Pox Arcana") itemId = 3434;
+  else if(currBest == "Puppeteer") itemId = 3745;
+  else if(currBest == "Rite of Ruin") itemId = 3430;
+  else if(currBest == "Staff of Flowing Water") itemId = 3744;
+  else if(currBest == "Trickster's Glass") itemId = 3829;
+  else if(currBest == "Typhoon Claws") itemId = 3652;
+  
+  document.getElementById("bestItemPic").src = "http://ddragon.leagueoflegends.com/cdn/5.15.1/img/item/" + itemId + ".png";
 }
 
 function findWorstItem(){
