@@ -21,6 +21,7 @@ function findBestItem(){
           win = getDifference( 1, 0, 0, item, champion );
           console.log(win);
           kda = Number(getDifference( 0, 0, 1, item, champion ));
+          if(win==NaN) console.log(item +" "+champion);
           if(win == "Unplayed" || kda == "Unplayed")
             continue;
         
