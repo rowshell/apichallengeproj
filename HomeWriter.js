@@ -49,7 +49,7 @@ function findBestItem(){
   document.getElementById("increaseKDA").innerHTML = Number(kdaDiffStore).toFixed(3);
   document.getElementById("bestItemPic").src = ""; 
   document.getElementById("bestItemPic").innerHTML = currBest;
-  //document.getElementById("bestItemName").innerHTML = currBest;
+  document.getElementById("bestItemName").innerHTML = currBest;
 
   var itemId = 0;
   if(currBest == "Dead Man's Plate") itemId = 3742;
