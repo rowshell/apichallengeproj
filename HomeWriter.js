@@ -17,15 +17,17 @@ function findBestItem(){
     if( post.hasOwnProperty(item) ){
 
       for( var champion in post[item] ){
-        win = getDifference( 1, 0, 0, item, champion );
-        kda = Number(getDifference( 0, 0, 1, item, champion ));
-        if(win == "Unplayed" || kda == "Unplayed")
-          continue;
+        if( post[item].hasOwnProperty(champion) ){
+          win = getDifference( 1, 0, 0, item, champion );
+          kda = Number(getDifference( 0, 0, 1, item, champion ));
+          if(win == "Unplayed" || kda == "Unplayed")
+            continue;
         
-        winDiff += win;
-        kdaDiff += kda;
-        numChamps++;
-        console.log(winDiff);
+          winDiff += win;
+          kdaDiff += kda;
+          numChamps++;
+          console.log(winDiff);
+        }
       }
       //console.log("winDiff: "+winDiff);
       
