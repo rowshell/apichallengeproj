@@ -26,6 +26,7 @@ function findBestItem(){
         kdaDiff += kda;
         numChamps++;
       }
+      console.log("winDiff: "+winDiff);
       
       if( winDiff + kdaDiff > currBestScore ){
         currBest = item;
@@ -34,6 +35,8 @@ function findBestItem(){
         kdaDiffStore = kdaDiff;
         console.log("New best found");
       }
+      winDiff = 0;
+      kdaDiff = 0;
     }
   }
   winDiffStore /= numChamps;
