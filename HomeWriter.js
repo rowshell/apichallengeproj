@@ -19,13 +19,13 @@ function findBestItem(){
       for( var champion in post[item] ){
         win = getDifference( 1, 0, 0, item, champion );
         kda = Number(getDifference( 0, 0, 1, item, champion ));
-        console.log(win);
         if(win == "Unplayed" || kda == "Unplayed")
           continue;
         
         winDiff += win;
         kdaDiff += kda;
         numChamps++;
+        console.log(winDiff);
       }
       //console.log("winDiff: "+winDiff);
       
