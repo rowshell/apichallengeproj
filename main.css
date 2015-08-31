@@ -1,0 +1,219 @@
+body {
+    background-image: url("http://i.imgur.com/2FWYAfk.jpg");
+    background-size: 1350px 750px;
+    background-repeat: no-repeat;
+    color: white; 
+    background-color: black;
+    padding-top: 10px;
+    padding-bottom:10px;
+    padding-left: 15px;
+    padding-right: 15px;
+    font-style: arial;
+}
+
+/* For navigation bar */
+
+.names h1 {
+    font-family: helvetica;
+    font-size: 20px;
+}
+
+ul.menu {
+  margin-left: auto;
+  margin-right: auto;
+  display:inline-block; 
+
+}
+
+ul.menu li {
+    background: none repeat scroll 0 0 #000;
+    border-left: 0 solid #fff;
+    border-right: 0 solid #fff;
+    float: left;
+    font-family: helvetica;
+    line-height: 17px;
+    margin: 0;
+    position: relative; list-style:none;
+    text-align: center;
+}
+
+ul.menu li a {
+    color: #fff;
+    display: block;
+    font-weight: bold;
+    height: 50px;
+    width: 135px;
+    text-align: center;
+    line-height: 40px;
+    padding: 3px 3px;
+    text-decoration: none;
+    font-size: 13px;
+}
+
+  ul.menu li > ul li {
+    width:100%;
+    transition: all 0.7s ease-in 0s; 
+}  
+
+ul.menu li.home-page {
+    display:inline-block; 
+    background:#000;  
+    border:none;
+}
+
+      
+ul.menu li:hover {
+    background:#888; 
+    border-right:#fff 1px solid; 
+    border-left:#fff 1px solid;
+    transition: all 0.7s ease-in 0s;
+}
+
+
+ul.menu li ul {
+    display: none;
+    left: 0;
+    padding: 20px 0 0;
+    position: absolute;
+    top: 32px;
+
+    transition: all 0.7s ease-in 0s;
+}
+
+
+ul.menu li:hover ul {
+    display:block;
+    transition: all 0.7s ease-in 0s;
+    
+}
+
+.items {
+    border-bottom: 10px solid #000;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    content: "";
+    height: 0;
+    left: 34px;
+    position: absolute;
+    top: 0;
+    width: 0;
+}
+
+/* For left sidebar */
+
+div.background
+{
+  border: 2px solid black;
+  width: 350px;
+  height: 420px;
+  float:left;
+
+}
+
+div.transbox
+{
+  background-color: #303030;
+  border: 1px solid black;
+  opacity:0.8;
+  filter:alpha(opacity=60); /* For IE8 and earlier */
+  width: 350px;
+  height: 420px;
+  float:left;
+
+}
+
+div.transbox p
+{
+  margin: 2%;
+  font-weight: bold;
+  color: #000000;
+  opacity:0.9;
+  color: white;
+  text-align: center;
+
+}
+
+div.transbox h1 
+{
+  text-align: center;
+  color: white;
+}
+
+/* For right sidebar */
+
+div.background-2
+{
+  border: 2px solid black;
+  width: 350px;
+  height: 420px;
+  display: inline;
+  float: right;
+}
+
+div.transbox-2
+{
+  background-color: #303030;
+  border: 1px solid black;
+  opacity:0.8;
+  filter:alpha(opacity=60); /* For IE8 and earlier */
+  width: 350px;
+  height: 420px;
+  display: inline;
+  float: right;
+
+}
+
+div.transbox-2 h1 
+{
+  text-align: center;
+  color: white;
+  display: inline; 
+  float: right;
+
+}
+
+/* The best/worst boxes */
+
+.theworstbox table, th, td {
+    border: 1px solid white;
+    border-collapse: collapse;
+    color: white;
+}
+
+.thebestbox table, th, td {
+    border: 1px solid white;
+    border-collapse: collapse;
+    color: white;
+}
+
+.thebestbox table {
+    float: left;
+    margin: 350px 0;
+    /* position:absolute; */
+}
+
+.theworstbox table {
+    float: right;
+    margin: 300px 0;
+}
+
+.theworstbox th {
+    padding: 5px;
+    text-align: center;    
+}
+.thebestbox th {
+    padding: 5px;
+    text-align: center;    
+}
+
+.theworstbox td {
+    padding: 7px;
+    text-align: center;
+
+}
+
+.thebestbox td {
+    padding: 7px;
+    text-align: center;
+
+}
