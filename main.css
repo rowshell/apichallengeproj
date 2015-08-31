@@ -222,7 +222,7 @@ div.transbox-2 h1
 .thebestbox table {
     float: left;
     margin: 350px 0;
-    position:absolute;
+    /* position:absolute; */
 }
 
 .theworstbox table {
