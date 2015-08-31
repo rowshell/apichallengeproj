@@ -18,10 +18,10 @@ function findBestItem(){
 
       for( var champion in post[item] ){
         if( post[item].hasOwnProperty(champion) ){
+          if( champion == "Win Rate" || champion == "Pick Rate")
+            continue;
           win = getDifference( 1, 0, 0, item, champion );
-          console.log(win);
-          console.log(item+" "+champion);
-          kda = Number(getDifference( 0, 0, 1, item, champion ));
+          kda = getDifference( 0, 0, 1, item, champion );
           if(win == "Unplayed" || kda == "Unplayed")
             continue;
         
