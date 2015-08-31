@@ -17,8 +17,8 @@ function findBestItem(){
 
       for( var champion in item ){
  
-        win = getDifference( 1, 0, 0, item, champion );
-        kda = getDifference( 0, 0, 1, item, champion );
+        win = Number(getDifference( 1, 0, 0, item, champion ));
+        kda = Number(getDifference( 0, 0, 1, item, champion ));
         if(win == "Unplayed" || kda == "Unplayed")
           continue;
         
