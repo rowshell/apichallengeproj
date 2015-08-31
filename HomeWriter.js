@@ -28,24 +28,24 @@ function findBestItem(){
           winDiff += win;
           kdaDiff += kda;
           numChamps++;
-          //console.log(winDiff);
         }
       }
-      //console.log("winDiff: "+winDiff);
-      
+
       if( winDiff + kdaDiff > currBestScore ){
         currBest = item;
         currBestScore = winDiff + kdaDiff;
         winDiffStore = winDiff;
         kdaDiffStore = kdaDiff;
+        bestItemNumChamps = numChamps;
         console.log("New best found");
       }
       winDiff = 0;
       kdaDiff = 0;
+      numChamps = 0;
     }
   }
-  winDiffStore /= numChamps;
-  kdaDiffStore /= numChamps;
+  winDiffStore /= bestItemNumChamps;
+  kdaDiffStore /= bestItemNumChamps;
   document.getElementById("increaseWinRate").innerHTML = Number(winDiffStore).toFixed(3);
   document.getElementById("increaseKDA").innerHTML = Number(kdaDiffStore).toFixed(3);
   document.getElementById("bestItemPic").src = ""; 
