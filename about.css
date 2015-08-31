@@ -15,7 +15,7 @@ ul.menu li {
 
 .about, .howitworks { 
   border: 2px solid white;
-  width: 650px;
+  border-width: medium;
   text-align: justify;
   text-justify: inter-word;
   padding-top: 20px;
