@@ -1,37 +1,3 @@
-/* For copyright page */
-
-.header {
-    font-family: arial;
-    border-style: solid;
-    border-width: medium;
-    border-color:white;
-    padding: 8px;
-}
-
-.header a:link {
-    color: white;
-    text-decoration: none;
-    background-color: transparent;
-}
-
-.header a:visited {
-    color: white;
-    background-color: transparent;
-    text-decoration: none;
-}
-
-.header a:hover {
-    color: #B89300;
-    background-color: transparent;
-    text-decoration: underline;
-}
-
-.header a:active {
-    color: #B89300;
-    background-color: transparent;
-    text-decoration: none;
-}
-
 body {
     background-image: url("http://i.imgur.com/2FWYAfk.jpg");
     background-size: 1350px 750px;
