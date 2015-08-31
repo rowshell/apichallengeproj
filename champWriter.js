@@ -58,4 +58,35 @@ function write(){
   document.getElementById("hurtPostWin").innerHTML = Number(getChampionWinRate( worstItem, champName, 1 )).toFixed(3);
   document.getElementById("hurtPreKDA").innerHTML = Number(getChampionKDA( worstItem, champName, 0 )).toFixed(3);
   document.getElementById("hurtPostKDA").innerHTML = Number(getChampionKDA( worstItem, champName, 1 )).toFixed(3);
+  
+  var itemId = 0;
+  if(bestItem == "Dead Man's Plate") itemId = 3742;
+  else if(bestItem == "Flesheater") itemId = 3924;
+  else if(bestItem == "Globe of Trust") itemId = 3840;
+  else if(bestItem == "Martyr's Gambit") itemId = 3911;
+  else if(bestItem == "Mirage Blade") itemId = 3150;
+  else if(bestItem == "Netherstride Grimoire") itemId = 3431;
+  else if(bestItem == "Pox Arcana") itemId = 3434;
+  else if(bestItem == "Puppeteer") itemId = 3745;
+  else if(bestItem == "Rite of Ruin") itemId = 3430;
+  else if(bestItem == "Staff of Flowing Water") itemId = 3744;
+  else if(bestItem == "Trickster's Glass") itemId = 3829;
+  else if(bestItem == "Typhoon Claws") itemId = 3652;
+  
+  document.getElementById("helpItemPic").src = "http://ddragon.leagueoflegends.com/cdn/5.15.1/img/item/" + itemId + ".png";
+  
+  if(worstItem == "Dead Man's Plate") itemId = 3742;
+  else if(worstItem == "Flesheater") itemId = 3924;
+  else if(worstItem == "Globe of Trust") itemId = 3840;
+  else if(worstItem == "Martyr's Gambit") itemId = 3911;
+  else if(worstItem == "Mirage Blade") itemId = 3150;
+  else if(worstItem == "Netherstride Grimoire") itemId = 3431;
+  else if(worstItem == "Pox Arcana") itemId = 3434;
+  else if(worstItem == "Puppeteer") itemId = 3745;
+  else if(worstItem == "Rite of Ruin") itemId = 3430;
+  else if(worstItem == "Staff of Flowing Water") itemId = 3744;
+  else if(worstItem == "Trickster's Glass") itemId = 3829;
+  else if(worstItem == "Typhoon Claws") itemId = 3652;
+  
+  document.getElementById("hurtItemPic").src = "http://ddragon.leagueoflegends.com/cdn/5.15.1/img/item/" + itemId +".png";
 }
