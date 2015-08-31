@@ -46,6 +46,7 @@ function write(){
   var worstItem = findWorst(champName);
   
   document.getElementById("helpItemPic").innerHTML = bestItem;
+  document.getElementById("helpIemPic").title = bestItem;
  
   document.getElementById("helpPreWin").innerHTML = Number(getChampionWinRate( bestItem, champName, 0 )).toFixed(3);
   document.getElementById("helpPostWin").innerHTML = Number(getChampionWinRate( bestItem, champName, 1 )).toFixed(3);
@@ -53,6 +54,7 @@ function write(){
   document.getElementById("helpPostKDA").innerHTML = Number(getChampionKDA( bestItem, champName, 1 )).toFixed(3);
 
   document.getElementById("hurtItemPic").innerHTML = worstItem;
+  document.getElementById("hurtItemPic").title = worstItem;
 
   document.getElementById("hurtPreWin").innerHTML = Number(getChampionWinRate( worstItem, champName, 0 )).toFixed(3);
   document.getElementById("hurtPostWin").innerHTML = Number(getChampionWinRate( worstItem, champName, 1 )).toFixed(3);
