@@ -107,7 +107,7 @@ a:visited {
 a:hover {
     color: #B89300;
     background-color: transparent;
-    text-decoration: underline;
+    text-decoration: none;
 }
 a:active {
     color: #B89300;
