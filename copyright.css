@@ -1,0 +1,116 @@
+.header {
+    font-family: arial;
+    border-style: solid;
+    border-width: medium;
+    border-color:white;
+    padding: 8px;
+}
+
+.header a:link {
+    color: white;
+    text-decoration: none;
+    background-color: transparent;
+}
+
+.header a:visited {
+    color: white;
+    background-color: transparent;
+    text-decoration: none;
+}
+
+.header a:hover {
+    color: #B89300;
+    background-color: transparent;
+    text-decoration: underline;
+}
+
+.header a:active {
+    color: #B89300;
+    background-color: transparent;
+    text-decoration: none;
+}
+
+body {
+    color: white; 
+    background-color: black;
+    padding-top: 10px;
+    padding-bottom:10px;
+    padding-left: 15px;
+    padding-right: 15px;
+    font-style: arial;
+}
+
+/* For navigation bar */
+
+.names h1 {
+    font-family: helvetica;
+    font-size: 20px;
+}
+
+ul.menu {
+  margin-left: auto;
+  margin-right: auto;
+  display:inline-block; 
+
+}
+
+ul.menu li {
+    background: none repeat scroll 0 0 #000;
+    border-left: 0 solid #fff;
+    border-right: 0 solid #fff;
+    float: left;
+    font-family: helvetica;
+    line-height: 17px;
+    margin: 0;
+    position: relative; list-style:none;
+    text-align: center;
+}
+
+ul.menu li a {
+    color: #fff;
+    display: block;
+    font-weight: bold;
+    height: 50px;
+    width: 135px;
+    text-align: center;
+    line-height: 40px;
+    padding: 3px 3px;
+    text-decoration: none;
+    font-size: 13px;
+}
+
+  ul.menu li > ul li {
+    width:100%;
+    transition: all 0.7s ease-in 0s; 
+}  
+
+ul.menu li.home-page {
+    display:inline-block; 
+    background:#000;  
+    border:none;
+}
+
+      
+ul.menu li:hover {
+    background:#888; 
+    border-right:#fff 1px solid; 
+    border-left:#fff 1px solid;
+    transition: all 0.7s ease-in 0s;
+}
+
+
+ul.menu li ul {
+    display: none;
+    left: 0;
+    padding: 20px 0 0;
+    position: absolute;
+    top: 32px;
+    transition: all 0.7s ease-in 0s;
+}
+
+
+ul.menu li:hover ul {
+    display:block;
+    transition: all 0.7s ease-in 0s;
+    
+}
