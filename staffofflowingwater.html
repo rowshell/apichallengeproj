@@ -1,0 +1,956 @@
+<!DOCTYPE html> 
+<html>
+  <head>
+    <link href="itemsmain.css" rel="stylesheet">
+  </head>
+
+  <body>  
+
+  <ul class="menu">
+  <li class="home-page current">
+    <li><a href="http://rowshell.github.io/apichallengeproj/#">Home</a></li>           
+    <li><a href="http://rowshell.github.io/apichallengeproj/itempage">Items</a></li>
+    <li><a href="http://rowshell.github.io/apichallengeproj/about">About</a></li>
+    <li><a href="http://rowshell.github.io/apichallengeproj/copyright">Copyrights</a></li>
+    </li>
+  </ul>
+  
+    <div class="staffofflowingwater">
+      <h1>Staff of Flowing Water</h1>
+
+      <div class="boxed">
+        <img src="http://ddragon.leagueoflegends.com/cdn/5.15.1/img/item/3744.png" alt="Staff of Flowing Water Image Item" title="Staff of Flowing Water" style="width:75px;height:75px;border:0;">
+        
+        <div>
+        <center><h2>Item information</h2></center>
+        <br>
+        <h3>Attributes</h3>
+        <p>+400 Ability Power</p>
+        <p>+25 Magic Resist</p>
+        <p>+50% Base Mana Regen</p>
+        </div>
+        
+        <div>
+        <h3>Description</h3>
+        <p>
+          <b>UNIQUE Passive: </b> <i><b>Mana Font</b></i>: Restores 2% of missing Mana every 5 seconds.
+          <br> 
+          <br>
+          <b>UNIQUE Passive: </b> Gain 30% Movement Speed and 10 Mana Regen per 5 seconds while in the river. (Unique Passives with the same name do not stack.)
+        </p>
+        </div>
+      </div>
+      
+  <br>
+  <br>
+  <br>
+  <br>
+  
+   <div class="searchbar">
+      <input id="searchBar"></input><button onClick="search()">Search</button>
+    </div>
+    
+    <div class="searchbardescription">
+      <font color="B89300"><b>Click table headers to reorder data. Use search bar to search up a specific champion. </b></font>
+    </div>
+    
+    <div class="table">
+<table style="width:100%">
+  <tr id="0">
+    <th id="0a" onClick="orderByName()">Champion</th>
+    <th id="0b" onClick="orderByPreWin()">Pre Win Rate</th>
+    <th id="0c" onClick="orderByPostWin()">Post Win Rate</th>
+    <th id="0d" onClick="orderByPreKDA()">Pre KDA</th>
+    <th id="0e" onClick="orderByPostKDA()">Post KDA</th>
+  </tr>
+  
+  <tr id="1">
+    <td id="1a"><a href="http://rowshell.github.io/apichallengeproj/emptychamptemp"><img src="http://ddragon.leagueoflegends.com/cdn/5.15.1/img/champion/Aatrox.png" alt="Aatrox" title="Aatrox" style="width:75px;height:75px;border:0;"></a> <a href="http://rowshell.github.io/apichallengeproj/emptychamptemp">Aatrox</a> </td>
+    <td id="1b">Blah</td>
+    <td id="1c">Blah</td>
+    <td id="1d">Blah</td>
+    <td id="1e">Blah</td>
+  </tr>
+  <tr id="2">
+    <td id="2a"><a href="http://rowshell.github.io/apichallengeproj/emptychamptemp"><img src="http://ddragon.leagueoflegends.com/cdn/5.15.1/img/champion/Ahri.png" alt="Ahri" title="Ahri" style="width:75px;height:75px;border:0;"></a> <a href="http://rowshell.github.io/apichallengeproj/emptychamptemp">Ahri</a> </td>
+    <td id="2b">Blah</td>
+    <td id="2c">Blah</td>
+    <td id="2d">Blah</td>
+    <td id="2e">Blah</td>
+  </tr>
+  <tr id="3">
+    <td id="3a"><a href="http://rowshell.github.io/apichallengeproj/emptychamptemp"><img src="http://ddragon.leagueoflegends.com/cdn/5.15.1/img/champion/Akali.png" alt="Akali" title="Akali" style="width:75px;height:75px;border:0;"></a> <a href="http://rowshell.github.io/apichallengeproj/emptychamptemp">Akali</a> </td>
+    <td id="3b">Blah</td>
+    <td id="3c">Blah</td>
+    <td id="3d">Blah</td>
+    <td id="3e">Blah</td>
+  </tr>
+  <tr id="4">
+    <td id="4a"><a href="http://rowshell.github.io/apichallengeproj/emptychamptemp"><img src="http://ddragon.leagueoflegends.com/cdn/5.15.1/img/champion/Alistar.png" alt="Alistar" title="Alistar" style="width:75px;height:75px;border:0;"></a> <a href="http://rowshell.github.io/apichallengeproj/emptychamptemp">Alistar</a> </td>
+    <td id="4b">Blah</td>
+    <td id="4c">Blah</td>
+    <td id="4d">Blah</td>
+    <td id="4e">Blah</td>
+  </tr>
+  <tr id="5">
+    <td id="5a"><a href="http://rowshell.github.io/apichallengeproj/emptychamptemp"><img src="http://ddragon.leagueoflegends.com/cdn/5.15.1/img/champion/Amumu.png" alt="Amumu" title="Amumu" style="width:75px;height:75px;border:0;"></a> <a href="http://rowshell.github.io/apichallengeproj/emptychamptemp">Amumu</a> </td>
+    <td id="5b">Blah</td>
+    <td id="5c">Blah</td>
+    <td id="5d">Blah</td>
+    <td id="5e">Blah</td>
+  </tr>
+  <tr id="6">
+    <td id="6a"><a href="http://rowshell.github.io/apichallengeproj/emptychamptemp"><img src="http://ddragon.leagueoflegends.com/cdn/5.15.1/img/champion/Anivia.png" alt="Anivia" title="Anivia" style="width:75px;height:75px;border:0;"></a> <a href="http://rowshell.github.io/apichallengeproj/emptychamptemp">Anivia</a> </td>
+    <td id="6b">Blah</td>
+    <td id="6c">Blah</td>
+    <td id="6d">Blah</td>
+    <td id="6e">Blah</td>
+  </tr>
+  <tr id="7">
+    <td id="7a"><a href="http://rowshell.github.io/apichallengeproj/emptychamptemp"><img src="http://ddragon.leagueoflegends.com/cdn/5.15.1/img/champion/Annie.png" alt="Annie" title="Annie" style="width:75px;height:75px;border:0;"></a> <a href="http://rowshell.github.io/apichallengeproj/emptychamptemp">Annie</a> </td>
+    <td id="7b">Blah</td>
+    <td id="7c">Blah</td>
+    <td id="7d">Blah</td>
+    <td id="7e">Blah</td>
+  </tr>
+  <tr id="8">
+    <td id="8a"><a href="http://rowshell.github.io/apichallengeproj/emptychamptemp"><img src="http://ddragon.leagueoflegends.com/cdn/5.15.1/img/champion/Ashe.png" alt="Ashe" title="Ashe" style="width:75px;height:75px;border:0;"></a> <a href="http://rowshell.github.io/apichallengeproj/emptychamptemp">Ashe</a> </td>
+    <td id="8b">Blah</td>
+    <td id="8c">Blah</td>
+    <td id="8d">Blah</td>
+    <td id="8e">Blah</td>
+  </tr>
+  <tr id="9">
+    <td id="9a"><a href="http://rowshell.github.io/apichallengeproj/emptychamptemp"><img src="http://ddragon.leagueoflegends.com/cdn/5.15.1/img/champion/Azir.png" alt="Azir" title="Azir" style="width:75px;height:75px;border:0;"></a> <a href="http://rowshell.github.io/apichallengeproj/emptychamptemp">Azir</a> </td>
+    <td id="9b">Blah</td>
+    <td id="9c">Blah</td>
+    <td id="9d">Blah</td>
+    <td id="9e">Blah</td>
+  </tr>
+  <tr id="10">
+    <td id="10a"><a href="http://rowshell.github.io/apichallengeproj/emptychamptemp"><img src="http://ddragon.leagueoflegends.com/cdn/5.15.1/img/champion/Bard.png" alt="Bard" title="Bard" style="width:75px;height:75px;border:0;"></a> <a href="http://rowshell.github.io/apichallengeproj/emptychamptemp">Bard</a> </td>
+    <td id="10b">Blah</td>
+    <td id="10c">Blah</td>
+    <td id="10d">Blah</td>
+    <td id="10e">Blah</td>
+  </tr>
+  <tr id="11">
+    <td id="11a"><a href="http://rowshell.github.io/apichallengeproj/emptychamptemp"><img src="http://ddragon.leagueoflegends.com/cdn/5.15.1/img/champion/Blitzcrank.png" alt="Blitzcrank" title="Blitzcrank" style="width:75px;height:75px;border:0;"></a> <a href="http://rowshell.github.io/apichallengeproj/emptychamptemp">Blitzcrank</a> </td>
+    <td id="11b">Blah</td>
+    <td id="11c">Blah</td>
+    <td id="11d">Blah</td>
+    <td id="11e">Blah</td>
+  </tr>
+  <tr id="12">
+    <td id="12a"><a href="http://rowshell.github.io/apichallengeproj/emptychamptemp"><img src="http://ddragon.leagueoflegends.com/cdn/5.15.1/img/champion/Brand.png" alt="Brand" title="Brand" style="width:75px;height:75px;border:0;"></a> <a href="http://rowshell.github.io/apichallengeproj/emptychamptemp">Brand</a> </td>
+    <td id="12b">Blah</td>
+    <td id="12c">Blah</td>
+    <td id="12d">Blah</td>
+    <td id="12e">Blah</td>
+  </tr>
+  <tr id="13">
+    <td id="13a"><a href="http://rowshell.github.io/apichallengeproj/emptychamptemp"><img src="http://ddragon.leagueoflegends.com/cdn/5.15.1/img/champion/Braum.png" alt="Braum" title="Braum" style="width:75px;height:75px;border:0;"></a> <a href="http://rowshell.github.io/apichallengeproj/emptychamptemp">Braum</a> </td>
+    <td id="13b">Blah</td>
+    <td id="13c">Blah</td>
+    <td id="13d">Blah</td>
+    <td id="13e">Blah</td>
+  </tr>
+  <tr id="14">
+    <td id="14a"><a href="http://rowshell.github.io/apichallengeproj/emptychamptemp"><img src="http://ddragon.leagueoflegends.com/cdn/5.15.1/img/champion/Caitlyn.png" alt="Caitlyn" title="Caitlyn" style="width:75px;height:75px;border:0;"></a> <a href="http://rowshell.github.io/apichallengeproj/emptychamptemp">Caitlyn</a> </td>
+    <td id="14b">Blah</td>
+    <td id="14c">Blah</td>
+    <td id="14d">Blah</td>
+    <td id="14e">Blah</td>
+  </tr>
+  <tr id="15">
+    <td id="15a"><a href="http://rowshell.github.io/apichallengeproj/emptychamptemp"><img src="http://ddragon.leagueoflegends.com/cdn/5.15.1/img/champion/Cassiopeia.png" alt="Cassiopeia" title="Cassiopeia" style="width:75px;height:75px;border:0;"></a> <a href="http://rowshell.github.io/apichallengeproj/emptychamptemp">Cassiopeia</a> </td>
+    <td id="15b">Blah</td>
+    <td id="15c">Blah</td>
+    <td id="15d">Blah</td>
+    <td id="15e">Blah</td>
+  </tr>
+  <tr id="16">
+    <td id="16a"><a href="http://rowshell.github.io/apichallengeproj/emptychamptemp"><img src="http://ddragon.leagueoflegends.com/cdn/5.15.1/img/champion/Chogath.png" alt="Cho'Gath" title="Cho'Gath" style="width:75px;height:75px;border:0;"></a> <a href="http://rowshell.github.io/apichallengeproj/emptychamptemp">Cho'Gath</a> </td>
+    <td id="16b">Blah</td>
+    <td id="16c">Blah</td>
+    <td id="16d">Blah</td>
+    <td id="16e">Blah</td>
+  </tr>
+  <tr id="17">
+    <td id="17a"><a href="http://rowshell.github.io/apichallengeproj/emptychamptemp"><img src="http://ddragon.leagueoflegends.com/cdn/5.15.1/img/champion/Corki.png" alt="Corki" title="Corki" style="width:75px;height:75px;border:0;"></a> <a href="http://rowshell.github.io/apichallengeproj/emptychamptemp">Corki</a> </td>
+    <td id="17b">Blah</td>
+    <td id="17c">Blah</td>
+    <td id="17d">Blah</td>
+    <td id="17e">Blah</td>
+  </tr>
+  <tr id="18">
+    <td id="18a"><a href="http://rowshell.github.io/apichallengeproj/emptychamptemp"><img src="http://ddragon.leagueoflegends.com/cdn/5.15.1/img/champion/Darius.png" alt="Darius" title="Darius" style="width:75px;height:75px;border:0;"></a> <a href="http://rowshell.github.io/apichallengeproj/emptychamptemp">Darius</a> </td>
+    <td id="18b">Blah</td>
+    <td id="18c">Blah</td>
+    <td id="18d">Blah</td>
+    <td id="18e">Blah</td>
+  </tr>
+  <tr id="19">
+    <td id="19a"><a href="http://rowshell.github.io/apichallengeproj/emptychamptemp"><img src="http://ddragon.leagueoflegends.com/cdn/5.15.1/img/champion/Diana.png" alt="Diana" title="Diana" style="width:75px;height:75px;border:0;"></a> <a href="http://rowshell.github.io/apichallengeproj/emptychamptemp">Diana</a> </td>
+    <td id="19b">Blah</td>
+    <td id="19c">Blah</td>
+    <td id="19d">Blah</td>
+    <td id="19e">Blah</td>
+  </tr>
+  <tr id="20">
+    <td id="20a"><a href="http://rowshell.github.io/apichallengeproj/emptychamptemp"><img src="http://ddragon.leagueoflegends.com/cdn/5.15.1/img/champion/DrMundo.png" alt="Dr. Mundo" title="Dr. Mundo" style="width:75px;height:75px;border:0;"></a> <a href="http://rowshell.github.io/apichallengeproj/emptychamptemp">Dr. Mundo</a> </td>
+    <td id="20b">Blah</td>
+    <td id="20c">Blah</td>
+    <td id="20d">Blah</td>
+    <td id="20e">Blah</td>
+  </tr>
+  <tr id="21">
+    <td id="21a"><a href="http://rowshell.github.io/apichallengeproj/emptychamptemp"><img src="http://ddragon.leagueoflegends.com/cdn/5.15.1/img/champion/Draven.png" alt="Draven" title="Draven" style="width:75px;height:75px;border:0;"></a> <a href="http://rowshell.github.io/apichallengeproj/emptychamptemp">Draven</a> </td>
+    <td id="21b">Blah</td>
+    <td id="21c">Blah</td>
+    <td id="21d">Blah</td>
+    <td id="21e">Blah</td>
+  </tr>
+  <tr id="22">
+    <td id="22a"><a href="http://rowshell.github.io/apichallengeproj/emptychamptemp"><img src="http://ddragon.leagueoflegends.com/cdn/5.15.1/img/champion/Ekko.png" alt="Ekko" title="Ekko" style="width:75px;height:75px;border:0;"></a> <a href="http://rowshell.github.io/apichallengeproj/emptychamptemp">Ekko</a> </td>
+    <td id="22b">Blah</td>
+    <td id="22c">Blah</td>
+    <td id="22d">Blah</td>
+    <td id="22e">Blah</td>
+  </tr>
+  <tr id="23">
+    <td id="23a"><a href="http://rowshell.github.io/apichallengeproj/emptychamptemp"><img src="http://ddragon.leagueoflegends.com/cdn/5.15.1/img/champion/Elise.png" alt="Elise" title="Elise" style="width:75px;height:75px;border:0;"></a> <a href="http://rowshell.github.io/apichallengeproj/emptychamptemp">Elise</a> </td>
+    <td id="23b">Blah</td>
+    <td id="23c">Blah</td>
+    <td id="23d">Blah</td>
+    <td id="23e">Blah</td>
+  </tr>  
+  <tr id="24">
+    <td id="24a"><a href="http://rowshell.github.io/apichallengeproj/emptychamptemp"><img src="http://ddragon.leagueoflegends.com/cdn/5.15.1/img/champion/Evelynn.png" alt="Evelynn" title="Evelynn" style="width:75px;height:75px;border:0;"></a> <a href="http://rowshell.github.io/apichallengeproj/emptychamptemp">Evelynn</a> </td>
+    <td id="24b">Blah</td>
+    <td id="24c">Blah</td>
+    <td id="24d">Blah</td>
+    <td id="24e">Blah</td>
+  </tr>
+  <tr id="25">
+    <td id="25a"><a href="http://rowshell.github.io/apichallengeproj/emptychamptemp"><img src="http://ddragon.leagueoflegends.com/cdn/5.15.1/img/champion/Ezreal.png" alt="Ezreal" title="Ezreal" style="width:75px;height:75px;border:0;"></a> <a href="http://rowshell.github.io/apichallengeproj/emptychamptemp">Ezreal</a> </td>
+    <td id="25b">Blah</td>
+    <td id="25c">Blah</td>
+    <td id="25d">Blah</td>
+    <td id="25e">Blah</td>
+  </tr>
+  <tr id="26">
+    <td id="26a"><a href="http://rowshell.github.io/apichallengeproj/emptychamptemp"><img src="http://ddragon.leagueoflegends.com/cdn/5.15.1/img/champion/FiddleSticks.png" alt="Fiddlesticks" title="Fiddlesticks" style="width:75px;height:75px;border:0;"></a> <a href="http://rowshell.github.io/apichallengeproj/emptychamptemp">Fiddlesticks</a> </td>
+    <td id="26b">Blah</td>
+    <td id="26c">Blah</td>
+    <td id="26d">Blah</td>
+    <td id="26e">Blah</td>
+  </tr>
+  <tr id="27">
+    <td id="27a"><a href="http://rowshell.github.io/apichallengeproj/emptychamptemp"><img src="http://ddragon.leagueoflegends.com/cdn/5.15.1/img/champion/Fiora.png" alt="Fiora" title="Fiora" style="width:75px;height:75px;border:0;"></a> <a href="http://rowshell.github.io/apichallengeproj/emptychamptemp">Fiora</a> </td>
+    <td id="27b">Blah</td>
+    <td id="27c">Blah</td>
+    <td id="27d">Blah</td>
+    <td id="27e">Blah</td>
+  </tr>
+  <tr id="28">
+    <td id="28a"><a href="http://rowshell.github.io/apichallengeproj/emptychamptemp"><img src="http://ddragon.leagueoflegends.com/cdn/5.15.1/img/champion/Fizz.png" alt="Fizz" title="Fizz" style="width:75px;height:75px;border:0;"></a> <a href="http://rowshell.github.io/apichallengeproj/emptychamptemp">Fizz</a> </td>
+    <td id="28b">Blah</td>
+    <td id="28c">Blah</td>
+    <td id="28d">Blah</td>
+    <td id="28e">Blah</td>
+  </tr>
+  <tr id="29">
+    <td id="29a"><a href="http://rowshell.github.io/apichallengeproj/emptychamptemp"><img src="http://ddragon.leagueoflegends.com/cdn/5.15.1/img/champion/Galio.png" alt="Galio" title="Galio" style="width:75px;height:75px;border:0;"></a> <a href="http://rowshell.github.io/apichallengeproj/emptychamptemp">Galio</a> </td>
+    <td id="29b">Blah</td>
+    <td id="29c">Blah</td>
+    <td id="29d">Blah</td>
+    <td id="29e">Blah</td>
+  </tr>
+  <tr id="30">
+    <td id="30a"><a href="http://rowshell.github.io/apichallengeproj/emptychamptemp"><img src="http://ddragon.leagueoflegends.com/cdn/5.15.1/img/champion/Gangplank.png" alt="Gangplank" title="Gangplank" style="width:75px;height:75px;border:0;"></a> <a href="http://rowshell.github.io/apichallengeproj/emptychamptemp">Gangplank</a> </td>
+    <td id="30b">Blah</td>
+    <td id="30c">Blah</td>
+    <td id="30d">Blah</td>
+    <td id="30e">Blah</td>
+  </tr>
+  <tr id="31">
+    <td id="31a"><a href="http://rowshell.github.io/apichallengeproj/emptychamptemp"><img src="http://ddragon.leagueoflegends.com/cdn/5.15.1/img/champion/Garen.png" alt="Garen" title="Garen" style="width:75px;height:75px;border:0;"></a> <a href="http://rowshell.github.io/apichallengeproj/emptychamptemp">Garen</a> </td>
+    <td id="31b">Blah</td>
+    <td id="31c">Blah</td>
+    <td id="31d">Blah</td>
+    <td id="31e">Blah</td>
+  </tr>
+  <tr id="32">
+    <td id="32a"><a href="http://rowshell.github.io/apichallengeproj/emptychamptemp"><img src="http://ddragon.leagueoflegends.com/cdn/5.15.1/img/champion/Gnar.png" alt="Gnar" title="Gnar" style="width:75px;height:75px;border:0;"></a> <a href="http://rowshell.github.io/apichallengeproj/emptychamptemp">Gnar</a> </td>
+    <td id="32b">Blah</td>
+    <td id="32c">Blah</td>
+    <td id="32d">Blah</td>
+    <td id="32e">Blah</td>
+  </tr>
+    <tr id="33">
+    <td id="33a"><a href="http://rowshell.github.io/apichallengeproj/emptychamptemp"><img src="http://ddragon.leagueoflegends.com/cdn/5.15.1/img/champion/Gragas.png" alt="Gragas" title="Gragas" style="width:75px;height:75px;border:0;"></a> <a href="http://rowshell.github.io/apichallengeproj/emptychamptemp">Gragas</a> </td>
+    <td id="33b">Blah</td>
+    <td id="33c">Blah</td>
+    <td id="33d">Blah</td>
+    <td id="33e">Blah</td>
+  </tr>
+  <tr id="34">
+    <td id="34a"><a href="http://rowshell.github.io/apichallengeproj/emptychamptemp"><img src="http://ddragon.leagueoflegends.com/cdn/5.15.1/img/champion/Graves.png" alt="Graves" title="Graves" style="width:75px;height:75px;border:0;"></a> <a href="http://rowshell.github.io/apichallengeproj/emptychamptemp">Graves</a> </td>
+    <td id="34b">Blah</td>
+    <td id="34c">Blah</td>
+    <td id="34d">Blah</td>
+    <td id="34e">Blah</td>
+  </tr>
+  <tr id="35">
+    <td id="35a"><a href="http://rowshell.github.io/apichallengeproj/emptychamptemp"><img src="http://ddragon.leagueoflegends.com/cdn/5.15.1/img/champion/Hecarim.png" alt="Hecarim" title="Hecarim" style="width:75px;height:75px;border:0;"></a> <a href="http://rowshell.github.io/apichallengeproj/emptychamptemp">Hecarim</a> </td>
+    <td id="35b">Blah</td>
+    <td id="35c">Blah</td>
+    <td id="35d">Blah</td>
+    <td id="35e">Blah</td>
+  </tr>
+  <tr id="36">
+    <td id="36a"><a href="http://rowshell.github.io/apichallengeproj/emptychamptemp"><img src="http://ddragon.leagueoflegends.com/cdn/5.15.1/img/champion/Heimerdinger.png" alt="Heimerdinger" title="Heimerdinger" style="width:75px;height:75px;border:0;"></a> <a href="http://rowshell.github.io/apichallengeproj/emptychamptemp">Heimerdinger</a> </td>
+    <td id="36b">Blah</td>
+    <td id="36c">Blah</td>
+    <td id="36d">Blah</td>
+    <td id="36e">Blah</td>
+  </tr>
+  <tr id="37">
+    <td id="37a"><a href="http://rowshell.github.io/apichallengeproj/emptychamptemp"><img src="http://ddragon.leagueoflegends.com/cdn/5.15.1/img/champion/Irelia.png" alt="Irelia" title="Irelia" style="width:75px;height:75px;border:0;"></a> <a href="http://rowshell.github.io/apichallengeproj/emptychamptemp">Irelia</a> </td>
+    <td id="37b">Blah</td>
+    <td id="37c">Blah</td>
+    <td id="37d">Blah</td>
+    <td id="37e">Blah</td>
+  </tr>
+  <tr id="38">
+    <td id="38a"><a href="http://rowshell.github.io/apichallengeproj/emptychamptemp"><img src="http://ddragon.leagueoflegends.com/cdn/5.15.1/img/champion/Janna.png" alt="Janna" title="Janna" style="width:75px;height:75px;border:0;"></a> <a href="http://rowshell.github.io/apichallengeproj/emptychamptemp">Janna</a> </td>
+    <td id="38b">Blah</td>
+    <td id="38c">Blah</td>
+    <td id="38d">Blah</td>
+    <td id="38e">Blah</td>
+  </tr>
+  <tr id="39">
+    <td id="39a"><a href="http://rowshell.github.io/apichallengeproj/emptychamptemp"><img src="http://ddragon.leagueoflegends.com/cdn/5.15.1/img/champion/JarvanIV.png" alt="Jarvan IV" title="Jarvan IV" style="width:75px;height:75px;border:0;"></a> <a href="http://rowshell.github.io/apichallengeproj/emptychamptemp">Jarvan IV</a> </td>
+    <td id="39b">Blah</td>
+    <td id="39c">Blah</td>
+    <td id="39d">Blah</td>
+    <td id="39e">Blah</td>
+  </tr>
+  <tr id="40">
+    <td id="40a"><a href="http://rowshell.github.io/apichallengeproj/emptychamptemp"><img src="http://ddragon.leagueoflegends.com/cdn/5.15.1/img/champion/Jax.png" alt="Jax" title="Jax" style="width:75px;height:75px;border:0;"></a> <a href="http://rowshell.github.io/apichallengeproj/emptychamptemp">Jax</a> </td>
+    <td id="40b">Blah</td>
+    <td id="40c">Blah</td>
+    <td id="40d">Blah</td>
+    <td id="40e">Blah</td>
+  </tr>
+  <tr id="41">
+    <td id="41a"><a href="http://rowshell.github.io/apichallengeproj/emptychamptemp"><img src="http://ddragon.leagueoflegends.com/cdn/5.15.1/img/champion/Jayce.png" alt="Jayce" title="Jayce" style="width:75px;height:75px;border:0;"></a> <a href="http://rowshell.github.io/apichallengeproj/emptychamptemp">Jayce</a> </td>
+    <td id="41b">Blah</td>
+    <td id="41c">Blah</td>
+    <td id="41d">Blah</td>
+    <td id="41e">Blah</td>
+  </tr>
+  <tr id="42">
+    <td id="42a"><a href="http://rowshell.github.io/apichallengeproj/emptychamptemp"><img src="http://ddragon.leagueoflegends.com/cdn/5.15.1/img/champion/Jinx.png" alt="Jinx" title="Jinx" style="width:75px;height:75px;border:0;"></a> <a href="http://rowshell.github.io/apichallengeproj/emptychamptemp">Jinx</a> </td>
+    <td id="42b">Blah</td>
+    <td id="42c">Blah</td>
+    <td id="42d">Blah</td>
+    <td id="42e">Blah</td>
+  </tr>
+  <tr id="43">
+    <td id="43a"><a href="http://rowshell.github.io/apichallengeproj/emptychamptemp"><img src="http://ddragon.leagueoflegends.com/cdn/5.15.1/img/champion/Kalista.png" alt="Kalista" title="Kalista" style="width:75px;height:75px;border:0;"></a> <a href="http://rowshell.github.io/apichallengeproj/emptychamptemp">Kalista</a> </td>
+    <td id="43b">Blah</td>
+    <td id="43c">Blah</td>
+    <td id="43d">Blah</td>
+    <td id="43e">Blah</td>
+  </tr>
+  <tr id="44">
+    <td id="44a"><a href="http://rowshell.github.io/apichallengeproj/emptychamptemp"><img src="http://ddragon.leagueoflegends.com/cdn/5.15.1/img/champion/Karma.png" alt="Karma" title="Karma" style="width:75px;height:75px;border:0;"></a> <a href="http://rowshell.github.io/apichallengeproj/emptychamptemp">Karma</a> </td>
+    <td id="44b">Blah</td>
+    <td id="44c">Blah</td>
+    <td id="44d">Blah</td>
+    <td id="44e">Blah</td>
+  </tr>
+  <tr id="45">
+    <td id="45a"><a href="http://rowshell.github.io/apichallengeproj/emptychamptemp"><img src="http://ddragon.leagueoflegends.com/cdn/5.15.1/img/champion/Karthus.png" alt="Karthus" title="Karthus" style="width:75px;height:75px;border:0;"></a> <a href="http://rowshell.github.io/apichallengeproj/emptychamptemp">Karthus</a> </td>
+    <td id="45b">Blah</td>
+    <td id="45c">Blah</td>
+    <td id="45d">Blah</td>
+    <td id="45e">Blah</td>
+  </tr>
+  <tr id="46">
+    <td id="46a"><a href="http://rowshell.github.io/apichallengeproj/emptychamptemp"><img src="http://ddragon.leagueoflegends.com/cdn/5.15.1/img/champion/Kassadin.png" alt="Kassadin" title="Kassadin" style="width:75px;height:75px;border:0;"></a> <a href="http://rowshell.github.io/apichallengeproj/emptychamptemp">Kassadin</a> </td>
+    <td id="46b">Blah</td>
+    <td id="46c">Blah</td>
+    <td id="46d">Blah</td>
+    <td id="46e">Blah</td>
+  </tr>
+  <tr id="47">
+    <td id="47a"><a href="http://rowshell.github.io/apichallengeproj/emptychamptemp"><img src="http://ddragon.leagueoflegends.com/cdn/5.15.1/img/champion/Katarina.png" alt="Katarina" title="Katarina" style="width:75px;height:75px;border:0;"></a> <a href="http://rowshell.github.io/apichallengeproj/emptychamptemp">Katarina</a> </td>
+    <td id="47b">Blah</td>
+    <td id="47c">Blah</td>
+    <td id="47d">Blah</td>
+    <td id="47e">Blah</td>
+  </tr>
+  <tr id="48">
+    <td id="48a"><a href="http://rowshell.github.io/apichallengeproj/emptychamptemp"><img src="http://ddragon.leagueoflegends.com/cdn/5.15.1/img/champion/Kayle.png" alt="Kayle" title="Kayle" style="width:75px;height:75px;border:0;"></a> <a href="http://rowshell.github.io/apichallengeproj/emptychamptemp">Kayle</a> </td>
+    <td id="48b">Blah</td>
+    <td id="48c">Blah</td>
+    <td id="48d">Blah</td>
+    <td id="48e">Blah</td>
+  </tr>
+  <tr id="49">
+    <td id="49a"><a href="http://rowshell.github.io/apichallengeproj/emptychamptemp"><img src="http://ddragon.leagueoflegends.com/cdn/5.15.1/img/champion/Kennen.png" alt="Kennen" title="Kennen" style="width:75px;height:75px;border:0;"></a> <a href="http://rowshell.github.io/apichallengeproj/emptychamptemp">Kennen</a> </td>
+    <td id="49b">Blah</td>
+    <td id="49c">Blah</td>
+    <td id="49d">Blah</td>
+    <td id="49e">Blah</td>
+  </tr>
+  <tr id="50">
+    <td id="50a"><a href="http://rowshell.github.io/apichallengeproj/emptychamptemp"><img src="http://ddragon.leagueoflegends.com/cdn/5.15.1/img/champion/Khazix.png" alt="Kha'Zix" title="Kha'Zix" style="width:75px;height:75px;border:0;"></a> <a href="http://rowshell.github.io/apichallengeproj/emptychamptemp">Kha'Zix</a> </td>
+    <td id="50b">Blah</td>
+    <td id="50c">Blah</td>
+    <td id="50d">Blah</td>
+    <td id="50e">Blah</td>
+  </tr>
+  <tr id="51">
+    <td id="51a"><a href="http://rowshell.github.io/apichallengeproj/emptychamptemp"><img src="http://ddragon.leagueoflegends.com/cdn/5.15.1/img/champion/KogMaw.png" alt="Kog'Maw" title="Kog'Maw" style="width:75px;height:75px;border:0;"></a> <a href="http://rowshell.github.io/apichallengeproj/emptychamptemp">Kog'Maw</a> </td>
+    <td id="51b">Blah</td>
+    <td id="51c">Blah</td>
+    <td id="51d">Blah</td>
+    <td id="51e">Blah</td>
+  </tr>
+  <tr id="52">
+    <td id="52a"><a href="http://rowshell.github.io/apichallengeproj/emptychamptemp"><img src="http://ddragon.leagueoflegends.com/cdn/5.15.1/img/champion/Leblanc.png" alt="LeBlanc" title="LeBlanc" style="width:75px;height:75px;border:0;"></a> <a href="http://rowshell.github.io/apichallengeproj/emptychamptemp">LeBlanc</a> </td>
+    <td id="52b">Blah</td>
+    <td id="52c">Blah</td>
+    <td id="52d">Blah</td>
+    <td id="52e">Blah</td>
+  </tr>
+  <tr id="53">
+    <td id="53a"><a href="http://rowshell.github.io/apichallengeproj/emptychamptemp"><img src="http://ddragon.leagueoflegends.com/cdn/5.15.1/img/champion/LeeSin.png" alt="Lee Sin" title="Lee Sin" style="width:75px;height:75px;border:0;"></a> <a href="http://rowshell.github.io/apichallengeproj/emptychamptemp">Lee Sin</a> </td>
+    <td id="53b">Blah</td>
+    <td id="53c">Blah</td>
+    <td id="53d">Blah</td>
+    <td id="53e">Blah</td>
+  </tr>
+  <tr id="54">
+    <td id="54a"><a href="http://rowshell.github.io/apichallengeproj/emptychamptemp"><img src="http://ddragon.leagueoflegends.com/cdn/5.15.1/img/champion/Leona.png" alt="Leona" title="Leona" style="width:75px;height:75px;border:0;"></a> <a href="http://rowshell.github.io/apichallengeproj/emptychamptemp">Leona</a> </td>
+    <td id="54b">Blah</td>
+    <td id="54c">Blah</td>
+    <td id="54d">Blah</td>
+    <td id="54e">Blah</td>
+  </tr>
+  <tr id="55">
+    <td id="55a"><a href="http://rowshell.github.io/apichallengeproj/emptychamptemp"><img src="http://ddragon.leagueoflegends.com/cdn/5.15.1/img/champion/Lissandra.png" alt="Lissandra" title="Lissandra" style="width:75px;height:75px;border:0;"></a> <a href="http://rowshell.github.io/apichallengeproj/emptychamptemp">Lissandra</a> </td>
+    <td id="55b">Blah</td>
+    <td id="55c">Blah</td>
+    <td id="55d">Blah</td>
+    <td id="55e">Blah</td>
+  </tr>
+  <tr id="56">
+    <td id="56a"><a href="http://rowshell.github.io/apichallengeproj/emptychamptemp"><img src="http://ddragon.leagueoflegends.com/cdn/5.15.1/img/champion/Lucian.png" alt="Lucian" title="Lucian" style="width:75px;height:75px;border:0;"></a> <a href="http://rowshell.github.io/apichallengeproj/emptychamptemp">Lucian</a> </td>
+    <td id="56b">Blah</td>
+    <td id="56c">Blah</td>
+    <td id="56d">Blah</td>
+    <td id="56e">Blah</td>
+  </tr>
+  <tr id="57">
+    <td id="57a"><a href="http://rowshell.github.io/apichallengeproj/emptychamptemp"><img src="http://ddragon.leagueoflegends.com/cdn/5.15.1/img/champion/Lulu.png" alt="Lulu" title="Lulu" style="width:75px;height:75px;border:0;"></a> <a href="http://rowshell.github.io/apichallengeproj/emptychamptemp">Lulu</a> </td>
+    <td id="57b">Blah</td>
+    <td id="57c">Blah</td>
+    <td id="57d">Blah</td>
+    <td id="57e">Blah</td>
+  </tr>
+  <tr id="58">
+    <td id="58a"><a href="http://rowshell.github.io/apichallengeproj/emptychamptemp"><img src="http://ddragon.leagueoflegends.com/cdn/5.15.1/img/champion/Lux.png" alt="Lux" title="Lux" style="width:75px;height:75px;border:0;"></a> <a href="http://rowshell.github.io/apichallengeproj/emptychamptemp">Lux</a> </td>
+    <td id="58b">Blah</td>
+    <td id="58c">Blah</td>
+    <td id="58d">Blah</td>
+    <td id="58e">Blah</td>
+  </tr>
+  <tr id="59">
+    <td id="59a"><a href="http://rowshell.github.io/apichallengeproj/emptychamptemp"><img src="http://ddragon.leagueoflegends.com/cdn/5.15.1/img/champion/Malphite.png" alt="Malphite" title="Malphite" style="width:75px;height:75px;border:0;"></a> <a href="http://rowshell.github.io/apichallengeproj/emptychamptemp">Malphite</a> </td>
+    <td id="59b">Blah</td>
+    <td id="59c">Blah</td>
+    <td id="59d">Blah</td>
+    <td id="59e">Blah</td>
+  </tr>
+  <tr id="60">
+    <td id="60a"><a href="http://rowshell.github.io/apichallengeproj/emptychamptemp"><img src="http://ddragon.leagueoflegends.com/cdn/5.15.1/img/champion/Malzahar.png" alt="Malzahar" title="Malzahar" style="width:75px;height:75px;border:0;"></a> <a href="http://rowshell.github.io/apichallengeproj/emptychamptemp">Malzahar</a> </td>
+    <td id="60b">Blah</td>
+    <td id="60c">Blah</td>
+    <td id="60d">Blah</td>
+    <td id="60e">Blah</td>
+  </tr>
+  <tr id="61">
+    <td id="61a"><a href="http://rowshell.github.io/apichallengeproj/emptychamptemp"><img src="http://ddragon.leagueoflegends.com/cdn/5.15.1/img/champion/Maokai.png" alt="Maokai" title="Maokai" style="width:75px;height:75px;border:0;"></a> <a href="http://rowshell.github.io/apichallengeproj/emptychamptemp">Maokai</a> </td>
+    <td id="61b">Blah</td>
+    <td id="61c">Blah</td>
+    <td id="61d">Blah</td>
+    <td id="61e">Blah</td>
+  </tr>
+  <tr id="62">
+    <td id="62a"><a href="http://rowshell.github.io/apichallengeproj/emptychamptemp"><img src="http://ddragon.leagueoflegends.com/cdn/5.15.1/img/champion/MasterYi.png" alt="Master Yi" title="Master Yi" style="width:75px;height:75px;border:0;"></a> <a href="http://rowshell.github.io/apichallengeproj/emptychamptemp">Master Yi</a> </td>
+    <td id="62b">Blah</td>
+    <td id="62c">Blah</td>
+    <td id="62d">Blah</td>
+    <td id="62e">Blah</td>
+  </tr>
+  <tr id="63">
+    <td id="63a"><a href="http://rowshell.github.io/apichallengeproj/emptychamptemp"><img src="http://ddragon.leagueoflegends.com/cdn/5.15.1/img/champion/MissFortune.png" alt="Miss Fortune" title="Miss Fortune" style="width:75px;height:75px;border:0;"></a> <a href="http://rowshell.github.io/apichallengeproj/emptychamptemp">Miss Fortune</a> </td>
+    <td id="63b">Blah</td>
+    <td id="63c">Blah</td>
+    <td id="63d">Blah</td>
+    <td id="63e">Blah</td>
+  </tr>
+  <tr id="64">
+    <td id="64a"><a href="http://rowshell.github.io/apichallengeproj/emptychamptemp"><img src="http://ddragon.leagueoflegends.com/cdn/5.15.1/img/champion/Mordekaiser.png" alt="Mordekaiser" title="Mordekaiser" style="width:75px;height:75px;border:0;"></a> <a href="http://rowshell.github.io/apichallengeproj/emptychamptemp">Mordekaiser</a> </td>
+    <td id="64b">Blah</td>
+    <td id="64c">Blah</td>
+    <td id="64d">Blah</td>
+    <td id="64e">Blah</td>
+  </tr>
+  <tr id="65">
+    <td id="65a"><a href="http://rowshell.github.io/apichallengeproj/emptychamptemp"><img src="http://ddragon.leagueoflegends.com/cdn/5.15.1/img/champion/Morgana.png" alt="Morgana" title="Morgana" style="width:75px;height:75px;border:0;"></a> <a href="http://rowshell.github.io/apichallengeproj/emptychamptemp">Morgana</a> </td>
+    <td id="65b">Blah</td>
+    <td id="65c">Blah</td>
+    <td id="65d">Blah</td>
+    <td id="65e">Blah</td>
+  </tr>
+  <tr id="66">
+    <td id="66a"><a href="http://rowshell.github.io/apichallengeproj/emptychamptemp"><img src="http://ddragon.leagueoflegends.com/cdn/5.15.1/img/champion/Nami.png" alt="Nami" title="Nami" style="width:75px;height:75px;border:0;"></a> <a href="http://rowshell.github.io/apichallengeproj/emptychamptemp">Nami</a> </td>
+    <td id="66b">Blah</td>
+    <td id="66c">Blah</td>
+    <td id="66d">Blah</td>
+    <td id="66e">Blah</td>
+  </tr>
+  <tr id="67">
+    <td id="67a"><a href="http://rowshell.github.io/apichallengeproj/emptychamptemp"><img src="http://ddragon.leagueoflegends.com/cdn/5.15.1/img/champion/Nasus.png" alt="Nasus" title="Nasus" style="width:75px;height:75px;border:0;"></a> <a href="http://rowshell.github.io/apichallengeproj/emptychamptemp">Nasus</a> </td>
+    <td id="67b">Blah</td>
+    <td id="67c">Blah</td>
+    <td id="67d">Blah</td>
+    <td id="67e">Blah</td>
+  </tr>
+  <tr id="68">
+    <td id="68a"><a href="http://rowshell.github.io/apichallengeproj/emptychamptemp"><img src="http://ddragon.leagueoflegends.com/cdn/5.15.1/img/champion/Nautilus.png" alt="Nautilus" title="Nautilus" style="width:75px;height:75px;border:0;"></a> <a href="http://rowshell.github.io/apichallengeproj/emptychamptemp">Nautilus</a> </td>
+    <td id="68b">Blah</td>
+    <td id="68c">Blah</td>
+    <td id="68d">Blah</td>
+    <td id="68e">Blah</td>
+  </tr>
+  <tr id="69">
+    <td id="69a"><a href="http://rowshell.github.io/apichallengeproj/emptychamptemp"><img src="http://ddragon.leagueoflegends.com/cdn/5.15.1/img/champion/Nidalee.png" alt="Nidalee" title="Nidalee" style="width:75px;height:75px;border:0;"></a> <a href="http://rowshell.github.io/apichallengeproj/emptychamptemp">Nidalee</a> </td>
+    <td id="69b">Blah</td>
+    <td id="69c">Blah</td>
+    <td id="69d">Blah</td>
+    <td id="69e">Blah</td>
+  </tr>
+  <tr id="70">
+    <td id="70a"><a href="http://rowshell.github.io/apichallengeproj/emptychamptemp"><img src="http://ddragon.leagueoflegends.com/cdn/5.15.1/img/champion/Nocturne.png" alt="Nocturne" title="Nocturne" style="width:75px;height:75px;border:0;"></a> <a href="http://rowshell.github.io/apichallengeproj/emptychamptemp">Nocturne</a> </td>
+    <td id="70b">Blah</td>
+    <td id="70c">Blah</td>
+    <td id="70d">Blah</td>
+    <td id="70e">Blah</td>
+  </tr>
+  <tr id="71">
+    <td id="71a"><a href="http://rowshell.github.io/apichallengeproj/emptychamptemp"><img src="http://ddragon.leagueoflegends.com/cdn/5.15.1/img/champion/Nunu.png" alt="Nunu" title="Nunu" style="width:75px;height:75px;border:0;"></a> <a href="http://rowshell.github.io/apichallengeproj/emptychamptemp">Nunu</a> </td>
+    <td id="71b">Blah</td>
+    <td id="71c">Blah</td>
+    <td id="71d">Blah</td>
+    <td id="71e">Blah</td>
+  </tr>
+  <tr id="72">
+    <td id="72a"><a href="http://rowshell.github.io/apichallengeproj/emptychamptemp"><img src="http://ddragon.leagueoflegends.com/cdn/5.15.1/img/champion/Olaf.png" alt="Olaf" title="Olaf" style="width:75px;height:75px;border:0;"></a> <a href="http://rowshell.github.io/apichallengeproj/emptychamptemp">Olaf</a> </td>
+    <td id="72b">Blah</td>
+    <td id="72c">Blah</td>
+    <td id="72d">Blah</td>
+    <td id="72e">Blah</td>
+  </tr>
+  <tr id="73">
+    <td id="73a"><a href="http://rowshell.github.io/apichallengeproj/emptychamptemp"><img src="http://ddragon.leagueoflegends.com/cdn/5.15.1/img/champion/Orianna.png" alt="Orianna" title="Orianna" style="width:75px;height:75px;border:0;"></a> <a href="http://rowshell.github.io/apichallengeproj/emptychamptemp">Orianna</a> </td>
+    <td id="73b">Blah</td>
+    <td id="73c">Blah</td>
+    <td id="73d">Blah</td>
+    <td id="73e">Blah</td>
+  </tr>
+  <tr id="74">
+    <td id="74a"><a href="http://rowshell.github.io/apichallengeproj/emptychamptemp"><img src="http://ddragon.leagueoflegends.com/cdn/5.15.1/img/champion/Pantheon.png" alt="Pantheon" title="Pantheon" style="width:75px;height:75px;border:0;"></a> <a href="http://rowshell.github.io/apichallengeproj/emptychamptemp">Pantheon</a></td>
+    <td id="74b">Blah</td>
+    <td id="74c">Blah</td>
+    <td id="74d">Blah</td>
+    <td id="74e">Blah</td>
+  </tr>
+  <tr id="75">
+    <td id="75a"><a href="http://rowshell.github.io/apichallengeproj/emptychamptemp"><img src="http://ddragon.leagueoflegends.com/cdn/5.15.1/img/champion/Poppy.png" alt="Poppy" title="Poppy" style="width:75px;height:75px;border:0;"></a> <a href="http://rowshell.github.io/apichallengeproj/emptychamptemp">Poppy</a></td>
+    <td id="75b">Blah</td>
+    <td id="75c">Blah</td>
+    <td id="75d">Blah</td>
+    <td id="75e">Blah</td>
+  </tr>
+  <tr id="76">
+    <td id="76a"><a href="http://rowshell.github.io/apichallengeproj/emptychamptemp"><img src="http://ddragon.leagueoflegends.com/cdn/5.15.1/img/champion/Quinn.png" alt="Quinn" title="Quinn" style="width:75px;height:75px;border:0;"></a> <a href="http://rowshell.github.io/apichallengeproj/emptychamptemp">Quinn</a></td>
+    <td id="76b">Blah</td>
+    <td id="76c">Blah</td>
+    <td id="76d">Blah</td>
+    <td id="76e">Blah</td>
+  </tr>
+  <tr id="77">
+    <td id="77a"><a href="http://rowshell.github.io/apichallengeproj/emptychamptemp"><img src="http://ddragon.leagueoflegends.com/cdn/5.15.1/img/champion/Rammus.png" alt="Rammus" title="Rammus" style="width:75px;height:75px;border:0;"></a> <a href="http://rowshell.github.io/apichallengeproj/emptychamptemp">Rammus</a> </td>
+    <td id="77b">Blah</td>
+    <td id="77c">Blah</td>
+    <td id="77d">Blah</td>
+    <td id="77e">Blah</td>
+  </tr>
+  <tr id="78">
+    <td id="78a"><a href="http://rowshell.github.io/apichallengeproj/emptychamptemp"><img src="http://ddragon.leagueoflegends.com/cdn/5.15.1/img/champion/RekSai.png" alt="Rek'Sai" title="Rek'Sai" style="width:75px;height:75px;border:0;"></a> <a href="http://rowshell.github.io/apichallengeproj/emptychamptemp">Rek'Sai</a></td>
+    <td id="78b">Blah</td>
+    <td id="78c">Blah</td>
+    <td id="78d">Blah</td>
+    <td id="78e">Blah</td>
+  </tr>
+  <tr id="79">
+    <td id="79a"><a href="http://rowshell.github.io/apichallengeproj/emptychamptemp"><img src="http://ddragon.leagueoflegends.com/cdn/5.15.1/img/champion/Renekton.png" alt="Renekton" title="Renekton" style="width:75px;height:75px;border:0;"></a> <a href="http://rowshell.github.io/apichallengeproj/emptychamptemp">Renekton</a> </td>
+    <td id="79b">Blah</td>
+    <td id="79c">Blah</td>
+    <td id="79d">Blah</td>
+    <td id="79e">Blah</td>
+  </tr>
+  <tr id="80">
+    <td id="80a"><a href="http://rowshell.github.io/apichallengeproj/emptychamptemp"><img src="http://ddragon.leagueoflegends.com/cdn/5.15.1/img/champion/Rengar.png" alt="Rengar" title="Rengar" style="width:75px;height:75px;border:0;"></a> <a href="http://rowshell.github.io/apichallengeproj/emptychamptemp">Rengar</a> </td>
+    <td id="80b">Blah</td>
+    <td id="80c">Blah</td>
+    <td id="80d">Blah</td>
+    <td id="80e">Blah</td>
+  </tr>
+  <tr id="81">
+    <td id="81a"><a href="http://rowshell.github.io/apichallengeproj/emptychamptemp"><img src="http://ddragon.leagueoflegends.com/cdn/5.15.1/img/champion/Riven.png" alt="Riven" title="Riven" style="width:75px;height:75px;border:0;"></a> <a href="http://rowshell.github.io/apichallengeproj/emptychamptemp">Riven</a> </td>
+    <td id="81b">Blah</td>
+    <td id="81c">Blah</td>
+    <td id="81d">Blah</td>
+    <td id="81e">Blah</td>
+  </tr>
+  <tr id="82">
+    <td id="82a"><a href="http://rowshell.github.io/apichallengeproj/emptychamptemp"><img src="http://ddragon.leagueoflegends.com/cdn/5.15.1/img/champion/Rumble.png" alt="Rumble" title="Rumble" style="width:75px;height:75px;border:0;"></a> <a href="http://rowshell.github.io/apichallengeproj/emptychamptemp">Rumble</a> </td>
+    <td id="82b">Blah</td>
+    <td id="82c">Blah</td>
+    <td id="82d">Blah</td>
+    <td id="82e">Blah</td>
+  </tr>
+  <tr id="83">
+    <td id="83a"><a href="http://rowshell.github.io/apichallengeproj/emptychamptemp"><img src="http://ddragon.leagueoflegends.com/cdn/5.15.1/img/champion/Ryze.png" alt="Ryze" title="Ryze" style="width:75px;height:75px;border:0;"></a> <a href="http://rowshell.github.io/apichallengeproj/emptychamptemp">Ryze</a> </td>
+    <td id="83b">Blah</td>
+    <td id="83c">Blah</td>
+    <td id="83d">Blah</td>
+    <td id="83e">Blah</td>
+  </tr>
+  <tr id="84">
+    <td id="84a"><a href="http://rowshell.github.io/apichallengeproj/emptychamptemp"><img src="http://ddragon.leagueoflegends.com/cdn/5.15.1/img/champion/Sejuani.png" alt="Sejuani" title="Sejuani" style="width:75px;height:75px;border:0;"></a> <a href="http://rowshell.github.io/apichallengeproj/emptychamptemp">Sejuani</a> </td>
+    <td id="84b">Blah</td>
+    <td id="84c">Blah</td>
+    <td id="84d">Blah</td>
+    <td id="84e">Blah</td>
+  </tr>
+  <tr id="85">
+    <td id="85a"><a href="http://rowshell.github.io/apichallengeproj/emptychamptemp"><img src="http://ddragon.leagueoflegends.com/cdn/5.15.1/img/champion/Shaco.png" alt="Shaco" title="Shaco" style="width:75px;height:75px;border:0;"></a> <a href="http://rowshell.github.io/apichallengeproj/emptychamptemp">Shaco</a> </td>
+    <td id="85b">Blah</td>
+    <td id="85c">Blah</td>
+    <td id="85d">Blah</td>
+    <td id="85e">Blah</td>
+  </tr>
+  <tr id="86">
+    <td id="86a"><a href="http://rowshell.github.io/apichallengeproj/emptychamptemp"><img src="http://ddragon.leagueoflegends.com/cdn/5.15.1/img/champion/Shen.png" alt="Shen" title="Shen" style="width:75px;height:75px;border:0;"></a> <a href="http://rowshell.github.io/apichallengeproj/emptychamptemp">Shen</a> </td>
+    <td id="86b">Blah</td>
+    <td id="86c">Blah</td>
+    <td id="86d">Blah</td>
+    <td id="86e">Blah</td>
+  </tr>
+  <tr id="87">
+    <td id="87a"><a href="http://rowshell.github.io/apichallengeproj/emptychamptemp"><img src="http://ddragon.leagueoflegends.com/cdn/5.15.1/img/champion/Shyvana.png" alt="Shyvana" title="Shyvana" style="width:75px;height:75px;border:0;"></a> <a href="http://rowshell.github.io/apichallengeproj/emptychamptemp">Shyvana</a> </td>
+    <td id="87b">Blah</td>
+    <td id="87c">Blah</td>
+    <td id="87d">Blah</td>
+    <td id="87e">Blah</td>
+  </tr>
+  <tr id="88">
+    <td id="88a"><a href="http://rowshell.github.io/apichallengeproj/emptychamptemp"><img src="http://ddragon.leagueoflegends.com/cdn/5.15.1/img/champion/Singed.png" alt="Singed" title="Singed" style="width:75px;height:75px;border:0;"></a> <a href="http://rowshell.github.io/apichallengeproj/emptychamptemp">Singed</a> </td>
+    <td id="88b">Blah</td>
+    <td id="88c">Blah</td>
+    <td id="88d">Blah</td>
+    <td id="88e">Blah</td>
+  </tr>
+  <tr id="89">
+    <td id="89a"><a href="http://rowshell.github.io/apichallengeproj/emptychamptemp"><img src="http://ddragon.leagueoflegends.com/cdn/5.15.1/img/champion/Sion.png" alt="Sion" title="Sion" style="width:75px;height:75px;border:0;"></a> <a href="http://rowshell.github.io/apichallengeproj/emptychamptemp">Sion</a> </td>
+    <td id="89b">Blah</td>
+    <td id="89c">Blah</td>
+    <td id="89d">Blah</td>
+    <td id="89e">Blah</td>
+  </tr>
+  <tr id="90">
+    <td id="90a"><a href="http://rowshell.github.io/apichallengeproj/emptychamptemp"><img src="http://ddragon.leagueoflegends.com/cdn/5.15.1/img/champion/Sivir.png" alt="Sivir" title="Sivir" style="width:75px;height:75px;border:0;"></a> <a href="http://rowshell.github.io/apichallengeproj/emptychamptemp">Sivir</a> </td>
+    <td id="90b">Blah</td>
+    <td id="90c">Blah</td>
+    <td id="90d">Blah</td>
+    <td id="90e">Blah</td>
+  </tr>
+  <tr id="91">
+    <td id="91a"><a href="http://rowshell.github.io/apichallengeproj/emptychamptemp"><img src="http://ddragon.leagueoflegends.com/cdn/5.15.1/img/champion/Skarner.png" alt="Skarner" title="Skarner" style="width:75px;height:75px;border:0;"></a> <a href="http://rowshell.github.io/apichallengeproj/emptychamptemp">Skarner</a> </td>
+    <td id="91b">Blah</td>
+    <td id="91c">Blah</td>
+    <td id="91d">Blah</td>
+    <td id="91e">Blah</td>
+  </tr>
+  <tr id="92">
+    <td id="92a"><a href="http://rowshell.github.io/apichallengeproj/emptychamptemp"><img src="http://ddragon.leagueoflegends.com/cdn/5.15.1/img/champion/Sona.png" alt="Sona" title="Sona" style="width:75px;height:75px;border:0;"></a> <a href="http://rowshell.github.io/apichallengeproj/emptychamptemp">Sona</a> </td>
+    <td id="92b">Blah</td>
+    <td id="92c">Blah</td>
+    <td id="92d">Blah</td>
+    <td id="92e">Blah</td>
+  </tr>
+  <tr id="93">
+    <td id="93a"><a href="http://rowshell.github.io/apichallengeproj/emptychamptemp"><img src="http://ddragon.leagueoflegends.com/cdn/5.15.1/img/champion/Soraka.png" alt="Soraka" title="Soraka" style="width:75px;height:75px;border:0;"></a> <a href="http://rowshell.github.io/apichallengeproj/emptychamptemp">Soraka</a> </td>
+    <td id="93b">Blah</td>
+    <td id="93c">Blah</td>
+    <td id="93d">Blah</td>
+    <td id="93e">Blah</td>
+  </tr>
+  <tr id="94">
+    <td id="94a"><a href="http://rowshell.github.io/apichallengeproj/emptychamptemp"><img src="http://ddragon.leagueoflegends.com/cdn/5.15.1/img/champion/Swain.png" alt="Swain" title="Swain" style="width:75px;height:75px;border:0;"></a> <a href="http://rowshell.github.io/apichallengeproj/emptychamptemp">Swain</a> </td>
+    <td id="94b">Blah</td>
+    <td id="94c">Blah</td>
+    <td id="94d">Blah</td>
+    <td id="94e">Blah</td>
+  </tr>
+  <tr id="95">
+    <td id="95a"><a href="http://rowshell.github.io/apichallengeproj/emptychamptemp"><img src="http://ddragon.leagueoflegends.com/cdn/5.15.1/img/champion/Syndra.png" alt="Syndra" title="Syndra" style="width:75px;height:75px;border:0;"></a> <a href="http://rowshell.github.io/apichallengeproj/emptychamptemp">Syndra</a> </td>
+    <td id="95b">Blah</td>
+    <td id="95c">Blah</td>
+    <td id="95d">Blah</td>
+    <td id="95e">Blah</td>
+  </tr>
+  <tr id="96">
+    <td id="96a"><a href="http://rowshell.github.io/apichallengeproj/emptychamptemp"><img src="http://ddragon.leagueoflegends.com/cdn/5.15.1/img/champion/TahmKench.png" alt="Tahm Kench" title="Tahm Kench" style="width:75px;height:75px;border:0;"></a> <a href="http://rowshell.github.io/apichallengeproj/emptychamptemp">Tahm Kench</a> </td>
+    <td id="96b">Blah</td>
+    <td id="96c">Blah</td>
+    <td id="96d">Blah</td>
+    <td id="96e">Blah</td>
+  </tr>
+  <tr id="97">
+    <td id="97a"><a href="http://rowshell.github.io/apichallengeproj/emptychamptemp"><img src="http://ddragon.leagueoflegends.com/cdn/5.15.1/img/champion/Talon.png" alt="Talon" title="Talon" style="width:75px;height:75px;border:0;"></a> <a href="http://rowshell.github.io/apichallengeproj/emptychamptemp">Talon</a> </td>
+    <td id="97b">Blah</td>
+    <td id="97c">Blah</td>
+    <td id="97d">Blah</td>
+    <td id="97e">Blah</td>
+  </tr>
+  <tr id="98">
+    <td id="98a"><a href="http://rowshell.github.io/apichallengeproj/emptychamptemp"><img src="http://ddragon.leagueoflegends.com/cdn/5.15.1/img/champion/Taric.png" alt="Taric" title="Taric" style="width:75px;height:75px;border:0;"></a> <a href="http://rowshell.github.io/apichallengeproj/emptychamptemp">Taric</a> </td>
+    <td id="98b">Blah</td>
+    <td id="98c">Blah</td>
+    <td id="98d">Blah</td>
+    <td id="98e">Blah</td>
+  </tr>
+  <tr id="99">
+    <td id="99a"><a href="http://rowshell.github.io/apichallengeproj/emptychamptemp"><img src="http://ddragon.leagueoflegends.com/cdn/5.15.1/img/champion/Teemo.png" alt="Teemo" title="Teemo" style="width:75px;height:75px;border:0;"></a> <a href="http://rowshell.github.io/apichallengeproj/emptychamptemp">Teemo</a> </td>
+    <td id="99b">Blah</td>
+    <td id="99c">Blah</td>
+    <td id="99d">Blah</td>
+    <td id="99e">Blah</td>
+  </tr>
+  <tr id="100">
+    <td id="100a"><a href="http://rowshell.github.io/apichallengeproj/emptychamptemp"><img src="http://ddragon.leagueoflegends.com/cdn/5.15.1/img/champion/Thresh.png" alt="Thresh" title="Thresh" style="width:75px;height:75px;border:0;"></a> <a href="http://rowshell.github.io/apichallengeproj/emptychamptemp">Thresh</a> </td>
+    <td id="100b">Blah</td>
+    <td id="100c">Blah</td>
+    <td id="100d">Blah</td>
+    <td id="100e">Blah</td>
+  </tr>
+  <tr id="101">
+    <td id="101a"><a href="http://rowshell.github.io/apichallengeproj/emptychamptemp"><img src="http://ddragon.leagueoflegends.com/cdn/5.15.1/img/champion/Tristana.png" alt="Tristana" title="Tristana" style="width:75px;height:75px;border:0;"></a> <a href="http://rowshell.github.io/apichallengeproj/emptychamptemp">Tristana</a> </td>
+    <td id="101b">Blah</td>
+    <td id="101c">Blah</td>
+    <td id="101d">Blah</td>
+    <td id="101e">Blah</td>
+  </tr>
+  <tr id="102">
+    <td id="102a"><a href="http://rowshell.github.io/apichallengeproj/emptychamptemp"><img src="http://ddragon.leagueoflegends.com/cdn/5.15.1/img/champion/Trundle.png" alt="Trundle" title="Trundle" style="width:75px;height:75px;border:0;"></a> <a href="http://rowshell.github.io/apichallengeproj/emptychamptemp">Trundle</a> </td>
+    <td id="102b">Blah</td>
+    <td id="102c">Blah</td>
+    <td id="102d">Blah</td>
+    <td id="102e">Blah</td>
+  </tr>
+  <tr id="103">
+    <td id="103a"><a href="http://rowshell.github.io/apichallengeproj/emptychamptemp"><img src="http://ddragon.leagueoflegends.com/cdn/5.15.1/img/champion/Tryndamere.png" alt="Tryndamere" title="Tryndamere" style="width:75px;height:75px;border:0;"></a> <a href="http://rowshell.github.io/apichallengeproj/emptychamptemp">Tryndamere</a> </td>
+    <td id="103b">Blah</td>
+    <td id="103c">Blah</td>
+    <td id="103d">Blah</td>
+    <td id="103e">Blah</td>
+  </tr>
+  <tr id="104">
+    <td id="104a"><a href="http://rowshell.github.io/apichallengeproj/emptychamptemp"><img src="http://ddragon.leagueoflegends.com/cdn/5.15.1/img/champion/TwistedFate.png" alt="Twisted Fate" title="Twisted Fate" style="width:75px;height:75px;border:0;"></a> <a href="http://rowshell.github.io/apichallengeproj/emptychamptemp">Twisted Fate</a> </td>
+    <td id="104b">Blah</td>
+    <td id="104c">Blah</td>
+    <td id="104d">Blah</td>
+    <td id="104e">Blah</td>
+  </tr>
+  <tr id="105">
+    <td id="105a"><a href="http://rowshell.github.io/apichallengeproj/emptychamptemp"><img src="http://ddragon.leagueoflegends.com/cdn/5.15.1/img/champion/Twitch.png" alt="Twitch" title="Twitch" style="width:75px;height:75px;border:0;"></a> <a href="http://rowshell.github.io/apichallengeproj/emptychamptemp">Twitch</a> </td>
+    <td id="105b">Blah</td>
+    <td id="105c">Blah</td>
+    <td id="105d">Blah</td>
+    <td id="105e">Blah</td>
+  </tr>
+  <tr id="106">
+    <td id="106a"><a href="http://rowshell.github.io/apichallengeproj/emptychamptemp"><img src="http://ddragon.leagueoflegends.com/cdn/5.15.1/img/champion/Udyr.png" alt="Udyr" title="Udyr" style="width:75px;height:75px;border:0;"></a> <a href="http://rowshell.github.io/apichallengeproj/emptychamptemp">Udyr</a> </td>
+    <td id="106b">Blah</td>
+    <td id="106c">Blah</td>
+    <td id="106d">Blah</td>
+    <td id="106e">Blah</td>
+  </tr>
+  <tr id="107">
+    <td id="107a"><a href="http://rowshell.github.io/apichallengeproj/emptychamptemp"><img src="http://ddragon.leagueoflegends.com/cdn/5.15.1/img/champion/Urgot.png" alt="Urgot" title="Urgot" style="width:75px;height:75px;border:0;"></a> <a href="http://rowshell.github.io/apichallengeproj/emptychamptemp">Urgot</a> </td>
+    <td id="107b">Blah</td>
+    <td id="107c">Blah</td>
+    <td id="107d">Blah</td>
+    <td id="107e">Blah</td>
+  </tr>
+  <tr id="108">
+    <td id="108a"><a href="http://rowshell.github.io/apichallengeproj/emptychamptemp"><img src="http://ddragon.leagueoflegends.com/cdn/5.15.1/img/champion/Varus.png" alt="Varus" title="Varus" style="width:75px;height:75px;border:0;"></a> <a href="http://rowshell.github.io/apichallengeproj/emptychamptemp">Varus</a> </td>
+    <td id="108b">Blah</td>
+    <td id="108c">Blah</td>
+    <td id="108d">Blah</td>
+    <td id="108e">Blah</td>
+  </tr>
+  <tr id="109">
+    <td id="109a"><a href="http://rowshell.github.io/apichallengeproj/emptychamptemp"><img src="http://ddragon.leagueoflegends.com/cdn/5.15.1/img/champion/Vayne.png" alt="Vayne" title="Vayne" style="width:75px;height:75px;border:0;"></a> <a href="http://rowshell.github.io/apichallengeproj/emptychamptemp">Vayne</a> </td>
+    <td id="109b">Blah</td>
+    <td id="109c">Blah</td>
+    <td id="109d">Blah</td>
+    <td id="109e">Blah</td>
+  </tr>
+  <tr id="110">
+    <td id="110a"><a href="http://rowshell.github.io/apichallengeproj/emptychamptemp"><img src="http://ddragon.leagueoflegends.com/cdn/5.15.1/img/champion/Veigar.png" alt="Veigar" title="Veigar" style="width:75px;height:75px;border:0;"></a> <a href="http://rowshell.github.io/apichallengeproj/emptychamptemp">Veigar</a> </td>
+    <td id="110b">Blah</td>
+    <td id="110c">Blah</td>
+    <td id="110d">Blah</td>
+    <td id="110e">Blah</td>
+  </tr>
+  <tr id="111">
+    <td id="111a"><a href="http://rowshell.github.io/apichallengeproj/emptychamptemp"><img src="http://ddragon.leagueoflegends.com/cdn/5.15.1/img/champion/Velkoz.png" alt="Vel'Koz" title="Vel'Koz" style="width:75px;height:75px;border:0;"></a> <a href="http://rowshell.github.io/apichallengeproj/emptychamptemp">Vel'Koz</a> </td>
+    <td id="111b">Blah</td>
+    <td id="111c">Blah</td>
+    <td id="111d">Blah</td>
+    <td id="111e">Blah</td>
+  </tr>
+  <tr id="112">
+    <td id="112a"><a href="http://rowshell.github.io/apichallengeproj/emptychamptemp"><img src="http://ddragon.leagueoflegends.com/cdn/5.15.1/img/champion/Vi.png" alt="Vi" title="Vi" style="width:75px;height:75px;border:0;"></a> <a href="http://rowshell.github.io/apichallengeproj/emptychamptemp">Vi</a> </td>
+    <td id="112b">Blah</td>
+    <td id="112c">Blah</td>
+    <td id="112d">Blah</td>
+    <td id="112e">Blah</td>
+  </tr>
+  <tr id="113">
+    <td id="113a"><a href="http://rowshell.github.io/apichallengeproj/emptychamptemp"><img src="http://ddragon.leagueoflegends.com/cdn/5.15.1/img/champion/Viktor.png" alt="Viktor" title="Viktor" style="width:75px;height:75px;border:0;"></a> <a href="http://rowshell.github.io/apichallengeproj/emptychamptemp">Viktor</a> </td>
+    <td id="113b">Blah</td>
+    <td id="113c">Blah</td>
+    <td id="113d">Blah</td>
+    <td id="113e">Blah</td>
+  </tr>
+  <tr id="114">
+    <td id="114a"><a href="http://rowshell.github.io/apichallengeproj/emptychamptemp"><img src="http://ddragon.leagueoflegends.com/cdn/5.15.1/img/champion/Vladimir.png" alt="Vladimir" title="Vladimir" style="width:75px;height:75px;border:0;"></a> <a href="http://rowshell.github.io/apichallengeproj/emptychamptemp">Vladimir</a> </td>
+    <td id="114b">Blah</td>
+    <td id="114c">Blah</td>
+    <td id="114d">Blah</td>
+    <td id="114e">Blah</td>
+  </tr>
+  <tr id="115">
+    <td id="115a"><a href="http://rowshell.github.io/apichallengeproj/emptychamptemp"><img src="http://ddragon.leagueoflegends.com/cdn/5.15.1/img/champion/Volibear.png" alt="Volibear" title="Volibear" style="width:75px;height:75px;border:0;"></a> <a href="http://rowshell.github.io/apichallengeproj/emptychamptemp">Volibear</a> </td>
+    <td id="115b">Blah</td>
+    <td id="115c">Blah</td>
+    <td id="115d">Blah</td>
+    <td id="115e">Blah</td>
+  </tr>
+  <tr id="116">
+    <td id="116a"><a href="http://rowshell.github.io/apichallengeproj/emptychamptemp"><img src="http://ddragon.leagueoflegends.com/cdn/5.15.1/img/champion/Warwick.png" alt="Warwick" title="Warwick" style="width:75px;height:75px;border:0;"></a> <a href="http://rowshell.github.io/apichallengeproj/emptychamptemp">Warwick</a> </td>
+    <td id="116b">Blah</td>
+    <td id="116c">Blah</td>
+    <td id="116d">Blah</td>
+    <td id="116e">Blah</td>
+  </tr>
+  <tr id="117">
+    <td id="117a"><a href="http://rowshell.github.io/apichallengeproj/emptychamptemp"><img src="http://ddragon.leagueoflegends.com/cdn/5.15.1/img/champion/MonkeyKing.png" alt="Wukong" title="Wukong" style="width:75px;height:75px;border:0;"></a> <a href="http://rowshell.github.io/apichallengeproj/emptychamptemp">Wukong</a> </td>
+    <td id="117b">Blah</td>
+    <td id="117c">Blah</td>
+    <td id="117d">Blah</td>
+    <td id="117e">Blah</td>
+  </tr>
+  <tr id="118">
+    <td id="118a"><a href="http://rowshell.github.io/apichallengeproj/emptychamptemp"><img src="http://ddragon.leagueoflegends.com/cdn/5.15.1/img/champion/Xerath.png" alt="Xerath" title="Xerath" style="width:75px;height:75px;border:0;"></a> <a href="http://rowshell.github.io/apichallengeproj/emptychamptemp">Xerath</a> </td>
+    <td id="118b">Blah</td>
+    <td id="118c">Blah</td>
+    <td id="118d">Blah</td>
+    <td id="118e">Blah</td>
+  </tr>
+  <tr id="119">
+    <td id="119a"><a href="http://rowshell.github.io/apichallengeproj/emptychamptemp"><img src="http://ddragon.leagueoflegends.com/cdn/5.15.1/img/champion/XinZhao.png" alt="Xin Zhao" title="Xin Zhao" style="width:75px;height:75px;border:0;"></a> <a href="http://rowshell.github.io/apichallengeproj/emptychamptemp">Xin Zhao</a> </td>
+    <td id="119b">Blah</td>
+    <td id="119c">Blah</td>
+    <td id="119d">Blah</td>
+    <td id="119e">Blah</td>
+  </tr>
+  <tr id="120">
+    <td id="120a"><a href="http://rowshell.github.io/apichallengeproj/emptychamptemp"><img src="http://ddragon.leagueoflegends.com/cdn/5.15.1/img/champion/Yasuo.png" alt="Yasuo" title="Yasuo" style="width:75px;height:75px;border:0;"></a> <a href="http://rowshell.github.io/apichallengeproj/emptychamptemp">Yasuo</a> </td>
+    <td id="120b">Blah</td>
+    <td id="120c">Blah</td>
+    <td id="120d">Blah</td>
+    <td id="120e">Blah</td>
+  </tr>
+  <tr id="121">
+    <td id="121a"><a href="http://rowshell.github.io/apichallengeproj/emptychamptemp"><img src="http://ddragon.leagueoflegends.com/cdn/5.15.1/img/champion/Yorick.png" alt="Yorick" title="Yorick" style="width:75px;height:75px;border:0;"></a> <a href="http://rowshell.github.io/apichallengeproj/emptychamptemp">Yorick</a> </td>
+    <td id="121b">Blah</td>
+    <td id="121c">Blah</td>
+    <td id="121d">Blah</td>
+    <td id="121e">Blah</td>
+  </tr>
+  <tr id="122">
+    <td id="122a"><a href="http://rowshell.github.io/apichallengeproj/emptychamptemp"><img src="http://ddragon.leagueoflegends.com/cdn/5.15.1/img/champion/Zac.png" alt="Zac" title="Zac" style="width:75px;height:75px;border:0;"></a> <a href="http://rowshell.github.io/apichallengeproj/emptychamptemp">Zac</a> </td>
+    <td id="122b">Blah</td>
+    <td id="122c">Blah</td>
+    <td id="122d">Blah</td>
+    <td id="122e">Blah</td>
+  </tr>
+  <tr id="123">
+    <td id="123a"><a href="http://rowshell.github.io/apichallengeproj/emptychamptemp"><img src="http://ddragon.leagueoflegends.com/cdn/5.15.1/img/champion/Zed.png" alt="Zed" title="Zed" style="width:75px;height:75px;border:0;"></a> <a href="http://rowshell.github.io/apichallengeproj/emptychamptemp">Zed</a> </td>
+    <td id="123b">Blah</td>
+    <td id="123c">Blah</td>
+    <td id="123d">Blah</td>
+    <td id="123e">Blah</td>
+  </tr>
+  <tr id="124">
+    <td id="124a"><a href="http://rowshell.github.io/apichallengeproj/emptychamptemp"><img src="http://ddragon.leagueoflegends.com/cdn/5.15.1/img/champion/Ziggs.png" alt="Ziggs" title="Ziggs" style="width:75px;height:75px;border:0;"></a> <a href="http://rowshell.github.io/apichallengeproj/emptychamptemp">Ziggs</a> </td>
+    <td id="124b">Blah</td>
+    <td id="124c">Blah</td>
+    <td id="124d">Blah</td>
+    <td id="124e">Blah</td>
+  </tr>
+  <tr id="125">
+    <td id="125a"><a href="http://rowshell.github.io/apichallengeproj/emptychamptemp"><img src="http://ddragon.leagueoflegends.com/cdn/5.15.1/img/champion/Zilean.png" alt="Zilean" title="Zilean" style="width:75px;height:75px;border:0;"></a> <a href="http://rowshell.github.io/apichallengeproj/emptychamptemp">Zilean</a> </td>
+    <td id="125b">Blah</td>
+    <td id="125c">Blah</td>
+    <td id="125d">Blah</td>
+    <td id="125e">Blah</td>
+  </tr>
+  <tr id="126">
+    <td id="126a"><a href="http://rowshell.github.io/apichallengeproj/emptychamptemp"><img src="http://ddragon.leagueoflegends.com/cdn/5.15.1/img/champion/Zyra.png" alt="Zyra" title="Zyra" style="width:75px;height:75px;border:0;"></a> <a href="http://rowshell.github.io/apichallengeproj/emptychamptemp">Zyra</a> </td>
+    <td id="126b">Blah</td>
+    <td id="126c">Blah</td>
+    <td id="126d">Blah</td>
+    <td id="126e">Blah</td>
+  </tr>
+
+</table> <!--End of the stats table--> 
+</div>
+  <script src="DataMiner.js"></script>
+  <script src="writer.js"></script>
+
+  </body>
+</html>
