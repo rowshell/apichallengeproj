@@ -1,7 +1,15 @@
+/**
+ * This script fills out the bottom of the home page, finding the best and worst item of the
+ * game mode. Items are selected by determining the total increase/decrease they have for every champion that
+ * purchased the item
+ * */
 
 findBestItem();
 findWorstItem();
 
+/**
+ * Script to find the best item and place it on the page
+ * */
 function findBestItem(){
   var currBest = "";
   var currBestScore = 0;
@@ -13,13 +21,17 @@ function findBestItem(){
   var winDiffStore = 0;
   var kdaDiffStore = 0;
 
+  //Loop through every item
   for( var item in post ){
     if( post.hasOwnProperty(item) ){
 
+      //Loop through each champion that purchased the item. Get rid of "false" champions
       for( var champion in post[item] ){
         if( post[item].hasOwnProperty(champion) ){
           if( champion == "Win Rate" || champion == "Pick Rate")
             continue;
+            
+          //Determine WinRate and KDA for each champion. If not played enough, skip this champion  
           win = getDifference( 1, 0, 0, item, champion );
           kda = getDifference( 0, 0, 1, item, champion );
           if(win == "Unplayed" || kda == "Unplayed")
@@ -30,7 +42,7 @@ function findBestItem(){
           numChamps++;
         }
       }
-
+      //Find the maximum score based on Win Rate and KDA
       if( winDiff + kdaDiff > currBestScore ){
         currBest = item;
         currBestScore = winDiff + kdaDiff;
@@ -43,6 +55,7 @@ function findBestItem(){
       numChamps = 0;
     }
   }
+  //Average the stats and place on the page
   winDiffStore /= bestItemNumChamps;
   kdaDiffStore /= bestItemNumChamps;
   document.getElementById("increaseWinRate").innerHTML = Number(winDiffStore).toFixed(3);
