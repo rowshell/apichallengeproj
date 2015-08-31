@@ -37,7 +37,6 @@ function findBestItem(){
         winDiffStore = winDiff;
         kdaDiffStore = kdaDiff;
         bestItemNumChamps = numChamps;
-        console.log("New best found");
       }
       winDiff = 0;
       kdaDiff = 0;
@@ -50,6 +49,7 @@ function findBestItem(){
   document.getElementById("increaseKDA").innerHTML = Number(kdaDiffStore).toFixed(3);
   document.getElementById("bestItemPic").src = ""; 
   document.getElementById("bestItemPic").innerHTML = currBest;
+  document.getElementById("bestLink").innerHTML = currBest;
 
   var itemId = 0;
   if(currBest == "Dead Man's Plate") itemId = 3742;
