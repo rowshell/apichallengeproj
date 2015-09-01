@@ -138,8 +138,10 @@ function getChampionKDA( item, champion, which ){
 * */
 function getDifference( isWinRate, isPickRate, isKDA, item, champion ){
     if( pre[""][champion] == undefined || post[item] == undefined ||
-        post[item][champion] == undefined || post[item][champion]["numGames"] < num )
+        post[item][champion] == undefined || post[item][champion]["numGames"] < num ){
+          console.log(champion+" did not play "+item );
       return "Unplayed";
+    }
     if( isWinRate == 1 ){
       return post[item][champion]["Win Rate"] - pre[""][champion]["Win Rate"];
     }
