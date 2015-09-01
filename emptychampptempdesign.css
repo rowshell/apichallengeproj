@@ -151,13 +151,18 @@ body {
 
 }
 
+.itemtables table {
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .helptable table {
    margin-left: auto;
    margin-right: auto;
   
 }
 
-.hurttable table{
+.hurttable table {
    margin-left: auto;
    margin-right: auto;
 }
