@@ -28,6 +28,16 @@ function write(){
   //Format the champ name in order to get the correct splash art
   var imgChampName = champName.replace(" ","");
   imgChampName = imgChampName.replace("'","");
+  console.log(imgChampName);
+  
+  if( imgChampName == "wukong") imgChampName = "MonkeyKing";
+  else if( imgChampName == "VelKoz") imgChampName = "Velkoz";
+  else if( imgChampName == "ChoGath") imgChampName = "Chogath";
+  else if( imgChampName == "Dr.Mundo") imgChampName = "DrMundo";
+  else if( imgChampName == "Fiddlesticks") imgChampName = "FiddleSticks";
+  else if( imgChampName == "KhaZix") imgChampName = "Khazix";
+  else if( imgChampName == "LeBlanc") imgChampName = "Leblanc";
+  
   var imgURL = "http://ddragon.leagueoflegends.com/cdn/img/champion/splash/" + imgChampName + "_0.jpg";
 
   //Set each element in the page according to the champion's characteristics
