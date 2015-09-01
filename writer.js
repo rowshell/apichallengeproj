@@ -48,6 +48,10 @@ function initWrite(){
   }
 }
 
+/**
+ * Function to change the min number of times an item must be built by a champ to be included in data
+ * This function is called by the submit button
+ * */
 function changeNum(){
   var newNum = document.getElementById("changeNum").value;
   if( newNum == "" || newNum == NaN )
