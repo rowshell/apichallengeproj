@@ -31,7 +31,7 @@ function write(){
   console.log(imgChampName);
   console.log(champName);
   
-  if( imgChampName == "wukong") imgChampName = "MonkeyKing";
+  if( imgChampName == "Wukong") imgChampName = "MonkeyKing";
   else if( imgChampName == "VelKoz") imgChampName = "Velkoz";
   else if( imgChampName == "ChoGath") imgChampName = "Chogath";
   else if( imgChampName == "Dr.Mundo") imgChampName = "DrMundo";
