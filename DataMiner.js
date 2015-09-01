@@ -160,7 +160,7 @@ function getDifference( isWinRate, isPickRate, isKDA, item, champion ){
 * @return the name of the best item for this champion
 * */
 function findBest( champion ){
-  var tempBest = 0; 
+  var tempBest = -900; 
   var item = "";
   var winDiff;
   var kdaDiff;
