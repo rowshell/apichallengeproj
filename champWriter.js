@@ -55,6 +55,8 @@ function write(){
     return;
   }
   var worstItem = findWorst(champName);
+  console.log(bestItem);
+  console.log(worstItem);
   
   document.getElementById("helpItemPic").innerHTML = bestItem;
   document.getElementById("helpItemPic").title = bestItem;
