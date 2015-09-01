@@ -47,6 +47,11 @@ function initWrite(){
       document.getElementById(""+i+"e").innerHTML = Number(getChampionKDA( itemName, champName, 1 )).toFixed(3);
   }
 }
+
+function changeNum(newNum){
+  changeDMNum(newNum);
+  initWrite();
+}
 /**
  * Method to search the champion grid for a specific champion. Swaps with the first position if found
  * */
