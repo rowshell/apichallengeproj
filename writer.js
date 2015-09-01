@@ -58,6 +58,7 @@ function changeNum(){
     return;
   changeDMNum(newNum);
   initWrite();
+  orderByName();
 }
 /**
  * Method to search the champion grid for a specific champion. Swaps with the first position if found
