@@ -48,7 +48,10 @@ function initWrite(){
   }
 }
 
-function changeNum(newNum){
+function changeNum(){
+  var newNum = document.getElementById("changeNum").value;
+  if( newNum == "" || newNum == NaN )
+    return;
   changeDMNum(newNum);
   initWrite();
 }
