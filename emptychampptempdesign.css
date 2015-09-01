@@ -148,17 +148,15 @@ body {
 .itemtables td {
     border: 1px solid white;
     border-collapse: collapse;
-    position:static;
 
 }
 
-/*.helptable table{
-  /*display:block; */
-  /*position:static;
-
+.helptable table {
+  display:inline;
 }
 
 .hurttable table{
+  float: right;
+  display:inline; 
   position:static;
-  
-}*/
+}
