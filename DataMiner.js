@@ -138,8 +138,9 @@ function getChampionKDA( item, champion, which ){
 * */
 function getDifference( isWinRate, isPickRate, isKDA, item, champion ){
     if( pre[""][champion] == undefined || post[item] == undefined ||
-        post[item][champion] == undefined || post[item][champion]["numGames"] < num )
+        post[item][champion] == undefined || post[item][champion]["numGames"] < num ){
       return "Unplayed";
+    }
     if( isWinRate == 1 ){
       return post[item][champion]["Win Rate"] - pre[""][champion]["Win Rate"];
     }
@@ -157,7 +158,7 @@ function getDifference( isWinRate, isPickRate, isKDA, item, champion ){
 * @return the name of the best item for this champion
 * */
 function findBest( champion ){
-  var tempBest = 0; 
+  var tempBest = -900; 
   var item = "";
   var winDiff;
   var kdaDiff;
@@ -188,7 +189,7 @@ function findBest( champion ){
 * @return the name of the worst item for this champion
 */
 function findWorst( champion ){
-  var tempWorst = 0;
+  var tempWorst = 900;
   var item = "";
   var winDiff;
   var kdadiff;
