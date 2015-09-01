@@ -158,5 +158,5 @@ body {
 .hurttable table{
   float: right;
   display:inline; 
-  position:static;
+  /*position:static;*/
 }
