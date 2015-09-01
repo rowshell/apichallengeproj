@@ -47,6 +47,18 @@ function initWrite(){
       document.getElementById(""+i+"e").innerHTML = Number(getChampionKDA( itemName, champName, 1 )).toFixed(3);
   }
 }
+
+/**
+ * Function to change the min number of times an item must be built by a champ to be included in data
+ * This function is called by the submit button
+ * */
+function changeNum(){
+  var newNum = document.getElementById("changeNum").value;
+  if( newNum == "" || newNum == NaN )
+    return;
+  changeDMNum(newNum);
+  initWrite();
+}
 /**
  * Method to search the champion grid for a specific champion. Swaps with the first position if found
  * */
