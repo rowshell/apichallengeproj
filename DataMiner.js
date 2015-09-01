@@ -34,24 +34,10 @@ function loadJSONs( url, which ){
 
  AJAX_req.send();
 } 
-/*
-function loadJSONS(callback){
-  var xobj = new XMLHttpRequest();
-  xobj.overrideMimeType("application/json");
-  xobj.open('GET','pre.json',true);
-  xobj.onreadystatechange=function(){
-    if(xobj.readystate==4 && xobj.status=="200"){
-      callback(xobj.responseText);
-    }
-  };
-  xobj.send(null);
+
+function changeDMNum(newNum){
+  num = newNum;
 }
-function init(){
-console.log("init called");
-  loadJSONS(function(response){
-    pre = JSON.parse(response);
-  });
-}*/
 
 /**
 * method to extract the win rate of an item
