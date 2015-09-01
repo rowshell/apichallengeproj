@@ -152,13 +152,11 @@ body {
 }
 
 .helptable table{
-  float: left; 
   display:inline-block; 
 
 }
 
 .hurttable table{
-  float: right;
   display:inline-block; 
 
   
