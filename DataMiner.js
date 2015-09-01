@@ -188,7 +188,7 @@ function findBest( champion ){
 * @return the name of the worst item for this champion
 */
 function findWorst( champion ){
-  var tempWorst = 0;
+  var tempWorst = 900;
   var item = "";
   var winDiff;
   var kdadiff;
@@ -207,7 +207,6 @@ function findWorst( champion ){
       if( winDiff + kdaDiff < tempWorst ){
         tempWorst = winDiff + kdaDiff;
         item = key;
-        console.log("new worst item "+item);
       }
     }
   }
