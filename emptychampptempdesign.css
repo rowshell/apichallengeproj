@@ -152,12 +152,12 @@ body {
 }
 
 .helptable table{
-  display:inline-block; 
+  display:block; 
 
 }
 
 .hurttable table{
-  display:inline-block; 
+  display:block; 
 
   
 }
