@@ -143,6 +143,7 @@ function getDifference( isWinRate, isPickRate, isKDA, item, champion ){
       return "Unplayed";
     }
     if( isWinRate == 1 ){
+      console.log(champion +" did play "+item+" "+post[item][champion]["numGames"]+" times");
       return post[item][champion]["Win Rate"] - pre[""][champion]["Win Rate"];
     }
     else if( isPickRate == 1 ){
