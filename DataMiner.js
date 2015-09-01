@@ -207,6 +207,7 @@ function findWorst( champion ){
       if( winDiff + kdaDiff < tempWorst ){
         tempWorst = winDiff + kdaDiff;
         item = key;
+        console.log("new worst item "+item);
       }
     }
   }
