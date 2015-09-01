@@ -29,6 +29,7 @@ function write(){
   var imgChampName = champName.replace(" ","");
   imgChampName = imgChampName.replace("'","");
   console.log(imgChampName);
+  console.log(champName);
   
   if( imgChampName == "wukong") imgChampName = "MonkeyKing";
   else if( imgChampName == "VelKoz") imgChampName = "Velkoz";
