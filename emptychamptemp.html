@@ -50,11 +50,7 @@
   <div style="width: 100%; height: 25%;">
   <table style="width:48%;height:100%" border="0" cellpadding="0" cellspacing="0"> 
      <tbody>
-      <tr><th>
-      <div class="">
-      <input id="changeNum" placeholder="Min Times Built"><button onclick="changeNum()">Submit</button>
-      </div>
-        </th></tr>
+
       <tr>
       <th>Item</th>
       <th>Pre Win</th>
@@ -64,11 +60,12 @@
     </tr>
     <tr>
       <td><center><img id="helpItemPic" src="#" alt="Unknown " title="" style="width:75px;height:75px;border:0;vertical-align:middle;"><a id="helpLink"></a></td>
-      <td id="helpPreWin">Blah</td>
-      <td id="helpPostWin">Blah</td>
-      <td id="helpPreKDA">Blah</td>
-      <td id="helpPostKDA">Blah</td>
+      <td id="helpPreWin"></td>
+      <td id="helpPostWin"></td>
+      <td id="helpPreKDA"></td>
+      <td id="helpPostKDA"></td>
     </tr>
+
   </tbody></table>
   </div>
 
@@ -92,17 +89,23 @@
     </tr>
     <tr>
       <td><center><img id="hurtItemPic" src="#" alt="Unknown " title="" style="width:75px;height:75px;border:0;vertical-align:middle;"><a id="hurtLink"></a></td>
-      <td id="hurtPreWin">Blah</td>
-      <td id="hurtPostWin">Blah</td>
-      <td id="hurtPreKDA">Blah</td>
-      <td id="hurtPostKDA">Blah</td>
+      <td id="hurtPreWin"></td>
+      <td id="hurtPostWin"></td>
+      <td id="hurtPreKDA"></td>
+      <td id="hurtPostKDA"></td>
     </tr>
+    
+     
   </tbody></table>
   </div>
   </div>
-  
+  <br>
     <div>
-      <center><p>Use the "Min Times Built" option to change the number of times a champion must have built an item to be included in the data. Default: 5
+      <center>
+             <div class="">
+      <input id="changeNum" placeholder="Min Times Built"><button onclick="changeNum()">Submit</button>
+      </div>
+        <p>Use the "Min Times Built" option to change the number of times a champion must have built an item to be included in the data. Default: 5
       </p>
       </center>
     </div>
